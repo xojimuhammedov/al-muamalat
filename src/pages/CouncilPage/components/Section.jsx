@@ -14,19 +14,19 @@ const Section = () => {
                     color="#103741"
                     mb={"2rem"}
                     textAlign={"center"}>{t("MAXSUS KENGASH")}</Heading>
-                <SimpleGrid mt={'24px'} gap={'24px'} columns={{ base: 1, lg: 2 }}>
-                    <Flex {...css.item}>
-                        <Image {...css.image} src={MaxsusImageTwo} />
-                        <Box p={'24px'}>
-                            <Heading className='council-name' {...css.name}>ABIEV XIKMATILLA HASANOVICH</Heading>
-                            <Text className='council-texts' {...css.text}>{t("maxsus_text")}</Text>
-                        </Box>
-                    </Flex>
+                <SimpleGrid mt={'24px'} gap={'24px'} columns={{ base: 1 }}>
                     <Flex {...css.item}>
                         <Image {...css.image} src={MaxsusImageOne} />
                         <Box p={'24px'}>
                             <Heading className='council-name' {...css.name}>QODIROV HASAN KARIMBERDIEVICH</Heading>
                             <Text className='council-texts' {...css.text}>{t("maxsus_text2")}</Text>
+                        </Box>
+                    </Flex>
+                    <Flex {...css.item}>
+                        <Image {...css.image} src={MaxsusImageTwo} />
+                        <Box p={'24px'}>
+                            <Heading className='council-name' {...css.name}>ABIEV XIKMATILLA HASANOVICH</Heading>
+                            <Text className='council-texts' {...css.text}>{t("maxsus_text")}</Text>
                         </Box>
                     </Flex>
                 </SimpleGrid>
@@ -60,12 +60,12 @@ const css = {
     text: {
         fontSize: {
             base: "12px",
-            lg: "14px"
+            lg: "16px"
         },
         marginTop: "10px",
         lineHeight: {
             base: "18px",
-            lg: "22px"
+            lg: "26px"
         }
     },
     name: {
