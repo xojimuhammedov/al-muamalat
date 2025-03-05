@@ -11,11 +11,11 @@ import LinkedinIcon from "../assets/linkedin.png";
 import BlogImageTwo from "../assets/blog.jpg";
 import TeamEleven from "../assets/prof.png";
 import TeamTwelve from "../assets/team11.webp";
-import TeamThirteen from "../assets/team13.jpg";
+import TeamThirteen from "../assets/magda.jpg";
 
-import TeamFourthen from '../assets/hayot1.jpg'
-import TeamFifthen from '../assets/sarvar1.jpg'
-import GayratImage from '../assets/gayrat.jpg'
+import TeamFourthen from '../assets/blog-13.jpg'
+import TeamFifthen from '../assets/blog-11.jpg'
+import GayratImage from '../assets/blog-12.jpg'
 
 function Blog() {
   const { t } = useTranslation();
