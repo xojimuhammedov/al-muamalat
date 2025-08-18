@@ -9,7 +9,7 @@ import {
   MenuList,
   Text,
 } from "@chakra-ui/react";
-import LogoIcon from "../assets/logo123.jpg";
+import LogoIcon from "../assets/new-logo.jpg";
 import { Link as ALink } from "react-router-dom";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import Language from "./Language";
@@ -133,9 +133,9 @@ export default Navbar;
 const css = {
   image: {
     width: {
-      base: "150px",
-      md: "200px",
+      base: "120px",
     },
+    paddingLeft:"8px"
   },
   nav: {
     position: "fixed",
