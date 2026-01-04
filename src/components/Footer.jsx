@@ -48,7 +48,7 @@ function Footer() {
             Al Muamalat
           </a>
           , Barcha huquqlar himoyalangan.{" "}
-          <a className="white" href="#">
+          <a className="white" target="_blank" href="https://t.me/Xojimuhammedov">
             Developer
           </a>
         </Text>

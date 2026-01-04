@@ -8,6 +8,7 @@ import {
   SimpleGrid,
   Text,
   Textarea,
+  VStack,
 } from "@chakra-ui/react";
 import ContactImage from "../../../assets/contacts.webp";
 import { MailOpen, MapPin, Phone } from "lucide-react";
@@ -75,9 +76,27 @@ function Contact() {
   return (
     <Box>
       <Box py={"5rem"} className="container">
-        <Heading textAlign={"center"} as={"h1"} mb={"2rem"}>
+        <VStack spacing={4} mb={8} textAlign="center">
+          <Heading
+            as="h2"
+            size="2xl"
+            color="#1B4D3E"
+            fontWeight="700"
+            letterSpacing="-1px"
+          >
+            {t("Aloqaga chiqing")}
+          </Heading>
+          <Box
+            width="80px"
+            height="4px"
+            bgGradient="linear(to-r, #FF6B00, #1B4D3E)"
+            borderRadius="full"
+            mb={4}
+          />
+        </VStack>
+        {/* <Heading textAlign={"center"} as={"h1"} mb={"2rem"}>
           {t("Aloqaga chiqing")}
-        </Heading>
+        </Heading> */}
         <Box p={"15px"}>
           <SimpleGrid gap={"16px"} columns={{ base: 1, md: 3 }}>
             <Flex flexDirection={"column"} align={"center"}>
