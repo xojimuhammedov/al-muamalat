@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import BannerImage from "../assets/header-banner.png";
+import BannerImage from "../assets/newbanner.jpg";
 
 function Header() {
   return (
@@ -19,9 +19,9 @@ function Header() {
           pagination={{
             clickable: true,
           }}
-          className="mySwiper header-list">
-          <SwiperSlide className="header-swiper">
-            <Image src={BannerImage} />
+          >
+          <SwiperSlide >
+            <Image w={'100%'} src={BannerImage} />
           </SwiperSlide>
         </Swiper>
       </Box>

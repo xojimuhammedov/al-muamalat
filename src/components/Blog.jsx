@@ -1,14 +1,11 @@
 import { Box, Heading, Image, Link, SimpleGrid, Text } from "@chakra-ui/react";
 import CeoImage from "../assets/iskandar.jpg";
 import CtoImage from "../assets/cto1.jpg";
-import TeamOne from "../assets/team4.jpg";
 import TeamTwo from "../assets/team55.jpg";
-import ChiefImage from "../assets/team66.jpg";
 import BlogImage from "../assets/team7.jpg";
 import { useTranslation } from "react-i18next";
 import LinkedinIcon from "../assets/linkedin.png";
 
-import BlogImageTwo from "../assets/blog.jpg";
 import TeamEleven from "../assets/prof.png";
 import TeamTwelve from "../assets/team11.webp";
 import TeamThirteen from "../assets/magda.jpg";
@@ -16,6 +13,8 @@ import TeamThirteen from "../assets/magda.jpg";
 import TeamFourthen from '../assets/blog-13.jpg'
 import TeamFifthen from '../assets/blog-11.jpg'
 import GayratImage from '../assets/blog-12.jpg'
+
+import OybekImage from '../assets/oybek.jpg'
 
 function Blog() {
   const { t } = useTranslation();
@@ -101,6 +100,17 @@ function Blog() {
             <Text {...css.text}>{t("text17")}</Text>
             <Link
               href="https://www.linkedin.com/in/alam-asadov/"
+              target="_blank">
+              <Image {...css.icon} src={LinkedinIcon} />
+            </Link>
+          </Box>
+          <Box {...css.item}>
+            <Image {...css.image} src={OybekImage} alt="CeoImage" />
+            <Heading {...css.title}>{t("Oybek Khojimamatov")}</Heading>
+            <Heading {...css.titles}>{t("blog9")}</Heading>
+            <Text {...css.text}>{t("text18")}</Text>
+            <Link
+              href="https://www.linkedin.com/in/oybekkhojimamatov/"
               target="_blank">
               <Image {...css.icon} src={LinkedinIcon} />
             </Link>

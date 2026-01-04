@@ -99,27 +99,6 @@
   display: none;
 }
 
-.header-swiper::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 10px;
-  top: 0;
-  left: 0;
-  background: url("./assets/bg-header-top.png") center center repeat-x;
-  z-index: 1;
-}
-.header-swiper::after {
-  height: 19px;
-  top: auto;
-  bottom: 0;
-  background: url("./assets/bg-header-bottom.png") center center repeat-x;
-  position: absolute;
-  content: "";
-  width: 100%;
-  z-index: 1;
-  left: 0;
-}
 
 .article .slick-list {
   margin-bottom: -450px !important;

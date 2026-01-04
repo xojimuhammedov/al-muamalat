@@ -27,6 +27,45 @@ function Videos() {
         <SimpleGrid gap={"20px"} columns={{ base: 1, sm: 2, lg: 3 }}>
           <Box {...css.list}>
             <Iframe
+              url={`https://www.youtube.com/embed/eRHgRlGz_64`}
+              width="100%"
+              height="300px"
+              id=""
+              className=""
+              display="block"
+              position="relative"
+              styles={{ borderRadius: "10px" }}
+            />
+            <Heading {...css.name}>{t("Islomiy moliya olimlari Toshkentda yig‘ildi")}</Heading>
+          </Box>
+          <Box {...css.list}>
+            <Iframe
+              url={`https://www.youtube.com/embed/JrJ02_hxwwk`}
+              width="100%"
+              height="300px"
+              id=""
+              className=""
+              display="block"
+              position="relative"
+              styles={{ borderRadius: "10px" }}
+            />
+            <Heading {...css.name}>{t("Islom moliyasi bo‘yicha 20-xalqaro forum Toshkentda bo‘lib o‘tdi")}</Heading>
+          </Box>
+          <Box {...css.list}>
+            <Iframe
+              url={`https://www.youtube.com/embed/KJjhSlAGwFw`}
+              width="100%"
+              height="300px"
+              id=""
+              className=""
+              display="block"
+              position="relative"
+              styles={{ borderRadius: "10px" }}
+            />
+            <Heading {...css.name}>{t("ISSF 2025 forumi - islom moliyasini joriy etish yo'lidagi muhim qadam")}</Heading>
+          </Box>
+          <Box {...css.list}>
+            <Iframe
               url={`https://www.youtube.com/embed/m0iMVuu2Tb4`}
               width="100%"
               height="300px"
