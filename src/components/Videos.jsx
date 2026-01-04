@@ -1,29 +1,45 @@
-import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, VStack } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Iframe from "react-iframe";
 
 function Videos() {
-  const [video, setVideo] = useState([]);
+  // const [video, setVideo] = useState([]);
   const [t, i18n] = useTranslation();
 
-  useEffect(() => {
-    axios
-      .get("https://v1.centurysilkroadtravel.uz/api/blogs")
-      .then((res) => {
-        setVideo(res?.data?.data);
-      })
-      .catch((error) => {
-        console.log("Error fetching data: ", error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("https://v1.centurysilkroadtravel.uz/api/blogs")
+  //     .then((res) => {
+  //       setVideo(res?.data?.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error fetching data: ", error);
+  //     });
+  // }, []);
+  
   return (
     <Box>
       <Box className="container">
-        <Heading {...css.title} mb={"3rem"}>
-          {t("Bizning Videolar!")}
-        </Heading>
+        <VStack spacing={4} mb={8} textAlign="center">
+          <Heading
+            as="h2"
+            size="2xl"
+            color="#1B4D3E"
+            fontWeight="700"
+            letterSpacing="-1px"
+          >
+            {t("Bizning Videolar!")}
+          </Heading>
+          <Box
+            width="80px"
+            height="4px"
+            bgGradient="linear(to-r, #FF6B00, #1B4D3E)"
+            borderRadius="full"
+            mb={4}
+          />
+        </VStack>
         <SimpleGrid gap={"20px"} columns={{ base: 1, sm: 2, lg: 3 }}>
           <Box {...css.list}>
             <Iframe

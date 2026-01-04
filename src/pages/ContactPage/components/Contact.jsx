@@ -12,9 +12,66 @@ import {
 import ContactImage from "../../../assets/contacts.webp";
 import { MailOpen, MapPin, Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import { toast } from "react-toastify";
 
 function Contact() {
   const { t } = useTranslation();
+  const [nameValue, setNameValue] = useState("");
+  const [numberValue, setNumberValue] = useState("");
+  const [textValue, setTextValue] = useState("");
+  const [email, setEmail] = useState("");
+
+  function changeNumber(item) {
+    setNumberValue(item);
+  }
+
+  function changeName(item) {
+    setNameValue(item);
+  }
+  function changeText(item) {
+    setTextValue(item);
+  }
+  function changeEmail(item) {
+    setEmail(item);
+  }
+  const handleClear = () => {
+    setNameValue("");
+    setNumberValue("");
+    setTextValue("");
+    setEmail("");
+  };
+  let bot = {
+    TOKEN: "7124566656:AAFYAZxPTZZPtPFUiPJekWVc1Kp35t1sjHY",
+    chatID: "-1002196684816",
+    message: `
+          Assalomu alaykum, sizga yangi xabar keldi!
+          Ismi 👤: ${nameValue}; 
+          Telefon raqami ☎: ${numberValue};
+          Elektron manzil: ${email};
+          Xabar: ${textValue};
+          `,
+  };
+  const encodedMessage = encodeURIComponent(bot.message);
+
+  function sendMessage(e) {
+    e.preventDefault();
+
+    fetch(
+      `https://api.telegram.org/bot${bot.TOKEN}/sendMessage?chat_id=${bot.chatID}&text=${encodedMessage} `,
+      {
+        method: "GET",
+      }
+    ).then(
+      () => {
+        handleClear();
+        toast.success(t("Sizning xabaringiz muvaffaqiyatli yuborildi!"));
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
   return (
     <Box>
       <Box py={"5rem"} className="container">
@@ -62,11 +119,15 @@ function Contact() {
                   placeholder={t("Ismingiz")}
                   required
                   width={{ base: "100%", md: "48%" }}
+                  value={nameValue}
+                  onChange={(e) => changeName(e.target.value)}
                 />
                 <Input
                   type="email"
                   {...css.input}
                   placeholder={t("Sizning elektron manzilingiz")}
+                  value={email}
+                  onChange={(e) => changeEmail(e.target.value)}
                   required
                   width={{ base: "100%", md: "48%" }}
                 />
@@ -74,9 +135,11 @@ function Contact() {
                   {...css.input}
                   type="number"
                   placeholder={t("Sizning raqamingiz")}
+                  value={numberValue}
+                  onChange={(e) => changeNumber(e.target.value)}
                 />
-                <Textarea {...css.input} placeholder="Xabar" />
-                <Button className="btn btn-primary" type="submit">
+                <Textarea {...css.input} placeholder="Xabar" value={textValue} onChange={(e) => changeText(e.target.value)} />
+                <Button onClick={sendMessage} className="btn btn-primary" type="submit">
                   {t("Yuborish")}
                 </Button>
               </form>

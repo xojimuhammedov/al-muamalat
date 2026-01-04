@@ -1,4 +1,4 @@
-import { Box, Heading, Image } from "@chakra-ui/react";
+import { Box, Heading, Image, VStack } from "@chakra-ui/react";
 import Slider from "react-slick";
 import LogoOne from "../assets/logo.jpg";
 import LogoTwo from "../assets/logo1.jpg";
@@ -50,9 +50,24 @@ function Partners() {
   return (
     <Box>
       <Box py={"3rem"} className="container">
-        <Heading {...css.title} mb={"3rem"}>
-          {t("Bizning hamkorlarimiz va mijozlarimiz!")}
-        </Heading>
+        <VStack spacing={4} mb={8} textAlign="center">
+          <Heading
+            as="h2"
+            size="2xl"
+            color="#1B4D3E"
+            fontWeight="700"
+            letterSpacing="-1px"
+          >
+            {t("Bizning hamkorlarimiz va mijozlarimiz!")}
+          </Heading>
+          <Box
+            width="80px"
+            height="4px"
+            bgGradient="linear(to-r, #FF6B00, #1B4D3E)"
+            borderRadius="full"
+            mb={4}
+          />
+        </VStack>
         <Slider {...settings}>
           <Box {...css.list}>
             <Image {...css.image} src={LogoOne} />

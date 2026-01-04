@@ -1,4 +1,4 @@
-import { Box, Heading, Image, Link, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Heading, Image, Link, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import CeoImage from "../assets/iskandar.jpg";
 import CtoImage from "../assets/cto1.jpg";
 import TeamTwo from "../assets/team55.jpg";
@@ -21,12 +21,24 @@ function Blog() {
   return (
     <Box>
       <Box py={"3rem"} className="container">
-        <Heading
-          fontSize={{ base: "25px", lg: "30px" }}
-          color="#103741"
-          textAlign={"center"}>
-          {t("Bizning Jamoa!")}
-        </Heading>
+        <VStack spacing={4} mb={8} textAlign="center">
+          <Heading
+            as="h2"
+            size="2xl"
+            color="#1B4D3E"
+            fontWeight="700"
+            letterSpacing="-1px"
+          >
+            {t("Bizning Jamoa!")}
+          </Heading>
+          <Box
+            width="80px"
+            height="4px"
+            bgGradient="linear(to-r, #FF6B00, #1B4D3E)"
+            borderRadius="full"
+            mb={4}
+          />
+        </VStack>
         <SimpleGrid
           mt={"30px"}
           gap={"20px"}
@@ -118,12 +130,24 @@ function Blog() {
         </SimpleGrid>
       </Box>
       <Box py={"3rem"} className="container">
-        <Heading
-          fontSize={{ base: "25px", lg: "30px" }}
-          color="#103741"
-          textAlign={"center"}>
-          {t("Xalqaro mutaxassislar")}
-        </Heading>
+        <VStack spacing={4} mb={8} textAlign="center">
+          <Heading
+            as="h2"
+            size="2xl"
+            color="#1B4D3E"
+            fontWeight="700"
+            letterSpacing="-1px"
+          >
+             {t("Xalqaro mutaxassislar")}
+          </Heading>
+          <Box
+            width="80px"
+            height="4px"
+            bgGradient="linear(to-r, #FF6B00, #1B4D3E)"
+            borderRadius="full"
+            mb={4}
+          />
+        </VStack>
         <SimpleGrid
           mt={"30px"}
           gap={"20px"}
