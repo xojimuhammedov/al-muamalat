@@ -15,6 +15,7 @@ import TeamFifthen from '../assets/blog-11.jpg'
 import GayratImage from '../assets/blog-12.jpg'
 
 import OybekImage from '../assets/oybek.jpg'
+import BaxtiyorImage from '../assets/baxtiyor.jpg'
 
 function Blog() {
   const { t } = useTranslation();
@@ -123,6 +124,17 @@ function Blog() {
             <Text {...css.text}>{t("text18")}</Text>
             <Link
               href="https://www.linkedin.com/in/oybekkhojimamatov/"
+              target="_blank">
+              <Image {...css.icon} src={LinkedinIcon} />
+            </Link>
+          </Box>
+          <Box {...css.item}>
+            <Image {...css.image} src={BaxtiyorImage} alt="CeoImage" />
+            <Heading {...css.title}>{t("Baxtiyorjon Fayzullayev")}</Heading>
+            <Heading {...css.titles}>{t("Islomiy moliya bo'yicha konsalting va maxsulot tuzilmalari eksperti")}</Heading>
+            <Text {...css.text}>{t("baxtiyor_text")}</Text>
+            <Link
+              href="https://www.linkedin.com/in/bakhtiyorjon-fayzullaev-fmva-cpss-955a58273/"
               target="_blank">
               <Image {...css.icon} src={LinkedinIcon} />
             </Link>

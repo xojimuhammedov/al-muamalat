@@ -111,6 +111,19 @@ function Article() {
               {t("Batafsil o'qish")}
             </Link>
           </Box>
+          <Box width={"100%"}>
+            <Image
+              {...css.image}
+              src="https://storage.kun.uz/source/11/3bGr23_d5dEA-xBn4qbLsT67jPv_OR5c.jpg"
+            />
+            <Heading {...css.title}>{t("Islomiy moliyada nazorat: “o‘tlab ketmaslik” uchun qanday vositalar bor?")}</Heading>
+            <Link
+              {...css.link}
+              href="https://kun.uz/kr/58795378"
+              target="_blank">
+              {t("Batafsil o'qish")}
+            </Link>
+          </Box>
         </Slider>
       </Box>
     </Box>

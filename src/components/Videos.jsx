@@ -1,23 +1,9 @@
 import { Box, Heading, SimpleGrid, VStack } from "@chakra-ui/react";
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Iframe from "react-iframe";
 
 function Videos() {
-  // const [video, setVideo] = useState([]);
   const [t, i18n] = useTranslation();
-
-  // useEffect(() => {
-  //   axios
-  //     .get("https://v1.centurysilkroadtravel.uz/api/blogs")
-  //     .then((res) => {
-  //       setVideo(res?.data?.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log("Error fetching data: ", error);
-  //     });
-  // }, []);
   
   return (
     <Box>
@@ -138,6 +124,51 @@ function Videos() {
               {t("Nima uchun Islom moliyasi zarur?")}
             </Heading>
           </Box>
+          <Box {...css.list}>
+            <Iframe
+              url={`https://www.youtube.com/embed/VmKKiC3Ivj4`}
+              width="100%"
+              height="300px"
+              id=""
+              className=""
+              display="block"
+              position="relative"
+              styles={{ borderRadius: "10px" }}
+            />
+            <Heading {...css.name}>
+              {t("O‘zbekistonda islomiy moliyani joriy qilish boshlandi, maxsus qonun parlament tasdig‘idan o‘tdi")}
+            </Heading>
+          </Box>
+          <Box {...css.list}>
+            <Iframe
+              url={`https://www.youtube.com/embed/jBeQKfMC2D0`}
+              width="100%"
+              height="300px"
+              id=""
+              className=""
+              display="block"
+              position="relative"
+              styles={{ borderRadius: "10px" }}
+            />
+            <Heading {...css.name}>
+              {t("Muamalat Time — Vaqt.uzʼda Islom moliyasiga atalgan yangi loyiha")}
+            </Heading>
+          </Box>
+          <Box {...css.list}>
+            <Iframe
+              url={`https://www.youtube.com/embed/gO2en7_9oG4`}
+              width="100%"
+              height="300px"
+              id=""
+              className=""
+              display="block"
+              position="relative"
+              styles={{ borderRadius: "10px" }}
+            />
+            <Heading {...css.name}>
+              {t("Islom moliyasida sheriklik, qarz va muddatli to‘lov — MUAMALAT TIME")}
+            </Heading>
+          </Box>
         </SimpleGrid>
       </Box>
     </Box>
@@ -158,8 +189,8 @@ const css = {
   },
   name: {
     color: "#103741",
-    fontSize: "22px",
-    lineHeight: "32px",
+    fontSize: "18px",
+    lineHeight: "26px",
     margin: "8px 0",
   },
   list: {
