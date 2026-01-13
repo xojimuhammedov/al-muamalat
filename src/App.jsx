@@ -18,6 +18,7 @@ import Services from "./components/Services";
 import DirectionPage from "./pages/DirectionPage/DirectionPage";
 import MyCoursesPage from "./pages/MyCoursesPage/MyCoursesPage";
 import LessonsPage from "./pages/LessonsPage/LessonsPage";
+import AAFOIExam from "./pages/AAFOI_Exam/AAFOI_Exam";
 
 function App() {
   const location = useLocation();
@@ -40,6 +41,7 @@ function App() {
         />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/material" element={<MaterialPage />} />
+        <Route path="/aafoi-exam" element={<AAFOIExam />} />
         <Route path="/council" element={<CouncilPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/course" element={<CoursePage />} />

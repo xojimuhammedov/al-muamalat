@@ -74,28 +74,12 @@ function Navbar() {
                 </Text>
               </MenuButton>
               <MenuList {...css.menuList}>
-                {module?.map((item, index) => (
-                  <MenuItem
-                    onMouseEnter={() => {
-                      setHover(true);
-                      setModuleId(item.id);
-                    }}
-                    key={index}>
-                    {item[`name_${i18n?.language}`]}
-                  </MenuItem>
-                ))}
-                <div
-                  style={{ display: `${hover ? "block" : "none"}` }}
-                  className="dropdown-content">
-                  {course?.map((item, index) => (
-                    <ALink
-                      onClick={() => setHover(false)}
-                      key={index}
-                      to={`/direction/${item?.course_id}`}>
-                      {item[`name_${i18n?.language}`]}
-                    </ALink>
-                  ))}
-                </div>
+                {/* <MenuItem>
+                  <ALink to={'/new-courses'}>{t("O’quv kurslari")}</ALink>
+                </MenuItem> */}
+                <MenuItem >
+                  <ALink to={'/aafoi-exam'}>{t("AAOIFI imtihonlari")}</ALink>
+                </MenuItem>
               </MenuList>
             </Menu>
             <ALink to={"/material"}>
@@ -135,7 +119,7 @@ const css = {
     width: {
       base: "120px",
     },
-    paddingLeft:"8px"
+    paddingLeft: "8px"
   },
   nav: {
     position: "fixed",

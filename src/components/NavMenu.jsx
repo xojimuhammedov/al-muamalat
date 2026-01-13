@@ -61,13 +61,11 @@ function NavMenu() {
               <Menu isLazy>
                 <MenuButton {...css.link}>{t("O'quv dasturlari")}</MenuButton>
                 <MenuList {...css.menuList} mt={"-25px"}>
-                  {course?.map((item, index) => (
-                    <MenuItem onClick={onClose} key={index} {...css.links}>
-                      <Alink to={`/direction/${item?.course_id}`}>
-                        {i18n.language === "en" ? item.name_en : item.name_uz}
-                      </Alink>
-                    </MenuItem>
-                  ))}
+                  <MenuItem onClick={onClose} {...css.links}>
+                    <Alink to={'/aafoi-exam'}>
+                      {t("AAOIFI imtihonlari")}
+                    </Alink>
+                  </MenuItem>
                 </MenuList>
               </Menu>
               <Alink onClick={onClose} to={"/material"}>

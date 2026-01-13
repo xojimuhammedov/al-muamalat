@@ -1,8 +1,4 @@
-import { Box, Heading, Image, Link, SimpleGrid, Text, VStack } from "@chakra-ui/react";
-import CeoImage from "../assets/iskandar.jpg";
-import CtoImage from "../assets/cto1.jpg";
-import TeamTwo from "../assets/team55.jpg";
-import BlogImage from "../assets/team7.jpg";
+import { Box, Heading, Image, SimpleGrid, useDisclosure, VStack, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import LinkedinIcon from "../assets/linkedin.png";
 
@@ -10,15 +6,16 @@ import TeamEleven from "../assets/prof.png";
 import TeamTwelve from "../assets/team11.webp";
 import TeamThirteen from "../assets/magda.jpg";
 
-import TeamFourthen from '../assets/blog-13.jpg'
-import TeamFifthen from '../assets/blog-11.jpg'
-import GayratImage from '../assets/blog-12.jpg'
-
-import OybekImage from '../assets/oybek.jpg'
-import BaxtiyorImage from '../assets/baxtiyor.jpg'
+import { blogData } from "../mockData/blogData";
+import BlogModal from "./BlogModal";
+import { useState } from "react";
 
 function Blog() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [blogId, setBlogId] = useState(null)
+
+  const aboutData = blogData.find((item) => item?.id === blogId)
   return (
     <Box>
       <Box py={"3rem"} className="container">
@@ -43,102 +40,16 @@ function Blog() {
         <SimpleGrid
           mt={"30px"}
           gap={"20px"}
-          columns={{ base: 1, sm: 2, md: 3, xl: 4 }}>
-          <Box {...css.item}>
-            <Image {...css.image} src={CeoImage} alt="CeoImage" />
-            <Heading {...css.title}>Iskandar Tursunov</Heading>
-            <Heading {...css.titles}>{t("blog")}</Heading>
-            <Text {...css.text}>{t("text")}</Text>
-            <Link
-              href="https://www.linkedin.com/in/iskandar-tursunov-575b591b7/"
-              target="_blank">
-              <Image {...css.icon} src={LinkedinIcon} />
-            </Link>
-          </Box>
-          <Box {...css.item}>
-            <Image {...css.image} src={CtoImage} alt="CeoImage" />
-            <Heading {...css.title}>Dr. Mezbah Uddin Ahmed</Heading>
-            <Heading {...css.titles}>{t("blog1")}</Heading>
-            <Text {...css.text}>{t("text1")}</Text>
-            <Link
-              href="https://www.linkedin.com/in/mezbahahmed/"
-              target="_blank">
-              <Image {...css.icon} src={LinkedinIcon} />
-            </Link>
-          </Box>
-          <Box {...css.item}>
-            <Image {...css.image} src={TeamFourthen} alt="CeoImage" />
-            <Heading {...css.title}>Hayot Azimov</Heading>
-            <Heading {...css.titles}>{t("blog3")}</Heading>
-            <Text {...css.text}>{t("text3")}</Text>
-            <Link href="https://www.linkedin.com/in/hayotjon/" target="_blank">
-              <Image {...css.icon} src={LinkedinIcon} />
-            </Link>
-          </Box>
-          <Box {...css.item}>
-            <Image {...css.image} src={TeamTwo} alt="CeoImage" />
-            <Heading {...css.title}>Khamid Rakhmatov</Heading>
-            <Heading {...css.titles}>{t("blog4")}</Heading>
-            <Text {...css.text}>{t("text4")}</Text>
-            <Link
-              href="https://www.linkedin.com/in/xamid-raxmatov-775439202/"
-              target="_blank">
-              <Image {...css.icon} src={LinkedinIcon} />
-            </Link>
-          </Box>
-          <Box {...css.item}>
-            <Image {...css.image} src={TeamFifthen} alt="CeoImage" />
-            <Heading {...css.title}>Oripov Sarvar</Heading>
-            <Heading {...css.titles}>{t("blog5")}</Heading>
-            <Text {...css.text}>{t("text5")}</Text>
-            <Link href="https://www.linkedin.com/" target="_blank">
-              <Image {...css.icon} src={LinkedinIcon} />
-            </Link>
-          </Box>
-          <Box {...css.item}>
-            <Image {...css.image} src={BlogImage} alt="CeoImage" />
-            <Heading {...css.title}>{t("Dr. A'lam Ilhomovich Asadov")}</Heading>
-            <Heading {...css.titles}>{t("blog6")}</Heading>
-            <Text {...css.text}>{t("text13")}</Text>
-            <Link
-              href="https://www.linkedin.com/in/alam-asadov/"
-              target="_blank">
-              <Image {...css.icon} src={LinkedinIcon} />
-            </Link>
-          </Box>
-          <Box {...css.item}>
-            <Image {...css.image} src={GayratImage} alt="CeoImage" />
-            <Heading {...css.title}>{t("G'ayrat Rakhmanberdiev")}</Heading>
-            <Heading {...css.titles}>{t("blog8")}</Heading>
-            <Text {...css.text}>{t("text17")}</Text>
-            <Link
-              href="https://www.linkedin.com/in/alam-asadov/"
-              target="_blank">
-              <Image {...css.icon} src={LinkedinIcon} />
-            </Link>
-          </Box>
-          <Box {...css.item}>
-            <Image {...css.image} src={OybekImage} alt="CeoImage" />
-            <Heading {...css.title}>{t("Oybek Khojimamatov")}</Heading>
-            <Heading {...css.titles}>{t("blog9")}</Heading>
-            <Text {...css.text}>{t("text18")}</Text>
-            <Link
-              href="https://www.linkedin.com/in/oybekkhojimamatov/"
-              target="_blank">
-              <Image {...css.icon} src={LinkedinIcon} />
-            </Link>
-          </Box>
-          <Box {...css.item}>
-            <Image {...css.image} src={BaxtiyorImage} alt="CeoImage" />
-            <Heading {...css.title}>{t("Baxtiyorjon Fayzullayev")}</Heading>
-            <Heading {...css.titles}>{t("Islomiy moliya bo'yicha konsalting va maxsulot tuzilmalari eksperti")}</Heading>
-            <Text {...css.text}>{t("baxtiyor_text")}</Text>
-            <Link
-              href="https://www.linkedin.com/in/bakhtiyorjon-fayzullaev-fmva-cpss-955a58273/"
-              target="_blank">
-              <Image {...css.icon} src={LinkedinIcon} />
-            </Link>
-          </Box>
+          columns={{ base: 2, md: 3, xl: 5 }}>
+          {blogData.map((item) => (
+            <Box onClick={() => {
+              onOpen();
+              setBlogId(item?.id)
+            }} {...css.item}>
+              <Image {...css.image} src={item?.image} alt={item[`title_${i18n?.language}`]} />
+              <Heading {...css.title}>{item[`title_${i18n?.language}`]}</Heading>
+            </Box>
+          ))}
         </SimpleGrid>
       </Box>
       <Box py={"3rem"} className="container">
@@ -150,7 +61,7 @@ function Blog() {
             fontWeight="700"
             letterSpacing="-1px"
           >
-             {t("Xalqaro mutaxassislar")}
+            {t("Xalqaro mutaxassislar")}
           </Heading>
           <Box
             width="80px"
@@ -184,6 +95,7 @@ function Blog() {
           </Box>
         </SimpleGrid>
       </Box>
+      <BlogModal isOpen={isOpen} onClose={onClose} aboutData={aboutData} />
     </Box>
   );
 }
@@ -193,19 +105,31 @@ export default Blog;
 const css = {
   image: {
     width: "100%",
-    height: {
-      base: "350px",
-      md: "300px",
-    },
-    borderRadius: "999px",
     objectFit: "cover",
-    padding: "16px",
+    borderTopLeftRadius: "26px",
+    borderTopRightRadius: "26px",
+    minHeight: {
+      base: "200px",
+      lg: "260px"
+    },
+    maxHeight: {
+      base: "200px",
+      lg: "260px"
+    }
   },
   title: {
     textAlign: "center",
-    fontSize: "20px",
-    marginTop: "0",
-    marginBottom: "16px",
+    fontSize: {
+      base: "16px",
+      lg: "18px"
+    },
+    paddingTop: "10px",
+    paddingBottom: "15px",
+    lineHeight: {
+      base: "22px",
+      lg: "24px"
+    },
+    fontWeight: "500"
   },
   text: {
     color: "#74787c",
@@ -223,32 +147,32 @@ const css = {
   },
   item: {
     boxShadow: "rgba(144, 173, 248, 0.25) 0px 9px 18px 0px",
-    background: "#fff",
-    borderTopLeftRadius: "999px",
-    borderTopRightRadius: "999px",
-    position: "relative",
-    height: "580px",
+    background: "#f2f2f8",
+    borderRadius: "26px",
     width: "100%",
     display: "flex",
     alignItems: "center",
     flexDirection: "column",
+    minHeight: "260px",
+    maxHeight: {
+      base: "250px",
+      lg: "310px"
+    },
+    cursor: "pointer"
   },
-  icon: {
-    width: "35px",
-    height: "35px",
-    position: "absolute",
-    bottom: "15px",
-    left: "45%",
-  },
+  // icon: {
+  //   width: "35px",
+  //   height: "35px",
+  //   position: "absolute",
+  //   bottom: "15px",
+  //   left: "45%",
+  // },
   images: {
     width: "100%",
     height: {
-      base: "350px",
-      md: "380px",
+      base: "380px"
     },
-    borderRadius: "999px",
     objectFit: "cover",
-    padding: "16px",
   },
   items: {
     boxShadow: "rgba(144, 173, 248, 0.25) 0px 9px 18px 0px",
