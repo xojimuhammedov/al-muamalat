@@ -74,11 +74,11 @@ function Navbar() {
                 </Text>
               </MenuButton>
               <MenuList {...css.menuList}>
-                {/* <MenuItem>
-                  <ALink to={'/new-courses'}>{t("O’quv kurslari")}</ALink>
-                </MenuItem> */}
+                <MenuItem>
+                  <ALink to={'/education-course'}>{t("O’quv kurslari")}</ALink>
+                </MenuItem>
                 <MenuItem >
-                  <ALink to={'/aafoi-exam'}>{t("AAOIFI imtihonlari")}</ALink>
+                  <ALink to={'/aaoifi-exam'}>{t("AAOIFI imtihonlari")}</ALink>
                 </MenuItem>
               </MenuList>
             </Menu>

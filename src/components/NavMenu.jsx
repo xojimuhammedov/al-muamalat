@@ -62,8 +62,13 @@ function NavMenu() {
                 <MenuButton {...css.link}>{t("O'quv dasturlari")}</MenuButton>
                 <MenuList {...css.menuList} mt={"-25px"}>
                   <MenuItem onClick={onClose} {...css.links}>
-                    <Alink to={'/aafoi-exam'}>
+                    <Alink to={'/aaoifi-exam'}>
                       {t("AAOIFI imtihonlari")}
+                    </Alink>
+                  </MenuItem>
+                  <MenuItem onClick={onClose} {...css.links}>
+                    <Alink to={'/education-course'}>
+                      {t("O’quv kurslari")}
                     </Alink>
                   </MenuItem>
                 </MenuList>

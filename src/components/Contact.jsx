@@ -9,7 +9,7 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import ContactImage from "../assets/contacts.webp";
+import ContactImage from "../assets/contact-new.jpg";
 import { MailOpen, MapPin, Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";

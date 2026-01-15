@@ -18,7 +18,6 @@ const Certificate = () => {
             <Box p={'36px 0'}>
                 <Box className='container'>
                     <Heading {...css.title}>{t("Sertifikatlash dasturlari")}</Heading>
-                    {/* <Text {...css.text}>AAOIFI xalqaro standartlari asosida ishlab chiqilgan professional sertifikatlash dasturlari orqali Islom moliyasi, audit va buxgalteriya sohalarida xalqaro darajada tan olingan mutaxassisga aylaning.</Text> */}
                     <SimpleGrid mt={'36px'} columns={{ base: 1, md: 2, lg: 3 }} gap={{ base: "12px", md: '24px' }}>
                         {certificateData?.map((item) => (
                             <Box {...css.item}>

@@ -10,7 +10,7 @@ import {
   Textarea,
   VStack,
 } from "@chakra-ui/react";
-import ContactImage from "../../../assets/contacts.webp";
+import ContactImage from "../../../assets/contact-new.jpg";
 import { MailOpen, MapPin, Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
@@ -94,9 +94,6 @@ function Contact() {
             mb={4}
           />
         </VStack>
-        {/* <Heading textAlign={"center"} as={"h1"} mb={"2rem"}>
-          {t("Aloqaga chiqing")}
-        </Heading> */}
         <Box p={"15px"}>
           <SimpleGrid gap={"16px"} columns={{ base: 1, md: 3 }}>
             <Flex flexDirection={"column"} align={"center"}>
@@ -183,8 +180,8 @@ const css = {
   },
   image: {
     width: "100%",
-    height: "100%",
     borderRadius: "10px",
+    objectFit: "cover"
   },
   input: {
     width: "100%",

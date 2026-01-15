@@ -41,18 +41,6 @@ function Footer() {
           </Flex>
         </SimpleGrid>
       </Box>
-      <Box py={"1rem"} bg={"#103741"} className="container">
-        <Text {...css.text}>
-          ©{" "}
-          <a className="white" href="#">
-            Al Muamalat
-          </a>
-          , Barcha huquqlar himoyalangan.{" "}
-          <a className="white" target="_blank" href="https://t.me/Xojimuhammedov">
-            Developer
-          </a>
-        </Text>
-      </Box>
     </Box>
   );
 }
