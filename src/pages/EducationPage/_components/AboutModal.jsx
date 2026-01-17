@@ -10,15 +10,15 @@ import {
     Box,
     Heading,
     Text,
-    Button,
-    SimpleGrid,
     Link,
     Image,
 } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 const AboutModal = ({ onClose, isOpen, aboutData }) => {
     const { t, i18n } = useTranslation()
+    const navigate = useNavigate()
 
     return (
         <Modal isCentered size={'xl'} isOpen={isOpen} onClose={onClose}>
@@ -40,7 +40,7 @@ const AboutModal = ({ onClose, isOpen, aboutData }) => {
                     <Flex mt={'24px'} flexWrap={'wrap'} justify={'end'} gap={'12px'} align={'center'}>
                         <Link href='https://forms.office.com/r/dcyGkgLvEd' target='_blank' {...css.button}>{t("Registration for preparatory course")}</Link>
                         {/* <Link href='https://forms.office.com/r/9PwAZs16PV' target='_blank' {...css.button}>{t("AAOIFI imtihoniga ro‘yxatdan o‘tish")}</Link> */}
-                        {/* <Link href='https://t.me/bfayzullaev_al_muamalat' target='_blank' {...css.button}>{t("Bog‘lanish")}</Link> */}
+                        <Text onClick={() => navigate("/contact")} {...css.button}>{t("Bog‘lanish")}</Text>
                     </Flex>
                 </ModalBody>
             </ModalContent>

@@ -9,14 +9,34 @@ import { ToastContainer } from "react-toastify";
 import './i18n.jsx'
 import "react-toastify/dist/ReactToastify.css";
 
-const queryClient = new QueryClient();
+// Optimize QueryClient with better defaults for performance
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false, // Reduce unnecessary refetches
+      retry: 1, // Reduce retry attempts
+      staleTime: 5 * 60 * 1000, // Cache data for 5 minutes
+    },
+  },
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ChakraProvider>
       <ToastContainer />
       <BrowserRouter>
-        <Suspense fallback={<>Hello world</>}>
+        <Suspense fallback={
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: '100vh',
+            fontSize: '18px',
+            color: '#1B4D3E'
+          }}>
+            Loading...
+          </div>
+        }>
           <QueryClientProvider client={queryClient}>
             <App />
           </QueryClientProvider>

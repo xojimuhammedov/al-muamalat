@@ -18,7 +18,7 @@ export const blogData = [
         text_en: "Tursunov Iskandar holds a master’s degree in Islamic finance from INCEIF University in Kuala Lumpur, Malaysia. He also studied Islamic finance at Istanbul Sabahattin Zaim University in Türkiye. He has many years of experience in the banking, insurance, and government sectors.",
         job_uz: "Asoschi va ijrochi direktor",
         job_en: "CEO and Founder",
-        link: "https://www.linkedin.com/in/iskandar-tursunov-575b591b7/",
+        link: "https://www.linkedin.com/in/iskandar-tursunov-csaa-575b591b7/",
         image: CeoImage
     },
     {
@@ -45,14 +45,14 @@ export const blogData = [
     },
     {
         id: 4,
-        title_uz: "Khamid Rakhmatov",
+        title_uz: "Xamid Raxmatov",
         title_en: "Khamid Rakhmatov",
         text_uz: "Xamid Raxmatov Kuala Lumpur, Malayziyadagi Xalqaro Islom Universitetida Islomiy moliya bo'yicha magistr darajasini olgan. U moliyaviy xizmatlar, sug'urta va davlat sektorida keng tajribaga ega.",
         text_en: "Xamid Raxmatov earned a master's degree in Islamic finance from International Islamic University Malaysia University in Kuala Lumpur, Malaysia. He has extensive expertise in the financial services, insurance, and the state industries.",
         job_en: "Islamic finance advisor",
         job_uz: "Islomiy moliya bo'yicha maslahatchi",
         image: TeamTwo,
-        link: "https://www.linkedin.com/in/xamid-raxmatov-775439202/",
+        link: "https://www.linkedin.com/in/khamid-rakhmatov-775439202/",
     },
     {
         id: 5,
@@ -67,8 +67,8 @@ export const blogData = [
     },
     {
         id: 6,
-        title_uz: "Dr. A'lam Ilhomovich Asadov",
-        title_en: "Dr. A'lam Ilhomovich Asadov",
+        title_uz: "Alam Asadov",
+        title_en: "Alam Asadov",
         text_en: "Dr. A’lam Ilhomovich Asadov, PhD, CSAA is an Assistant Professor of Finance at Prince Sultan University in Riyadh, Saudi Arabia. He holds a PhD in Islamic Finance from INCEIF University and a CSAA certification from AAOIFI.",
         text_uz: "A’lam Ilhomovich, Saudiya Arabistoni, Riyod shahridagi Shahzoda Sulton universitetining moliya kafedrasi dotsenti. U INCEIF universitetida islom moliyasi bo‘yicha PhD va AAOIFI tomonidan CSAA sertifikatiga ega.",
         job_en: "Islamic finance advisor",
@@ -78,18 +78,18 @@ export const blogData = [
     },
     {
         id: 7,
-        title_uz: "G'ayrat Rakhmanberdiev",
+        title_uz: "G'ayrat Raxmanberdiyev",
         title_en: "G'ayrat Rakhmanberdiev",
         text_en: "Mr. Gayrat Rakhmanberdiev is an experienced corporate consultant and legal expert with over 16 years in corporate governance and legal advisory.",
         text_uz: "G'ayrat Rakhmanberdiev – korporativ boshqaruv va yuridik konsalting sohasida 16 yildan ortiq tajribaga ega bo‘lgan malakali korporativ maslahatchi va yuridik ekspert.",
         job_en: "Corporate Consultant and Legal Expert",
         job_uz: "Korporativ maslahatchi va yuridik ekspert",
         image: GayratImage,
-        link: "https://www.linkedin.com/in/alam-asadov/"
+        link: "https://www.linkedin.com/in/gayrat-rakhmanberdiev-89a78ab4/"
     },
     {
         id: 8,
-        title_uz: "Oybek Khojimamatov",
+        title_uz: "Oybek Xojimamatov",
         title_en: "Oybek Khojimamatov",
         text_en: "Oybek Khojimamatov holds a B.S. in Accounting from the University of South Florida, USA, and has earned CPSS and CPFAS certifications from AAOIFI. He has a strong foundation in accounting and Islamic finance.",
         text_uz: "Oybek Xojimamatov AQShdagi Janubiy Florida Universitetida buxgalteriya hisobi yo‘nalishi bo‘yicha bakalavr darajasiga ega. U, shuningdek, AAOIFI tomonidan berilgan CPSS va CPFAS sertifikatlariga ega. Oybek buxgalteriya va islomiy moliya sohasida mustahkam bilimga ega.",

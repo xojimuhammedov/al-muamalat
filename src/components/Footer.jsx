@@ -1,6 +1,7 @@
 import { Box, Flex, Heading, Link, SimpleGrid, Text } from "@chakra-ui/react";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Link as ALink } from 'react-router-dom'
 
 function Footer() {
   const { t } = useTranslation();
@@ -35,9 +36,15 @@ function Footer() {
             <Heading {...css.title} as={"h3"}>
               {t("Tezkor havolalar")}
             </Heading>
-            <Link {...css.link}> {t("Biz haqimizda")}</Link>
-            <Link {...css.link}> {t("Bog'lanish")}</Link>
-            <Link {...css.link}> {t("Xizmatlar")}</Link>
+            <ALink to={'/aaoifi-exam'}>
+              <Text {...css.link}>{t("AAOIFI imtihonlari")}</Text>
+            </ALink>
+            <ALink to={'/education-course'}>
+              <Text {...css.link}>{t("O’quv kurslari")}</Text>
+            </ALink>
+            <ALink to="/contact">
+              <Text {...css.link}>{t("Bog'lanish")}</Text>
+            </ALink>
           </Flex>
         </SimpleGrid>
       </Box>
@@ -60,7 +67,6 @@ const css = {
     color: "#889BA0",
     marginBottom: "10px",
     textAlign: "left",
-    textTransform: "capitalize",
     transition: "0.3s",
     display: "flex",
     fontSize: {

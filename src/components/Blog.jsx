@@ -46,7 +46,7 @@ function Blog() {
               onOpen();
               setBlogId(item?.id)
             }} {...css.item}>
-              <Image {...css.image} src={item?.image} alt={item[`title_${i18n?.language}`]} />
+              <Image {...css.image} src={item?.image} alt={item[`title_${i18n?.language}`]} loading="lazy" />
               <Heading {...css.title}>{item[`title_${i18n?.language}`]}</Heading>
             </Box>
           ))}
@@ -76,19 +76,19 @@ function Blog() {
           gap={"20px"}
           columns={{ base: 1, sm: 2, md: 3 }}>
           <Box {...css.items}>
-            <Image {...css.images} src={TeamEleven} alt="CeoImage" />
+            <Image {...css.images} src={TeamEleven} alt="CeoImage" loading="lazy" />
             <Heading {...css.title}>{t("team11")}</Heading>
             <Heading {...css.titles}>{t("team11-blog")}</Heading>
             <Text {...css.text}>{t("team11-text")}</Text>
           </Box>
           <Box {...css.items}>
-            <Image {...css.images} src={TeamTwelve} alt="CeoImage" />
+            <Image {...css.images} src={TeamTwelve} alt="CeoImage" loading="lazy" />
             <Heading {...css.title}>{t("team12")}</Heading>
             <Heading {...css.titles}>{t("team12-blog")}</Heading>
             <Text {...css.text}>{t("team12-text")}</Text>
           </Box>
           <Box {...css.items}>
-            <Image {...css.images} src={TeamThirteen} alt="CeoImage" />
+            <Image {...css.images} src={TeamThirteen} alt="CeoImage" loading="lazy" />
             <Heading {...css.title}>{t("team13")}</Heading>
             <Heading {...css.titles}>{t("team13-blog")}</Heading>
             <Text {...css.text}>{t("team13-text")}</Text>

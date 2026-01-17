@@ -19,9 +19,9 @@ function Header() {
           pagination={{
             clickable: true,
           }}
-          >
+        >
           <SwiperSlide >
-            <Image w={'100%'} src={BannerImage} />
+            <Image w={'100%'} src={BannerImage} loading="lazy" />
           </SwiperSlide>
         </Swiper>
       </Box>
