@@ -49,12 +49,12 @@ function NavMenu() {
               flexDirection={"column"}
               gap={"20px"}>
               <Alink onClick={onClose} to={"/"}>
-                <Link {...css.link} href="#">
+                <Link onClick={() => window.scrollTo({ top: 0 })} {...css.link} href="#">
                   {t("Bosh sahifa")}
                 </Link>
               </Alink>
               <Alink onClick={onClose} to={"/"}>
-                <Link {...css.link} href="#">
+                <Link onClick={() => window.scrollTo({ top: 0 })} {...css.link} href="#">
                   {t("Xizmatlar")}
                 </Link>
               </Alink>
@@ -62,29 +62,29 @@ function NavMenu() {
                 <MenuButton {...css.link}>{t("O'quv dasturlari")}</MenuButton>
                 <MenuList {...css.menuList} mt={"-25px"}>
                   <MenuItem onClick={onClose} {...css.links}>
-                    <Alink to={'/aaoifi-exam'}>
+                    <Alink onClick={() => window.scrollTo({ top: 0 })} to={'/aaoifi-exam'}>
                       {t("AAOIFI imtihonlari")}
                     </Alink>
                   </MenuItem>
                   <MenuItem onClick={onClose} {...css.links}>
-                    <Alink to={'/education-course'}>
+                    <Alink onClick={() => window.scrollTo({ top: 0 })} to={'/education-course'}>
                       {t("O’quv kurslari")}
                     </Alink>
                   </MenuItem>
                 </MenuList>
               </Menu>
               <Alink onClick={onClose} to={"/material"}>
-                <Link {...css.link} href="#">
+                <Link onClick={() => window.scrollTo({ top: 0 })} {...css.link} href="#">
                   {t("Islom moliyasi")}
                 </Link>
               </Alink>
               <Alink onClick={onClose} to={"/council"}>
-                <Link {...css.link} href="#">
+                <Link onClick={() => window.scrollTo({ top: 0 })} {...css.link} href="#">
                   {t("Maxsus Kengash")}
                 </Link>
               </Alink>
               <Alink onClick={onClose} to={"/contact"}>
-                <Link {...css.link} href="#">
+                <Link onClick={() => window.scrollTo({ top: 0 })} {...css.link} href="#">
                   {t("Bog'lanish")}
                 </Link>
               </Alink>

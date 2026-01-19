@@ -9,6 +9,7 @@ import Partners from "./components/Partners";
 import Header from "./components/Header";
 import Services from "./components/Services";
 import Videos from "./components/Videos";
+import NewFooter from "./components/NewFooter";
 
 // Lazy load all page components for code splitting
 const ContactPage = lazy(() => import("./pages/ContactPage/ContactPage"));
@@ -54,7 +55,6 @@ function App() {
                 <Blog />
                 <Partners />
                 <Videos />
-                <Contact />
               </>
             }
           />
@@ -72,7 +72,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
         </Routes>
       </Suspense>
-      {location.pathname === "/login" ? "" : <Footer />}
+      {location.pathname === "/login" ? "" : <NewFooter />}
     </>
   );
 }

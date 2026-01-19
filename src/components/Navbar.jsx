@@ -57,12 +57,12 @@ function Navbar() {
             <Image {...css.image} src={LogoIcon} alt="LogoIcon" />
           </ALink>
           <Flex align={"center"}>
-            <ALink to={"/"}>
+            <ALink onClick={() => window.scrollTo({ top: 0 })} to={"/"}>
               <Link {...css.link} href="#">
                 {t("Bosh sahifa")}
               </Link>
             </ALink>
-            <ALink to={"/"}>
+            <ALink onClick={() => window.scrollTo({ top: 0 })} to={"/"}>
               <Link {...css.link} href="#">
                 {t("Xizmatlar")}
               </Link>
@@ -75,24 +75,24 @@ function Navbar() {
               </MenuButton>
               <MenuList {...css.menuList}>
                 <MenuItem>
-                  <ALink to={'/education-course'}>{t("O’quv kurslari")}</ALink>
+                  <ALink onClick={() => window.scrollTo({ top: 0 })} to={'/education-course'}>{t("O’quv kurslari")}</ALink>
                 </MenuItem>
                 <MenuItem >
-                  <ALink to={'/aaoifi-exam'}>{t("AAOIFI imtihonlari")}</ALink>
+                  <ALink onClick={() => window.scrollTo({ top: 0 })} to={'/aaoifi-exam'}>{t("AAOIFI imtihonlari")}</ALink>
                 </MenuItem>
               </MenuList>
             </Menu>
-            <ALink to={"/material"}>
+            <ALink onClick={() => window.scrollTo({ top: 0 })} to={"/material"}>
               <Link {...css.link} href="#">
                 {t("Islom moliyasi")}
               </Link>
             </ALink>
-            <ALink to={"/council"}>
+            <ALink onClick={() => window.scrollTo({ top: 0 })} to={"/council"}>
               <Link {...css.link} href="#">
                 {t("Maxsus Kengash")}
               </Link>
             </ALink>
-            <ALink to={"/contact"}>
+            <ALink onClick={() => window.scrollTo({ top: 0 })} to={"/contact"}>
               <Link {...css.link} href="#">
                 {t("Bog'lanish")}
               </Link>
