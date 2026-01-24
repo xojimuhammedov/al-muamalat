@@ -48,6 +48,7 @@ function Blog() {
             }} {...css.item}>
               <Image {...css.image} src={item?.image} alt={item[`title_${i18n?.language}`]} loading="lazy" />
               <Heading {...css.title}>{item[`title_${i18n?.language}`]}</Heading>
+              <Heading {...css.name}>{item[`job_${i18n?.language}`]}</Heading>
             </Box>
           ))}
         </SimpleGrid>
@@ -124,10 +125,20 @@ const css = {
       lg: "18px"
     },
     paddingTop: "10px",
-    paddingBottom: "15px",
     lineHeight: {
       base: "22px",
       lg: "24px"
+    },
+    fontWeight: "500"
+  },
+  name: {
+    textAlign: "center",
+    fontSize: {
+      base: "14px",
+    },
+    paddingBottom: "15px",
+    lineHeight: {
+      base: "20px",
     },
     fontWeight: "500"
   },
@@ -156,7 +167,7 @@ const css = {
     minHeight: "260px",
     maxHeight: {
       base: "250px",
-      lg: "310px"
+      lg: "350px"
     },
     cursor: "pointer"
   },

@@ -1,5 +1,5 @@
 import { Box, Button, Heading, Image, Input } from "@chakra-ui/react";
-import NewLogoImage from "../../../assets/new-logo.png";
+import NewLogoImage from "../../../assets/logo-bg.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
@@ -133,7 +133,7 @@ const css = {
   },
   image: {
     height: "120px",
-    objectFit: "cover",
+    objectFit: "contain",
     width: "100%",
   },
 };

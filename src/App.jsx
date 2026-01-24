@@ -2,8 +2,6 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import "./App.css";
 import Blog from "./components/Blog";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Partners from "./components/Partners";
 import Header from "./components/Header";
