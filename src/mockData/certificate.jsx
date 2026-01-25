@@ -1,3 +1,10 @@
+import CpssImage from '../assets/cpss-remove.png'
+import CipaImage from '../assets/cipa.png'
+import CsaaImage from '../assets/csaa.png'
+import CpfasImage from '../assets/cpfas-remove.png'
+import CseImage from '../assets/cse.png'
+import CpaageImage from '../assets/cpaage-remove.png'
+
 export const certificateData = [
     {
         id: 1,
@@ -19,7 +26,8 @@ export const certificateData = [
             <p>• Advantage in employment – Certificate holders are in high demand in Islamic banks, financial institutions, and Shariah auditing.</p>
             <p>• Improvement of expertise and confidence - AAOIFI certification is internationally recognized.</p>
             <p>• Practical knowledge and skills – it provides knowledge needed in the real work process.</p>
-        `
+        `,
+        image: CpssImage
     },
     {
         id: 2,
@@ -42,7 +50,8 @@ export const certificateData = [
             <p>• Advantage in employment – CPFAS holders are valued by Islamic banks, takaful operators, and audit/advisory firms for AAOIFI FAS-based financial reporting and implementation roles.</p>
             <p>• Improvement of expertise and confidence – It strengthens your ability to interpret and apply AAOIFI Financial Accounting Standards (FAS), enhancing professional credibility in Islamic finance accounting.</p>
             <p>• Practical knowledge and skills – It equips you with hands-on, work-ready skills for AAOIFI-compliant recognition, measurement, presentation, and disclosure in real financial statements and reporting processes.</p>
-        `
+        `,
+        image: CpfasImage
     },
     {
         id: 3,
@@ -65,7 +74,8 @@ export const certificateData = [
             <p>• Advantage in employment – CPAAGE holders are attractive to Islamic banks, takaful operators, and audit/advisory firms for roles linked to audit/assurance, governance, and ethics compliance in line with AAOIFI requirements.</p>
             <p>• Improvement of expertise and confidence – It strengthens your credibility by proving proficiency in AAOIFI Audit, Assurance, Governance and Ethics standards and expectations used across the Islamic finance industry.</p>
             <p>• Practical knowledge and skills – It equips you with work-ready capability to support/execute audits and compliance reviews, implement governance controls, and uphold ethics frameworks within Islamic financial institutions.</p>
-        `
+        `,
+        image: CpaageImage
     },
     {
         id: 4,
@@ -92,7 +102,8 @@ export const certificateData = [
             <p>• The opportunity to work as a Shariah advisor, auditor, or compliance expert in Islamic banks and financial institutions</p>
             <p>• Access to the professional community of AAOIFI experts worldwide</p>
             <p>• Direct career advancement opportunity - CSAA can be a step towards obtaining a more advanced CIPA (Certified Islamic Professional Accountant) qualification</p>
-        `
+        `,
+        image: CsaaImage
     },
     {
         id: 5,
@@ -117,7 +128,8 @@ export const certificateData = [
             <p>• Internationally recognized AAOIFI certificate.</p>
             <p>• Opportunity to work as a Shariah compliance consultant, member of a Shariah council, or advisor in banks and investment companies.</p>
             <p>• In-depth understanding of AAOIFI standards and their application in real-world practice.</p>
-        `
+        `,
+        image: CseImage
     },
     {
         id: 6,
@@ -144,6 +156,7 @@ export const certificateData = [
             <p>• International recognition: CIPA is an internationally recognized certification that is valued in Islamic financial centers around the world, such as Bahrain, Saudi Arabia, Malaysia, the UAE, and others.</p>
             <p>• Careers in Islamic banks and financial institutions: CIPA provides opportunities to work as a financial advisor, auditor, accountant, or compliance manager in Islamic financial institutions.</p>
             <p>• Professional growth and specialization: The CIPA certificate is the foundation for deeper knowledge and further specialization in other areas of Islamic finance, such as Sharia auditing and risk management.</p>
-        `
+        `,
+        image: CipaImage
     }
 ]

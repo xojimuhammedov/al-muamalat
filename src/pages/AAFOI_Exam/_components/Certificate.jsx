@@ -21,9 +21,7 @@ const Certificate = () => {
                     <SimpleGrid mt={'36px'} columns={{ base: 1, md: 2, lg: 3 }} gap={{ base: "12px", md: '24px' }}>
                         {certificateData?.map((item) => (
                             <Box {...css.item}>
-                                <Box {...css.circle}>
-                                    <Image src={SvgIcon} />
-                                </Box>
+                                <Image src={item?.image} {...css.image} />
                                 <Heading {...css.name}>{item?.[`title_${i18n?.language}`]}</Heading>
                                 <Text {...css.subtext}
                                     noOfLines={3}
@@ -107,5 +105,10 @@ const css = {
         fontWeight: "600",
         fontSize: "18px",
         lineHeight: "26px"
+    },
+    image: {
+        width: "180px",
+        height: "80px",
+        objectFit: "contain"
     }
 }

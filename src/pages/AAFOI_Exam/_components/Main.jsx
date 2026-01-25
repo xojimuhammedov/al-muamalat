@@ -1,7 +1,8 @@
-import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react';
 import { CircleCheck } from 'lucide-react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import BannerImage from '../../../assets/banner-new.jpg'
 
 const Main = () => {
     const { t } = useTranslation()
@@ -9,7 +10,10 @@ const Main = () => {
         <>
             <Box className='container'>
                 <Heading {...css.title}>{t("AAOIFI tashkilotining O‘zbekistondagi rasmiy hamkori")}</Heading>
-                <Text {...css.subtext}>{t("AAOIFI (Accounting and Auditing Organization for Islamic Financial Institutions) — dunyoning 50 dan ortiq mamlakatlarida tan olingan islom moliyasi standartlarini belgilovchi yetakchi xalqaro tashkilot.")}</Text>
+                <Flex m={'12px 0'} flexDirection={{ base: "column-reverse", lg: "row" }}>
+                    <Text {...css.subtext}>{t("AAOIFI (Accounting and Auditing Organization for Islamic Financial Institutions) — dunyoning 50 dan ortiq mamlakatlarida tan olingan islom moliyasi standartlarini belgilovchi yetakchi xalqaro tashkilot.")}</Text>
+                    <Image src={BannerImage} {...css.image} />
+                </Flex>
             </Box>
             <Box {...css.topBox}>
                 <Box bg={'#F7F7F7'} className='container'>
@@ -51,7 +55,11 @@ const css = {
             base: "16px",
             lg: "18px"
         },
-        fontWeight: "500"
+        fontWeight: "500",
+        width: {
+            base: "100%",
+            lg: "80%"
+        }
     },
     topBox: {
         backgroundColor: "#F7F7F7",
@@ -83,5 +91,11 @@ const css = {
             base: "14px",
             lg: "20px"
         }
+    },
+    image: {
+        width: {
+            base: "100%",
+            lg: "400px"
+        },
     }
 }

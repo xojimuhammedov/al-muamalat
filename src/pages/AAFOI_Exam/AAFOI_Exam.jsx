@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Main from './_components/Main';
 import { Box } from '@chakra-ui/react';
 import Certificate from './_components/Certificate';
@@ -26,7 +26,8 @@ const examSchedule = [
         name_en: "CPSS - Certificate of Proficiency in Shari’ah Standards",
         regLast_uz: "",
         regLast_en: "",
-        exam: "22 Aprel 2026",
+        exam_uz: "22 Aprel 2026",
+        exam_en: "22 April 2026",
     },
     {
         name_uz: "CPFAS - Certificate of Proficiency in Financial Accounting Standards",
@@ -110,20 +111,49 @@ const examSchedule = [
 const AAFOIExam = () => {
     const { t, i18n } = useTranslation()
     const border = "border-2 border-[#2f5a43]";
+    const lang = i18n.language;
+    const regMeta = useMemo(() => {
+        const meta = examSchedule.map(() => ({ show: true, span: 1 }));
+
+        for (let i = 0; i < examSchedule.length; i++) {
+            const currReg = examSchedule[i][`regLast_${lang}`];
+            if (!currReg) {
+                continue;
+            }
+
+            let span = 1;
+            for (let j = i + 1; j < examSchedule.length; j++) {
+                const nextReg = examSchedule[j][`regLast_${lang}`];
+
+                if (!nextReg) {
+                    span++;
+                    meta[j].show = false;
+                } else {
+                    break;
+                }
+            }
+
+            meta[i].span = span;
+            i = i + span - 1;
+        }
+
+        return meta;
+    }, [examSchedule, lang]);
+
     const thBase =
-        "bg-[#2f5a43] text-white font-bold px-4 py-4 text-left align-middle " + border;
+        "border border-[#0B3B2B] bg-[#0B3B2B] text-white font-semibold text-[15px] py-3 px-3";
     const tdBase =
-        "bg-white px-4 py-4 align-middle text-[#0f1a14] " + border;
+        "border border-[#0B3B2B] bg-white text-[#111827] text-[15px] py-3 px-3 align-middle";
     return (
         <Box p={'36px 0'} mt={'72px'}>
             <Main />
             <div className="container">
                 <div className={`overflow-hidden rounded-[4px] ${border}`}>
                     <div className="w-full overflow-x-auto">
-                        <table className="w-full border-collapse table-fixed text-[16px] min-w-[920px]">
+                        <table className="w-full border-collapse min-w-[920px] table-fixed">
                             <thead>
                                 <tr>
-                                    <th className={thBase}>{t("Nomi")}</th>
+                                    <th className={`${thBase} text-left`}>{t("Nomi")}</th>
                                     <th className={`${thBase} w-[280px] text-center`}>
                                         {t("Ro‘yxatdan o‘tish oxirgi kuni")}
                                     </th>
@@ -132,15 +162,30 @@ const AAFOIExam = () => {
                             </thead>
 
                             <tbody>
-                                {examSchedule.map((row, idx) => (
-                                    <tr key={`${row.name_uz}-${idx}`}>
-                                        <td className={`${tdBase} whitespace-normal break-words leading-[1.2]`}>
-                                            {row[`name_${i18n?.language}`]}
-                                        </td>
-                                        <td className={`${tdBase} text-center`}>{row[`regLast_${i18n?.language}`]}</td>
-                                        <td className={`${tdBase} text-center`}>{row[`exam_${i18n?.language}`]}</td>
-                                    </tr>
-                                ))}
+                                {examSchedule.map((row, idx) => {
+                                    const name = row[`name_${lang}`] ?? "";
+                                    const regLast = row[`regLast_${lang}`] ?? "";
+                                    const exam = row[`exam_${lang}`] ?? "";
+
+                                    return (
+                                        <tr key={`${name}-${idx}`}>
+                                            {/* 1-ustun */}
+                                            <td className={`${tdBase} text-left whitespace-normal break-words leading-[1.2]`}>
+                                                {name}
+                                            </td>
+
+                                            {/* 2-ustun (rowSpan) */}
+                                            {regMeta[idx].show ? (
+                                                <td className={`${tdBase} text-center`} rowSpan={regMeta[idx].span}>
+                                                    {regLast}
+                                                </td>
+                                            ) : null}
+
+                                            {/* 3-ustun */}
+                                            <td className={`${tdBase} text-center`}>{exam}</td>
+                                        </tr>
+                                    );
+                                })}
                             </tbody>
                         </table>
                     </div>

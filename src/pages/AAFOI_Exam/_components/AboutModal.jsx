@@ -13,6 +13,7 @@ import {
     Button,
     SimpleGrid,
     Link,
+    Image,
 } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
@@ -29,6 +30,7 @@ const AboutModal = ({ onClose, isOpen, aboutData }) => {
                 <ModalBody m={'36px 0'}>
                     <Flex gap={'24px'}>
                         <Box>
+                            <Image mb={'12px'} src={aboutData?.image} {...css.image} />
                             <Heading {...css.title}>{aboutData?.[`title_${i18n?.language}`]}</Heading>
                             <Text {...css.subtext}
                                 dangerouslySetInnerHTML={{
@@ -178,5 +180,10 @@ const css = {
         justifyContent: "center",
         padding: "4px 8px",
         cursor: "pointer"
+    },
+    image: {
+        width: "220px",
+        height: "80px",
+        objectFit: "contain"
     }
 }

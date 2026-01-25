@@ -19,6 +19,8 @@ import { toast } from "react-toastify";
 function Contact() {
   const { t } = useTranslation();
   const [nameValue, setNameValue] = useState("");
+  const [nameValueTwo, setNameValueTwo] = useState("");
+  const [company, setCompany] = useState("");
   const [numberValue, setNumberValue] = useState("");
   const [textValue, setTextValue] = useState("");
   const [email, setEmail] = useState("");
@@ -41,6 +43,8 @@ function Contact() {
     setNumberValue("");
     setTextValue("");
     setEmail("");
+    setCompany("")
+    setNameValueTwo("")
   };
   let bot = {
     TOKEN: "7124566656:AAFYAZxPTZZPtPFUiPJekWVc1Kp35t1sjHY",
@@ -48,6 +52,8 @@ function Contact() {
     message: `
           Assalomu alaykum, sizga yangi xabar keldi!
           Ismi 👤: ${nameValue}; 
+          Familyasi 👤: ${nameValueTwo}; 
+          Tashkiloti: ${company}; 
           Telefon raqami ☎: ${numberValue};
           Elektron manzil: ${email};
           Xabar: ${textValue};
@@ -139,12 +145,29 @@ function Contact() {
                   onChange={(e) => changeName(e.target.value)}
                 />
                 <Input
+                  {...css.input}
+                  type="text"
+                  placeholder={t("Familyangiz")}
+                  required
+                  width={{ base: "100%", md: "48%" }}
+                  value={nameValueTwo}
+                  onChange={(e) => setNameValueTwo(e.target.value)}
+                />
+                <Input
                   type="email"
                   {...css.input}
                   placeholder={t("Sizning elektron manzilingiz")}
                   value={email}
                   onChange={(e) => changeEmail(e.target.value)}
                   required
+                  width={{ base: "100%", md: "48%" }}
+                />
+                <Input
+                  {...css.input}
+                  type="number"
+                  placeholder={t("Tashkilotingiz")}
+                  value={company}
+                  onChange={(e) => setCompany(e.target.value)}
                   width={{ base: "100%", md: "48%" }}
                 />
                 <Input
