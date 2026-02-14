@@ -145,7 +145,7 @@ const AAFOIExam = () => {
     const tdBase =
         "border border-[#0B3B2B] bg-white text-[#111827] text-[15px] py-3 px-3 align-middle";
     return (
-        <Box p={'36px 0'} mt={'72px'}>
+        <Box p={'36px 0'} mt={'96px'}>
             <Main />
             <div className="container">
                 <div className={`overflow-hidden rounded-[4px] ${border}`}>

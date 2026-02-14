@@ -1,0 +1,136 @@
+import { QuoteIcon } from "lucide-react";
+import SecondBanner from "../assets/second-banner.jpg";
+import RightBg from "../assets/right-bg.jpg";
+import { useTranslation } from "react-i18next";
+
+export function HeaderBanner() {
+  const { t } = useTranslation();
+  return (
+    <header className="relative w-full overflow-hidden min-h-screen">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${SecondBanner})` }}
+      />
+      {/* Dark overlay */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.7) 100%)",
+          zIndex: 1,
+        }}
+      />
+
+      {/* Content */}
+      <div className="relative z-10 mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10 lg:pt-36 flex flex-col justify-between min-h-screen">
+        {/* Top: Quote + Image */}
+        <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-stretch lg:gap-14 flex-1">
+          {/* Left -- Quote */}
+          <div className="flex flex-1 flex-col justify-center">
+            {/* Decorative quote mark */}
+            <div className="mb-2 mt-10 md:mt-0">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="text-[#FE5D37] w-10 h-10"
+              >
+                <path
+                  d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+
+            <blockquote className="mb-8">
+              <p className="text-base leading-relaxed text-white/95 sm:text-xl lg:text-2xl xl:leading-relaxed">
+                {
+                  t("The time has come to create a legal framework for the introduction of Islamic financial services in Uzbekistan. Experts from the Islamic Development Bank and other international financial organizations will be involved in this process.")
+                }
+              </p>
+            </blockquote>
+
+            <div className="flex items-center gap-4">
+              <div className="h-[2px] w-12 bg-[#FE5D37]" />
+              <div>
+                <p className="text-sm font-bold tracking-widest text-[#FE5D37] uppercase sm:text-base">
+                  {t("Shavkat Mirziyoyev")}
+                </p>
+                <p className="text-xs tracking-wider text-white/50 uppercase sm:text-sm">
+                   {t("President of the Republic of Uzbekistan")}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right -- Image */}
+          <div className="w-full flex-shrink-0 lg:w-5/12">
+            <div className="relative h-72 overflow-hidden rounded-2xl shadow-2xl sm:h-96 lg:h-[3/4]">
+              <img
+                src={RightBg}
+                alt="Modern financial analytics dashboard in a high-rise office overlooking a city skyline"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                priority
+              />
+              {/* Gold border accent */}
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-[#c9973f]/30" />
+            </div>
+          </div>
+        </div>
+
+        {/* Separator */}
+        <div className="my-10 flex items-center gap-4 lg:my-14">
+          <div className="h-px flex-1 bg-white/15" />
+          <div className="h-2 w-2 rotate-45 bg-[#c9973f]" />
+          <div className="h-px flex-1 bg-white/15" />
+        </div>
+
+        {/* Bottom: Mission & Vision */}
+        <div className="grid gap-6 sm:grid-cols-2 sm:gap-8">
+          {/* Missiya */}
+          <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-[#c9973f]/30">
+            <div className="mb-4 flex items-center gap-3">
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#FE5D37]/15 text-sm font-bold text-[#FE5D37]">
+                M
+              </span>
+              <h2 className="text-base font-bold tracking-widest text-[#FE5D37] uppercase sm:text-lg">
+                 {t("Missiya")}
+              </h2>
+            </div>
+            <p className="text-sm leading-relaxed text-white/75 sm:text-base sm:leading-relaxed">
+              {
+                t("Mintaqa manfaatlari va amaldagi qoidalarga muvofiq holda, O'zbekiston va Markaziy Osiyoda Islom moliyasining har tomonlama rivojlanishiga hissa qo'shish.")
+              }
+            </p>
+          </div>
+
+          {/* Istiqbolli qarash */}
+          <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-[#c9973f]/30">
+            <div className="mb-4 flex items-center gap-3">
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#FE5D37]/15 text-sm font-bold text-[#FE5D37]">
+                I
+              </span>
+              <h2 className="text-base font-bold tracking-widest text-[#FE5D37] uppercase sm:text-lg">
+                 {t("Istiqbolli qarash")}
+              </h2>
+            </div>
+            <p className="text-sm leading-relaxed text-white/75 sm:text-base sm:leading-relaxed">
+              {
+                t("Innovatsion Islom moliyasi yechimlari orqali Markaziy Osiyodagi moliyaviy muhitni transformatsiya qilishda yetakchilik qilish.")
+              }
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}

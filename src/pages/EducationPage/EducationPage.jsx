@@ -69,7 +69,7 @@ const EducationPage = () => {
     const tdBase =
         "bg-white px-4 py-4 align-middle text-[#0f1a14] " + border;
     return (
-        <Box p={'36px 0'} mt={'72px'}>
+        <Box p={'36px 0'} mt={'96px'}>
             <Main />
             <div className='container'>
                 <div className={`overflow-hidden rounded-[4px] ${border}`}>

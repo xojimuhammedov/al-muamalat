@@ -10,7 +10,7 @@ import {
   Textarea,
   VStack,
 } from "@chakra-ui/react";
-import ContactImage from "../../../assets/contact-new.jpg";
+import ContactImage from "../../../assets/contact-banner.jpg";
 import { MailOpen, MapPin, Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
@@ -90,7 +90,7 @@ function Contact() {
             fontWeight="700"
             letterSpacing="-1px"
           >
-            {t("Aloqaga chiqing")}
+            {t("Contact Us")}
           </Heading>
           <Box
             width="80px"
@@ -133,7 +133,7 @@ function Contact() {
           </SimpleGrid>
           <SimpleGrid mt={"3rem"} columns={{ base: 1, md: 2 }} {...css.list}>
             <Box width={"100%"} p={{ base: "10px", md: "3rem" }}>
-              <Heading as={"h3"}>{t("Uchrashuv belgilang")}</Heading>
+              <Heading as={"h3"}>{t("Aloqaga chiqing")}</Heading>
               <form className="contact-form" action="">
                 <Input
                   {...css.input}

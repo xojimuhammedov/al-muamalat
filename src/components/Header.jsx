@@ -3,28 +3,35 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import 'swiper/css/navigation';
 
-import BannerImage from "../assets/newbanner.jpg";
+import { HeroHeader } from "./HeroHeader";
+import { HeaderBanner } from "./HeaderBanner";
+import { Navigation } from "swiper/modules";
 
 function Header() {
   return (
     <Box>
-      <Box
-        position={"relative"}
-        mt={"2.5rem"}
-        py={"3rem"}
-        className="container">
-        <Swiper
-          spaceBetween={30}
-          pagination={{
-            clickable: true,
-          }}
-        >
-          <SwiperSlide >
-            <Image w={'100%'} src={BannerImage} loading="lazy" />
-          </SwiperSlide>
-        </Swiper>
-      </Box>
+      <Swiper
+        spaceBetween={30}
+        loop={true}
+        pagination={{
+          clickable: true,
+        }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        navigation={true}
+        modules={[Navigation]}
+      >
+        <SwiperSlide>
+          <HeroHeader />
+        </SwiperSlide>
+        <SwiperSlide>
+          <HeaderBanner />
+        </SwiperSlide>
+      </Swiper>
     </Box>
   );
 }

@@ -5,13 +5,13 @@ import { useTranslation } from "react-i18next";
 function Main() {
   const { t } = useTranslation();
   return (
-    <Box mt={"40px"}>
+    <Box mt={"96px"}>
       <Box py={"6rem"} {...css.image} className="container">
         <Heading as="h1"
           fontWeight="700"
           letterSpacing="-1px"
           size="2xl" {...css.title}>
-          {t("Uchrashuv belgilang")}
+           {t("Bog'lanish")}
         </Heading>
       </Box>
     </Box>

@@ -1,13 +1,13 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import "./App.css";
-import Blog from "./components/Blog";
-import Navbar from "./components/Navbar";
 import Partners from "./components/Partners";
 import Header from "./components/Header";
 import Services from "./components/Services";
 import Videos from "./components/Videos";
 import NewFooter from "./components/NewFooter";
+import { CoreGoals } from "./components/CoreGoals";
+import Navbar from "./components/Navbar";
 
 // Lazy load all page components for code splitting
 const ContactPage = lazy(() => import("./pages/ContactPage/ContactPage"));
@@ -22,17 +22,20 @@ const MyCoursesPage = lazy(() => import("./pages/MyCoursesPage/MyCoursesPage"));
 const LessonsPage = lazy(() => import("./pages/LessonsPage/LessonsPage"));
 const AAFOIExam = lazy(() => import("./pages/AAFOI_Exam/AAFOI_Exam"));
 const EducationPage = lazy(() => import("./pages/EducationPage/EducationPage"));
+const OurTeam = lazy(() => import("./pages/OurTeam/OurTeam"));
 
 // Loading fallback component
 const LoadingFallback = () => (
-  <div style={{
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    minHeight: '50vh',
-    fontSize: '18px',
-    color: '#1B4D3E'
-  }}>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      minHeight: "50vh",
+      fontSize: "18px",
+      color: "#1B4D3E",
+    }}
+  >
     Loading...
   </div>
 );
@@ -49,8 +52,8 @@ function App() {
             element={
               <>
                 <Header />
+                <CoreGoals />
                 <Services />
-                <Blog />
                 <Partners />
                 <Videos />
               </>
@@ -68,6 +71,7 @@ function App() {
           <Route path="/my-courses/:id" element={<MyCoursesPage />} />
           <Route path="/lessons/:id" element={<LessonsPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/team" element={<OurTeam />} />
         </Routes>
       </Suspense>
       {location.pathname === "/login" ? "" : <NewFooter />}
