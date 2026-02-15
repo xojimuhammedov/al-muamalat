@@ -15,7 +15,7 @@ function Navbar() {
 
   const navLinks = [
     { label: t("Bosh sahifa"), href: "/" },
-    // { label: t("Xizmatlar"), href: "/services" },
+    { label: t("Xizmatlar"), href: "/services" },
     {
       label: t("O'quv dasturlari"),
       href: "#",
@@ -56,8 +56,8 @@ function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
           scrolled
-            ? "bg-[#0a1628]/95 shadow-lg shadow-black/10 backdrop-blur-md"
-            : "bg-[#0a1628]/70 backdrop-blur-sm"
+            ? "bg-[#fff]/95 shadow-lg shadow-black/10 backdrop-blur-md"
+            : "bg-[#fff] backdrop-blur-sm"
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-0 sm:px-8 lg:px-10">
@@ -84,7 +84,7 @@ function Navbar() {
                     className={`flex items-center gap-1 px-4 py-6 text-[13px] font-medium tracking-wide transition-colors ${
                       openDropdown === link.label
                         ? "text-[#FE5D37]"
-                        : "text-white/75 hover:text-white"
+                        : ""
                     }`}
                   >
                     {link.label}
@@ -106,7 +106,7 @@ function Navbar() {
                         <Link
                           key={child.href}
                           to={child.href}
-                          className={`flex items-center gap-3 px-5 py-3.5 text-[13px] font-medium text-white/70 transition-all hover:bg-white/5 hover:text-[#FE5D37] ${
+                          className={`flex items-center gap-3 px-5 py-3.5 text-white text-[13px] font-medium transition-all hover:bg-white/5 hover:text-[#FE5D37] ${
                             i !== link.children.length - 1
                               ? "border-b border-white/5"
                               : ""
@@ -123,7 +123,7 @@ function Navbar() {
                 <Link
                   key={link.label}
                   to={link.href}
-                  className="px-4 py-6 text-[13px] font-medium tracking-wide text-white/75 transition-colors hover:text-white"
+                  className="px-4 py-6 text-[13px] font-medium tracking-wide"
                 >
                   {link.label}
                 </Link>

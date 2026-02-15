@@ -3,11 +3,13 @@ import { lazy, Suspense } from "react";
 import "./App.css";
 import Partners from "./components/Partners";
 import Header from "./components/Header";
-import Services from "./components/Services";
 import Videos from "./components/Videos";
 import NewFooter from "./components/NewFooter";
 import { CoreGoals } from "./components/CoreGoals";
 import Navbar from "./components/Navbar";
+import ServicesSection from "./pages/ServicesPage/ServicePage";
+import Services from "./components/Services";
+import { AboutHero } from "./components/About";
 
 // Lazy load all page components for code splitting
 const ContactPage = lazy(() => import("./pages/ContactPage/ContactPage"));
@@ -52,6 +54,7 @@ function App() {
             element={
               <>
                 <Header />
+                <AboutHero />
                 <CoreGoals />
                 <Services />
                 <Partners />
@@ -72,6 +75,7 @@ function App() {
           <Route path="/lessons/:id" element={<LessonsPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/team" element={<OurTeam />} />
+          <Route path="/services" element={<ServicesSection />} />
         </Routes>
       </Suspense>
       {location.pathname === "/login" ? "" : <NewFooter />}

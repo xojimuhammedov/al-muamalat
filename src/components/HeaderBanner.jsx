@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 export function HeaderBanner() {
   const { t } = useTranslation();
   return (
-    <header className="relative w-full overflow-hidden min-h-screen">
+    <header className="relative w-full overflow-hidden min-h-[3/4]">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -24,11 +24,9 @@ export function HeaderBanner() {
       />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10 lg:pt-36 flex flex-col justify-between min-h-screen">
-        {/* Top: Quote + Image */}
-        <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-stretch lg:gap-14 flex-1">
-          {/* Left -- Quote */}
-          <div className="flex flex-1 flex-col justify-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10 lg:pt-36 flex flex-col justify-between min-h-[3/4]">
+        <div className="flex justify-center items-center gap-10 lg:flex-row lg:gap-14 flex-1">
+          <div className="flex flex-col justify-center w-1/2">
             {/* Decorative quote mark */}
             <div className="mb-2 mt-10 md:mt-0">
               <svg
@@ -69,22 +67,6 @@ export function HeaderBanner() {
               </div>
             </div>
           </div>
-
-          {/* Right -- Image */}
-          <div className="w-full flex-shrink-0 lg:w-5/12">
-            <div className="relative h-72 overflow-hidden rounded-2xl shadow-2xl sm:h-96 lg:h-[3/4]">
-              <img
-                src={RightBg}
-                alt="Modern financial analytics dashboard in a high-rise office overlooking a city skyline"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                priority
-              />
-              {/* Gold border accent */}
-              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-[#c9973f]/30" />
-            </div>
-          </div>
         </div>
 
         {/* Separator */}
@@ -94,42 +76,6 @@ export function HeaderBanner() {
           <div className="h-px flex-1 bg-white/15" />
         </div>
 
-        {/* Bottom: Mission & Vision */}
-        <div className="grid gap-6 sm:grid-cols-2 sm:gap-8">
-          {/* Missiya */}
-          <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-[#c9973f]/30">
-            <div className="mb-4 flex items-center gap-3">
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#FE5D37]/15 text-sm font-bold text-[#FE5D37]">
-                M
-              </span>
-              <h2 className="text-base font-bold tracking-widest text-[#FE5D37] uppercase sm:text-lg">
-                 {t("Missiya")}
-              </h2>
-            </div>
-            <p className="text-sm leading-relaxed text-white/75 sm:text-base sm:leading-relaxed">
-              {
-                t("Mintaqa manfaatlari va amaldagi qoidalarga muvofiq holda, O'zbekiston va Markaziy Osiyoda Islom moliyasining har tomonlama rivojlanishiga hissa qo'shish.")
-              }
-            </p>
-          </div>
-
-          {/* Istiqbolli qarash */}
-          <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-[#c9973f]/30">
-            <div className="mb-4 flex items-center gap-3">
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#FE5D37]/15 text-sm font-bold text-[#FE5D37]">
-                I
-              </span>
-              <h2 className="text-base font-bold tracking-widest text-[#FE5D37] uppercase sm:text-lg">
-                 {t("Istiqbolli qarash")}
-              </h2>
-            </div>
-            <p className="text-sm leading-relaxed text-white/75 sm:text-base sm:leading-relaxed">
-              {
-                t("Innovatsion Islom moliyasi yechimlari orqali Markaziy Osiyodagi moliyaviy muhitni transformatsiya qilishda yetakchilik qilish.")
-              }
-            </p>
-          </div>
-        </div>
       </div>
     </header>
   );

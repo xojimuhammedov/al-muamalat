@@ -40,7 +40,7 @@ function Language() {
       <button
         onClick={() => setLangOpen(!langOpen)}
         onBlur={() => setTimeout(() => setLangOpen(false), 150)}
-        className="flex items-center gap-1.5 rounded-lg border border-white/10 px-3 py-1.5 text-xs font-medium text-white/70 transition-all hover:border-white/20 hover:text-white"
+        className="flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition-all"
       >
         <Globe className="h-3.5 w-3.5" />
         {initialLanguage.toUpperCase()}

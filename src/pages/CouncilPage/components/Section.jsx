@@ -3,6 +3,8 @@ import React from 'react';
 
 import MaxsusImageOne from '../../../assets/maxsus1.png'
 import MaxsusImageTwo from '../../../assets/maxsus2.png'
+import MaxsusImageThree from '../../../assets/maxsus4.jpg'
+import MaxsusImageFour from '../../../assets/maxsus5.jpg'
 import { useTranslation } from 'react-i18next';
 
 const Section = () => {
@@ -27,6 +29,20 @@ const Section = () => {
                         <Box p={'24px'}>
                             <Heading className='council-name' {...css.name}>ABIEV XIKMATILLA HASANOVICH</Heading>
                             <Text className='council-texts' {...css.text}>{t("maxsus_text")}</Text>
+                        </Box>
+                    </Flex>
+                    <Flex {...css.item}>
+                        <Image {...css.image} src={MaxsusImageThree} />
+                        <Box p={'24px'}>
+                            <Heading className='council-name' {...css.name}>{t("Mufti Ibrohim Essa")}</Heading>
+                            <Text className='council-texts' {...css.text}>{t("maxsus_text3")}</Text>
+                        </Box>
+                    </Flex>
+                    <Flex {...css.item}>
+                        <Image {...css.image} src={MaxsusImageFour} />
+                        <Box p={'24px'}>
+                            <Heading className='council-name' {...css.name}>{t("Djumanov Abdulhamid Mahamatlatipovich")}</Heading>
+                            <Text className='council-texts' {...css.text}>{t("maxsus_text4")}</Text>
                         </Box>
                     </Flex>
                 </SimpleGrid>

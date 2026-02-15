@@ -1,8 +1,10 @@
 import { useTranslation } from "react-i18next";
 import HeroBanner from "../assets/hero-banner.jpg";
+import { useNavigate } from "react-router-dom";
 
 export function HeroHeader() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   return (
     <section
       style={{
@@ -70,8 +72,7 @@ export function HeroHeader() {
         <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
           <button
             onClick={() => {
-              const el = document.getElementById("contact");
-              if (el) el.scrollIntoView({ behavior: "smooth" });
+              navigate("/contact");
             }}
             style={{
               color: "#fff",
@@ -93,8 +94,7 @@ export function HeroHeader() {
 
           <button
             onClick={() => {
-              const el = document.getElementById("services");
-              if (el) el.scrollIntoView({ behavior: "smooth" });
+              navigate("/contact");
             }}
             style={{
               backgroundColor: "transparent",

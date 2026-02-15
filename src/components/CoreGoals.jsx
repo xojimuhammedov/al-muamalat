@@ -7,10 +7,7 @@ export function CoreGoals() {
 
   const bgColor = useColorModeValue("gray.50", "gray.900");
   return (
-    <Box bgColor={bgColor}
-    //   style={{ backgroundColor: "#f0f0ec" }}
-      className="py-8 px-4 md:py-12 md:px-6"
-    >
+    <Box bgColor={bgColor} className="pb-8 px-4 md:px-6">
       <div className="mx-auto max-w-6xl">
         {/* Section heading */}
         <VStack spacing={4} mb={8} textAlign="center">
