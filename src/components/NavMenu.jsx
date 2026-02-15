@@ -19,7 +19,7 @@ function NavMenu({ isOpen, onClose }) {
 
   const navLinks = [
     { label: t("Bosh sahifa"), href: "/" },
-    // { label: t("Xizmatlar"), href: "/services" },
+    { label: t("Xizmatlar"), href: "/services" },
     {
       label: t("O'quv dasturlari"),
       href: "#",
@@ -92,7 +92,7 @@ function NavMenu({ isOpen, onClose }) {
 
       {/* Panel */}
       <div
-        className={`fixed right-0 top-0 z-[9999] flex h-full w-[300px] max-w-[85vw] flex-col overflow-y-auto bg-[#0a1628] shadow-2xl transition-transform duration-300 ease-in-out ${
+        className={`fixed right-0 top-0 z-[9999] flex h-full w-[300px] max-w-[85vw] flex-col overflow-y-auto bg-white shadow-2xl transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -105,7 +105,7 @@ function NavMenu({ isOpen, onClose }) {
           </div>
           <button
             onClick={onClose}
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-white/70 transition-colors hover:border-white/25 hover:text-white"
+            className="flex h-9 w-9 items-center justify-center rounded-lg border"
             aria-label="Close menu"
           >
             <X className="h-5 w-5" />
@@ -125,7 +125,7 @@ function NavMenu({ isOpen, onClose }) {
                       mobileDropdown === link.label ? null : link.label,
                     )
                   }
-                  className="flex w-full items-center justify-between rounded-xl px-4 py-3.5 text-[15px] font-medium text-white/80 transition-colors hover:bg-white/5 hover:text-white"
+                  className="flex w-full items-center justify-between rounded-xl px-4 py-3.5 text-[15px] font-medium"
                 >
                   {link.label}
                   <ChevronDown
@@ -149,7 +149,7 @@ function NavMenu({ isOpen, onClose }) {
                         key={child.href}
                         to={child.href}
                         onClick={onClose}
-                        className="flex items-center gap-3 rounded-lg px-4 py-3 text-[14px] text-white/60 transition-colors hover:text-[#c9973f]"
+                        className="flex items-center gap-3 rounded-lg px-4 py-3 text-[14px]"
                       >
                         <span className="h-1.5 w-1.5 rounded-full bg-[#c9973f]/50" />
                         {child.label}
@@ -163,7 +163,7 @@ function NavMenu({ isOpen, onClose }) {
                 key={link.label}
                 to={link.href}
                 onClick={onClose}
-                className="rounded-xl px-4 py-3.5 text-[15px] font-medium text-white/80 transition-colors hover:bg-white/5 hover:text-white"
+                className="rounded-xl px-4 py-3.5 text-[15px] font-medium"
               >
                 {link.label}
               </Link>
@@ -181,7 +181,7 @@ function NavMenu({ isOpen, onClose }) {
                 className={`rounded-lg px-5 py-2.5 text-xs font-semibold transition-all ${
                   initialLanguage === lang.code
                     ? "bg-[#c9973f]/15 text-[#c9973f] ring-1 ring-[#c9973f]/30"
-                    : "border border-white/10 text-white/50 hover:border-white/20 hover:text-white"
+                    : "border"
                 }`}
               >
                 {lang.label}

@@ -26,7 +26,7 @@ export function HeaderBanner() {
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10 lg:pt-36 flex flex-col justify-between min-h-[3/4]">
         <div className="flex justify-center items-center gap-10 lg:flex-row lg:gap-14 flex-1">
-          <div className="flex flex-col justify-center w-1/2">
+          <div className="flex flex-col justify-center lg:w-1/2">
             {/* Decorative quote mark */}
             <div className="mb-2 mt-10 md:mt-0">
               <svg

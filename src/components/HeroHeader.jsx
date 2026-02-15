@@ -10,7 +10,6 @@ export function HeroHeader() {
       style={{
         position: "relative",
         width: "100%",
-        minHeight: "100vh",
         backgroundImage: `url(${HeroBanner})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -19,6 +18,7 @@ export function HeroHeader() {
         alignItems: "center",
         justifyContent: "center",
       }}
+      className="min-h-screen lg:min-h-[3/4]"
     >
       <div
         style={{
@@ -35,9 +35,8 @@ export function HeroHeader() {
           zIndex: 2,
           textAlign: "center",
           maxWidth: "800px",
-          padding: "40px 24px",
         }}
-        className="flex flex-col items-center gap-4"
+        className="flex flex-col items-center gap-4 px-2 lg:px-6"
       >
         {/* Main heading */}
         <h1

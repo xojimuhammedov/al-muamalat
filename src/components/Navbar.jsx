@@ -101,12 +101,12 @@ function Navbar() {
                         : "invisible -translate-y-2 opacity-0"
                     }`}
                   >
-                    <div className="min-w-[220px] overflow-hidden rounded-xl border border-white/10 bg-[#0f2035] shadow-xl shadow-black/20 backdrop-blur-xl">
+                    <div className="min-w-[220px] overflow-hidden rounded-xl border border-white/10 bg-white shadow-xl shadow-black/20 backdrop-blur-xl">
                       {link.children.map((child, i) => (
                         <Link
                           key={child.href}
                           to={child.href}
-                          className={`flex items-center gap-3 px-5 py-3.5 text-white text-[13px] font-medium transition-all hover:bg-white/5 hover:text-[#FE5D37] ${
+                          className={`flex items-center gap-3 px-5 py-3.5 text-[13px] font-medium transition-all hover:bg-white/5 hover:text-[#FE5D37] ${
                             i !== link.children.length - 1
                               ? "border-b border-white/5"
                               : ""
@@ -145,7 +145,7 @@ function Navbar() {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="relative z-[10000] flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-white transition-all hover:border-white/25 lg:hidden"
+              className="relative z-[10000] flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 transition-all hover:border-white/25 lg:hidden"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
             >
               <div className="relative h-5 w-5">
