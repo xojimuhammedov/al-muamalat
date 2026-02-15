@@ -82,9 +82,7 @@ function Navbar() {
                 >
                   <button
                     className={`flex items-center gap-1 px-4 py-6 text-[13px] font-medium tracking-wide transition-colors ${
-                      openDropdown === link.label
-                        ? "text-[#FE5D37]"
-                        : ""
+                      openDropdown === link.label ? "text-[#FE5D37]" : ""
                     }`}
                   >
                     {link.label}
@@ -106,6 +104,7 @@ function Navbar() {
                         <Link
                           key={child.href}
                           to={child.href}
+                          onClick={() => window.scrollTo({ top: 0 })}
                           className={`flex items-center gap-3 px-5 py-3.5 text-[13px] font-medium transition-all hover:bg-white/5 hover:text-[#FE5D37] ${
                             i !== link.children.length - 1
                               ? "border-b border-white/5"
@@ -123,6 +122,7 @@ function Navbar() {
                 <Link
                   key={link.label}
                   to={link.href}
+                  onClick={() => window.scrollTo({ top: 0 })}
                   className="px-4 py-6 text-[13px] font-medium tracking-wide"
                 >
                   {link.label}
@@ -138,7 +138,7 @@ function Navbar() {
               to="/login"
               className="group hidden items-center gap-2 rounded-full bg-[#FE5D37] px-5 py-2 text-[13px] font-semibold text-white shadow-lg shadow-[#FE5D37]/20 transition-all duration-300 sm:flex"
             >
-               {t("Kirish")}
+              {t("Kirish")}
               <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
             </Link>
 
