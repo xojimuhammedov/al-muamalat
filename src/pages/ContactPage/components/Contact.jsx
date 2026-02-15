@@ -10,7 +10,7 @@ import {
   Textarea,
   VStack,
 } from "@chakra-ui/react";
-import ContactImage from "../../../assets/contact-banner.jpg";
+import ContactImage from "../../../assets/contact-banner.png";
 import { MailOpen, MapPin, Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import RightBgImage from "../assets/right-bg.jpg";
+import RightBgImage from "../assets/right-bg.png";
 
 export function AboutHero() {
   const { t } = useTranslation();

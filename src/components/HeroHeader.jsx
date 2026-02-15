@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import HeroBanner from "../assets/hero-banner.jpg";
+import HeroBanner from "../assets/hero-banner.png";
 import { useNavigate } from "react-router-dom";
 
 export function HeroHeader() {

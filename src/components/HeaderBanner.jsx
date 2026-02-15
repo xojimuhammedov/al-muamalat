@@ -1,6 +1,5 @@
 import { QuoteIcon } from "lucide-react";
-import SecondBanner from "../assets/second-banner.jpg";
-import RightBg from "../assets/right-bg.jpg";
+import SecondBanner from "../assets/second-banner.png";
 import { useTranslation } from "react-i18next";
 
 export function HeaderBanner() {
