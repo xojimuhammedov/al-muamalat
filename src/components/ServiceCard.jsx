@@ -1,8 +1,10 @@
 import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 export function ServiceCard({ service }) {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate()
   const isDark = service.variant === "dark";
 
   return (
@@ -37,9 +39,13 @@ export function ServiceCard({ service }) {
                 backgroundColor: isDark ? "#ffffff" : "#3D6B5E",
                 color: isDark ? "#141414" : "#ffffff",
               }}
+              onClick={() => {
+                navigate("/contact");
+                window.scrollTo({ top: 0 });
+              }}
               className="group inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-medium transition-all duration-200 hover:opacity-90"
             >
-              {t("Contact")}
+              {t("Bog'lanish")}
               <ArrowRight
                 className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
                 strokeWidth={2}

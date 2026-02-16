@@ -11,8 +11,7 @@ import {
 
 import LogoIcon from "../assets/logo-bg.png";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
 
 const social = [
   {
@@ -36,92 +35,9 @@ function cn(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function Input({ className = "", ...props }) {
-  return (
-    <input
-      {...props}
-      className={cn(
-        "h-12 w-full rounded-full bg-white/10 px-5 text-sm text-white placeholder:text-white/55",
-        "border border-white/10 outline-none transition",
-        "focus:border-orange-400/40 focus:ring-4 focus:ring-emerald-700/30",
-        className,
-      )}
-    />
-  );
-}
-
-function Textarea({ className = "", ...props }) {
-  return (
-    <textarea
-      {...props}
-      className={cn(
-        "min-h-[120px] w-full rounded-2xl bg-white/10 px-5 py-4 text-sm text-white placeholder:text-white/55",
-        "border border-white/10 outline-none transition resize-none",
-        "focus:border-orange-400/40 focus:ring-4 focus:ring-emerald-700/30",
-        className,
-      )}
-    />
-  );
-}
-
 export default function NewFooter() {
   const { t } = useTranslation();
-  const [nameValue, setNameValue] = useState("");
-  const [numberValue, setNumberValue] = useState("");
-  const [textValue, setTextValue] = useState("");
-  const [email, setEmail] = useState("");
-
-  function changeNumber(item) {
-    setNumberValue(item);
-  }
-
-  function changeName(item) {
-    setNameValue(item);
-  }
-  function changeText(item) {
-    setTextValue(item);
-  }
-  function changeEmail(item) {
-    setEmail(item);
-  }
-  const handleClear = () => {
-    setNameValue("");
-    setNumberValue("");
-    setTextValue("");
-    setEmail("");
-  };
-  let bot = {
-    TOKEN: "7124566656:AAFYAZxPTZZPtPFUiPJekWVc1Kp35t1sjHY",
-    chatID: "-1002196684816",
-    message: `
-            Assalomu alaykum, sizga yangi xabar keldi!
-            Ismi 👤: ${nameValue}; 
-            Telefon raqami ☎: ${numberValue};
-            Elektron manzil: ${email};
-            Xabar: ${textValue};
-            `,
-  };
-  const encodedMessage = encodeURIComponent(bot.message);
-
-  function sendMessage(e) {
-    e.preventDefault();
-    if (!nameValue || !numberValue || !email) return null;
-
-    fetch(
-      `https://api.telegram.org/bot${bot.TOKEN}/sendMessage?chat_id=${bot.chatID}&text=${encodedMessage} `,
-      {
-        method: "GET",
-      },
-    ).then(
-      () => {
-        handleClear();
-        toast.success(t("Sizning xabaringiz muvaffaqiyatli yuborildi!"));
-      },
-      (error) => {
-        console.log(error);
-      },
-    );
-  }
+  const navigate = useNavigate();
 
   const companyLinks = [
     { label: t("AAOIFI imtihonlari"), href: "/aaoifi-exam" },
@@ -148,10 +64,10 @@ export default function NewFooter() {
         <div className="absolute right-[-180px] top-24 h-[420px] w-[420px] rounded-full bg-orange-500/20 blur-3xl" />
       </div>
 
-      <div className="relative px-4 py-4 sm:px-6 lg:px-8">
+      <div className="relative px-2 py-2 sm:px-6 lg:px-8">
         <div className="new-container">
           <div className="mx-auto mt-10">
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_rgba(0,0,0,0.35)] backdrop-blur-md sm:p-8">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-4 shadow-[0_20px_80px_rgba(0,0,0,0.35)] backdrop-blur-md sm:p-8">
               <div className="grid gap-8 lg:grid-cols-12 lg:items-baseline">
                 {/* LEFT: Brand block */}
                 <div className="lg:col-span-4">
@@ -186,18 +102,23 @@ export default function NewFooter() {
                   </div>
                 </div>
 
-                <div className="flex justify-center sm:justify-end">
-                  <button
-                    type="submit"
-                    onClick={sendMessage}
-                    className={cn(
-                      "group inline-flex items-center gap-3 rounded-full bg-[#FE5D37] px-6 py-3",
-                      "text-sm font-semibold text-[#0B2416] shadow-[0_18px_50px_rgba(255,106,0,0.22)]",
-                      "transition hover:bg-orange-400",
-                    )}
-                  >
-                    {t("Contact")}
-                  </button>
+                <div className="lg:col-span-8">
+                  <div className="flex justify-end">
+                    <button
+                      type="submit"
+                      onClick={() => {
+                        navigate("/contact");
+                        window.scrollTo({ top: 0 });
+                      }}
+                      className={cn(
+                        "group inline-flex items-center gap-3 rounded-full bg-[#FE5D37] px-6 py-3",
+                        "text-sm font-semibold text-[#0B2416] shadow-[0_18px_50px_rgba(255,106,0,0.22)]",
+                        "transition hover:bg-orange-400",
+                      )}
+                    >
+                      {t("Bog'lanish")}
+                    </button>
+                  </div>
                 </div>
               </div>
 

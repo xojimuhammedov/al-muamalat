@@ -198,7 +198,7 @@ const css = {
     display: "flex",
     alignItems: "center",
     flexDirection: "column",
-    minHeight: "300px",
+    minHeight: "270px",
     maxHeight: {
       base: "250px",
       lg: "370px",

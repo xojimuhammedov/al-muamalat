@@ -1,69 +1,83 @@
-import { Box, Flex, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
-import React from "react";
-
-import MaxsusImageOne from "../../../assets/maxsus1.png";
-import MaxsusImageTwo from "../../../assets/maxsus2.png";
-import MaxsusImageThree from "../../../assets/maxsus4.jpg";
-import MaxsusImageFour from "../../../assets/maxsus5.jpg";
+import {
+  Box,
+  Flex,
+  Heading,
+  Image,
+  SimpleGrid,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { kengash } from "../../../mockData/kengash";
+import SectionModal from "./SectionModal";
 
 const Section = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [blogId, setBlogId] = useState(null);
+
+  const aboutData = kengash?.find((item) => item?.id === blogId);
   return (
-    <Box py={8} pt={{ base: "96px", md: "120px" }}>
-      <Box className="container">
-        <Heading
-          fontSize={{ base: "25px", lg: "30px" }}
-          color="#103741"
-          mb={"2rem"}
-          textAlign={"center"}
-        >
-          {t("MAXSUS KENGASH")}
-        </Heading>
-        <SimpleGrid mt={"24px"} gap={"24px"} columns={{ base: 1 }}>
-          <Flex {...css.item}>
-            <Image {...css.image} src={MaxsusImageOne} />
-            <Box p={"24px"}>
-              <Heading className="council-name" {...css.name}>
-                QODIROV HASAN KARIMBERDIEVICH
-              </Heading>
-              <Text className="council-texts" {...css.text}>
-                {t("maxsus_text2")}
-              </Text>
-            </Box>
-          </Flex>
-          <Flex {...css.item}>
-            <Image {...css.image} src={MaxsusImageTwo} />
-            <Box p={"24px"}>
-              <Heading className="council-name" {...css.name}>
-                ABIEV XIKMATILLA HASANOVICH
-              </Heading>
-              <Text className="council-texts" {...css.text}>
-                {t("maxsus_text")}
-              </Text>
-            </Box>
-          </Flex>
-          {/* <Flex {...css.item}>
-                        <Image {...css.image} src={MaxsusImageThree} />
-                        <Box p={'24px'}>
-                            <Heading className='council-name' {...css.name}>{t("Mufti Ibrohim Essa")}</Heading>
-                            <Text className='council-texts' {...css.text}>{t("maxsus_text3")}</Text>
-                        </Box>
-                    </Flex> */}
-          <Flex {...css.item}>
-            <Image {...css.image} src={MaxsusImageFour} />
-            <Box p={"24px"}>
-              <Heading className="council-name" {...css.name}>
-                {t("Djumanov Abdulhamid Mahamatlatipovich")}
-              </Heading>
-              <Text className="council-texts" {...css.text}>
-                {t("maxsus_text4")}
-              </Text>
-            </Box>
-          </Flex>
-        </SimpleGrid>
+    <>
+      <Box py={8} pt={{ base: "96px", md: "120px" }}>
+        <Box className="container">
+          <Heading
+            fontSize={{ base: "25px", lg: "30px" }}
+            color="#103741"
+            mb={"2rem"}
+            textAlign={"center"}
+          >
+            {t("MAXSUS KENGASH")}
+          </Heading>
+          <Box display={{ base: "none", md: "block" }}>
+            <SimpleGrid mt={"24px"} gap={"24px"} columns={{ base: 1 }}>
+              {kengash?.map((item) => (
+                <Flex key={item?.id} {...css.item}>
+                  <Image {...css.image} src={item.image} />
+                  <Box p={"24px"}>
+                    <Heading className="council-name" {...css.name}>
+                      {item[`title_${i18n?.language}`]}
+                    </Heading>
+                    <Text className="council-texts" {...css.text}>
+                      {item[`description_${i18n?.language}`]}
+                    </Text>
+                  </Box>
+                </Flex>
+              ))}
+            </SimpleGrid>
+          </Box>
+
+          {/* ///////////////////////////// */}
+
+          <Box display={{ base: "block", md: "none" }}>
+            <SimpleGrid mt={"24px"} gap={"24px"} columns={{ base: 1 }}>
+              {kengash?.map((item) => (
+                <Flex
+                  onClick={() => {
+                    onOpen();
+                    setBlogId(item?.id);
+                  }}
+                  key={item?.id}
+                  {...css.item}
+                >
+                  <Image {...css.image} src={item.image} />
+                  <Box p={"24px"}>
+                    <Heading className="council-name" {...css.name}>
+                      {item[`title_${i18n?.language}`]}
+                    </Heading>
+                    <Text className="council-texts" {...css.text}>
+                      {item[`description_${i18n?.language}`]}
+                    </Text>
+                  </Box>
+                </Flex>
+              ))}
+            </SimpleGrid>
+          </Box>
+        </Box>
       </Box>
-    </Box>
+      <SectionModal isOpen={isOpen} onClose={onClose} aboutData={aboutData} />
+    </>
   );
 };
 
