@@ -43,8 +43,8 @@ function Contact() {
     setNumberValue("");
     setTextValue("");
     setEmail("");
-    setCompany("")
-    setNameValueTwo("")
+    setCompany("");
+    setNameValueTwo("");
   };
   let bot = {
     TOKEN: "7124566656:AAFYAZxPTZZPtPFUiPJekWVc1Kp35t1sjHY",
@@ -68,7 +68,7 @@ function Contact() {
       `https://api.telegram.org/bot${bot.TOKEN}/sendMessage?chat_id=${bot.chatID}&text=${encodedMessage} `,
       {
         method: "GET",
-      }
+      },
     ).then(
       () => {
         handleClear();
@@ -76,11 +76,11 @@ function Contact() {
       },
       (error) => {
         console.log(error);
-      }
+      },
     );
   }
   return (
-    <Box>
+    <Box mt={6}>
       <Box py={"5rem"} className="container">
         <VStack spacing={4} mb={8} textAlign="center">
           <Heading
@@ -177,8 +177,17 @@ function Contact() {
                   value={numberValue}
                   onChange={(e) => changeNumber(e.target.value)}
                 />
-                <Textarea {...css.input} placeholder="Xabar" value={textValue} onChange={(e) => changeText(e.target.value)} />
-                <Button onClick={sendMessage} className="btn btn-primary" type="submit">
+                <Textarea
+                  {...css.input}
+                  placeholder={t("Xabaringiz / Izoh...")}
+                  value={textValue}
+                  onChange={(e) => changeText(e.target.value)}
+                />
+                <Button
+                  onClick={sendMessage}
+                  className="btn btn-primary"
+                  type="submit"
+                >
                   {t("Yuborish")}
                 </Button>
               </form>
@@ -204,7 +213,7 @@ const css = {
   image: {
     width: "100%",
     borderRadius: "10px",
-    objectFit: "cover"
+    objectFit: "cover",
   },
   input: {
     width: "100%",

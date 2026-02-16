@@ -4,7 +4,6 @@ import Main from "./components/Main";
 function ContactPage() {
   return (
     <>
-      <Main />
       <Contact />
     </>
   );

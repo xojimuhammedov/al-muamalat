@@ -1,4 +1,12 @@
-import { Box, Heading, Image, SimpleGrid, useDisclosure, VStack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Image,
+  SimpleGrid,
+  useDisclosure,
+  VStack,
+  Text,
+} from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 
 import TeamEleven from "../../assets/prof.png";
@@ -11,12 +19,12 @@ import { useState } from "react";
 
 function Blog() {
   const { t, i18n } = useTranslation();
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const [blogId, setBlogId] = useState(null)
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [blogId, setBlogId] = useState(null);
 
-  const aboutData = blogData.find((item) => item?.id === blogId)
+  const aboutData = blogData.find((item) => item?.id === blogId);
   return (
-    <Box mt={'60px'}>
+    <Box mt={"60px"}>
       <Box py={"3rem"} className="container">
         <VStack spacing={4} mb={8} textAlign="center">
           <Heading
@@ -39,15 +47,26 @@ function Blog() {
         <SimpleGrid
           mt={"30px"}
           gap={"20px"}
-          columns={{ base: 2, md: 3, xl: 5 }}>
+          columns={{ base: 2, md: 3, xl: 5 }}
+        >
           {blogData.map((item) => (
-            <Box onClick={() => {
-              onOpen();
-              setBlogId(item?.id)
-            }} {...css.item}>
-              <Image {...css.image} src={item?.image} alt={item[`title_${i18n?.language}`]} loading="lazy" />
-              <Heading {...css.title}>{item[`title_${i18n?.language}`]}</Heading>
-              <Heading {...css.name}>{item[`job_${i18n?.language}`]}</Heading>
+            <Box
+              onClick={() => {
+                onOpen();
+                setBlogId(item?.id);
+              }}
+              {...css.item}
+            >
+              <Image
+                {...css.image}
+                src={item?.image}
+                alt={item[`title_${i18n?.language}`]}
+                loading="lazy"
+              />
+              <Heading {...css.title}>
+                {item[`title_${i18n?.language}`]}
+              </Heading>
+              {/* <Heading {...css.name}>{item[`job_${i18n?.language}`]}</Heading> */}
             </Box>
           ))}
         </SimpleGrid>
@@ -74,21 +93,37 @@ function Blog() {
         <SimpleGrid
           mt={"30px"}
           gap={"20px"}
-          columns={{ base: 1, sm: 2, md: 3 }}>
+          columns={{ base: 1, sm: 2, md: 3 }}
+        >
           <Box {...css.items}>
-            <Image {...css.images} src={TeamEleven} alt="CeoImage" loading="lazy" />
+            <Image
+              {...css.images}
+              src={TeamEleven}
+              alt="CeoImage"
+              loading="lazy"
+            />
             <Heading {...css.title}>{t("team11")}</Heading>
             <Heading {...css.titles}>{t("team11-blog")}</Heading>
             <Text {...css.text}>{t("team11-text")}</Text>
           </Box>
           <Box {...css.items}>
-            <Image {...css.images} src={TeamTwelve} alt="CeoImage" loading="lazy" />
+            <Image
+              {...css.images}
+              src={TeamTwelve}
+              alt="CeoImage"
+              loading="lazy"
+            />
             <Heading {...css.title}>{t("team12")}</Heading>
             <Heading {...css.titles}>{t("team12-blog")}</Heading>
             <Text {...css.text}>{t("team12-text")}</Text>
           </Box>
           <Box {...css.items}>
-            <Image {...css.images} src={TeamThirteen} alt="CeoImage" loading="lazy" />
+            <Image
+              {...css.images}
+              src={TeamThirteen}
+              alt="CeoImage"
+              loading="lazy"
+            />
             <Heading {...css.title}>{t("team13")}</Heading>
             <Heading {...css.titles}>{t("team13-blog")}</Heading>
             <Text {...css.text}>{t("team13-text")}</Text>
@@ -110,25 +145,25 @@ const css = {
     borderTopRightRadius: "26px",
     minHeight: {
       base: "200px",
-      lg: "260px"
+      lg: "260px",
     },
     maxHeight: {
       base: "200px",
-      lg: "260px"
-    }
+      lg: "260px",
+    },
   },
   title: {
     textAlign: "center",
     fontSize: {
       base: "16px",
-      lg: "18px"
+      lg: "18px",
     },
     paddingTop: "10px",
     lineHeight: {
       base: "22px",
-      lg: "24px"
+      lg: "24px",
     },
-    fontWeight: "500"
+    fontWeight: "500",
   },
   name: {
     textAlign: "center",
@@ -139,7 +174,7 @@ const css = {
     lineHeight: {
       base: "20px",
     },
-    fontWeight: "500"
+    fontWeight: "500",
   },
   text: {
     color: "#74787c",
@@ -163,17 +198,17 @@ const css = {
     display: "flex",
     alignItems: "center",
     flexDirection: "column",
-    minHeight: "260px",
+    minHeight: "300px",
     maxHeight: {
       base: "250px",
-      lg: "350px"
+      lg: "370px",
     },
-    cursor: "pointer"
+    cursor: "pointer",
   },
   images: {
     width: "100%",
     height: {
-      base: "380px"
+      base: "380px",
     },
     objectFit: "cover",
   },
