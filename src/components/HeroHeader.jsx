@@ -72,6 +72,7 @@ export function HeroHeader() {
           <button
             onClick={() => {
               navigate("/contact");
+              window.scrollTo({ top: 0 });
             }}
             style={{
               color: "#fff",
@@ -93,7 +94,8 @@ export function HeroHeader() {
 
           <button
             onClick={() => {
-              navigate("/contact");
+              navigate("/services");
+              window.scrollTo({ top: 0 });
             }}
             style={{
               backgroundColor: "transparent",

@@ -148,7 +148,10 @@ function NavMenu({ isOpen, onClose }) {
                       <Link
                         key={child.href}
                         to={child.href}
-                        onClick={onClose}
+                        onClick={() => {
+                          onClose();
+                          window.scrollTo({ top: 0 });
+                        }}
                         className="flex items-center gap-3 rounded-lg px-4 py-3 text-[14px]"
                       >
                         <span className="h-1.5 w-1.5 rounded-full bg-[#c9973f]/50" />
@@ -162,7 +165,10 @@ function NavMenu({ isOpen, onClose }) {
               <Link
                 key={link.label}
                 to={link.href}
-                onClick={onClose}
+                onClick={() => {
+                  onClose();
+                  window.scrollTo({ top: 0 });
+                }}
                 className="rounded-xl px-4 py-3.5 text-[15px] font-medium"
               >
                 {link.label}
@@ -192,7 +198,10 @@ function NavMenu({ isOpen, onClose }) {
           {/* Login */}
           <Link
             to="/login"
-            onClick={onClose}
+            onClick={() => {
+              onClose();
+              window.scrollTo({ top: 0 });
+            }}
             className="flex items-center justify-center gap-2 rounded-full bg-[#FE5D37] py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#FE5D37]/20 transition-all"
           >
             {t("Kirish")}

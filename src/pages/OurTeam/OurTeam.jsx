@@ -12,6 +12,7 @@ import { useTranslation } from "react-i18next";
 import TeamEleven from "../../assets/prof.png";
 import TeamTwelve from "../../assets/team11.webp";
 import TeamThirteen from "../../assets/magda.jpg";
+import MaxsusImageThree from "../../assets/maxsus4.jpg";
 
 import { blogData } from "../../mockData/blogData";
 import BlogModal from "./BlogModal";
@@ -66,6 +67,7 @@ function Blog() {
               <Heading {...css.title}>
                 {item[`title_${i18n?.language}`]}
               </Heading>
+              <Heading {...css.title}>{item?.certificate}</Heading>
               {/* <Heading {...css.name}>{item[`job_${i18n?.language}`]}</Heading> */}
             </Box>
           ))}
@@ -105,6 +107,17 @@ function Blog() {
             <Heading {...css.title}>{t("team11")}</Heading>
             <Heading {...css.titles}>{t("team11-blog")}</Heading>
             <Text {...css.text}>{t("team11-text")}</Text>
+          </Box>
+          <Box {...css.items}>
+            <Image
+              {...css.images}
+              src={MaxsusImageThree}
+              alt="CeoImage"
+              loading="lazy"
+            />
+            <Heading {...css.title}>{t("Mufti Ibrohim Essa")}</Heading>
+            <Heading {...css.titles}>{t("International expert")}</Heading>
+            <Text {...css.text}>{t("maxsus_text3")}</Text>
           </Box>
           <Box {...css.items}>
             <Image
@@ -158,7 +171,10 @@ const css = {
       base: "16px",
       lg: "18px",
     },
-    paddingTop: "10px",
+    paddingTop: {
+      base: "6px",
+      lg: "10px",
+    },
     lineHeight: {
       base: "22px",
       lg: "24px",
@@ -179,7 +195,10 @@ const css = {
   text: {
     color: "#74787c",
     textAlign: "center",
-    fontSize: "14px",
+    fontSize: {
+      base: "10px",
+      lg: "14px",
+    },
     lineHeight: "20px",
     padding: "0 10px",
   },
@@ -200,8 +219,8 @@ const css = {
     flexDirection: "column",
     minHeight: "270px",
     maxHeight: {
-      base: "250px",
-      lg: "370px",
+      base: "300px",
+      lg: "380px",
     },
     cursor: "pointer",
   },
@@ -218,7 +237,7 @@ const css = {
     borderTopLeftRadius: "999px",
     borderTopRightRadius: "999px",
     position: "relative",
-    height: "630px",
+    height: "690px",
     width: "100%",
     display: "flex",
     alignItems: "center",
