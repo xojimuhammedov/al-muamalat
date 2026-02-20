@@ -9,7 +9,7 @@ import {
   Facebook,
 } from "lucide-react";
 
-import LogoIcon from "../assets/logo-bg.png";
+import LogoIcon from "../assets/footer-logo.jpg";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 

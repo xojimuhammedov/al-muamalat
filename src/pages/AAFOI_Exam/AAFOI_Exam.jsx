@@ -10,24 +10,24 @@ const examSchedule = [
         name_en: "CPFAS - Certificate of Proficiency in Financial Accounting Standards",
         regLast_uz: "31 Mart 2026",
         regLast_en: "31 March 2026",
-        exam_uz: "20 Aprel 2026",
-        exam_en: "20 April 2026"
+        exam_uz: "13 Aprel 2026",
+        exam_en: "13 April 2026"
     },
     {
         name_uz: "CPAAGE - Certificate of Proficiency in Audit, Assurance, Governance, and Ethics",
         name_en: "CPAAGE - Certificate of Proficiency in Audit, Assurance, Governance, and Ethics",
         regLast_uz: "",
         regLast_en: "",
-        exam_uz: "21 Aprel 2026",
-        exam_en: "21 April 2026"
+        exam_uz: "14 Aprel 2026",
+        exam_en: "14 April 2026"
     },
     {
         name_uz: "CPSS - Certificate of Proficiency in Shari’ah Standards",
         name_en: "CPSS - Certificate of Proficiency in Shari’ah Standards",
         regLast_uz: "",
         regLast_en: "",
-        exam_uz: "22 Aprel 2026",
-        exam_en: "22 April 2026",
+        exam_uz: "15 Aprel 2026",
+        exam_en: "15 April 2026",
     },
     {
         name_uz: "CPFAS - Certificate of Proficiency in Financial Accounting Standards",

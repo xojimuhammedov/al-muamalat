@@ -3,150 +3,147 @@ export const goals = [
     id: 1,
     icon: (
       <svg
-        width="40"
-        height="40"
-        viewBox="0 0 40 40"
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <linearGradient id="barGrad1" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#3D6B5E" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#3D6B5E" stopOpacity="0.2" />
+          <linearGradient id="bar1" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#4A8070" />
+            <stop offset="45%" stop-color="#3D6B5E" />
+            <stop offset="100%" stop-color="#2E5247" />
           </linearGradient>
-          <linearGradient id="barGrad2" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#3D6B5E" stopOpacity="0.75" />
-            <stop offset="100%" stopColor="#3D6B5E" stopOpacity="0.3" />
+
+          <linearGradient id="bar2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#5A9485" />
+            <stop offset="50%" stop-color="#477A6B" />
+            <stop offset="100%" stop-color="#356155" />
           </linearGradient>
-          <linearGradient id="barGrad3" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#3D6B5E" />
-            <stop offset="100%" stopColor="#3D6B5E" stopOpacity="0.5" />
+
+          <linearGradient id="bar3" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#6AA89A" />
+            <stop offset="40%" stop-color="#5A8F81" />
+            <stop offset="100%" stop-color="#3F6C60" />
           </linearGradient>
-          <linearGradient id="trendLine" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#D4882C" />
-            <stop offset="100%" stopColor="#E8A54B" />
+
+          <linearGradient id="trend" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#F4A261" />
+            <stop offset="50%" stop-color="#E76F51" />
+            <stop offset="100%" stop-color="#E07A5F" />
           </linearGradient>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="1.5" result="blur" />
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2.2" result="blur" />
+            <feComponentTransfer>
+              <feFuncA type="linear" slope="1.4" />
+            </feComponentTransfer>
             <feMerge>
               <feMergeNode in="blur" />
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
+          <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="3" result="shadow" />
+            <feFlood flood-color="#000000" flood-opacity="0.25" />
+            <feComposite in2="shadow" operator="in" />
+            <feOffset dx="1" dy="2" />
+            <feMerge>
+              <feMergeNode />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
         </defs>
-
         <line
-          x1="4"
-          y1="35"
-          x2="36"
-          y2="35"
-          stroke="#3D6B5E"
-          strokeWidth="1.5"
-          strokeOpacity="0.15"
-          strokeLinecap="round"
+          x1="6"
+          y1="42"
+          x2="42"
+          y2="42"
+          stroke="#2E5247"
+          stroke-width="1.8"
+          stroke-opacity="0.18"
+          stroke-linecap="round"
         />
 
-        <rect
-          x="6"
-          y="23"
-          width="7"
-          height="12"
-          rx="2"
-          fill="url(#barGrad1)"
-          stroke="#3D6B5E"
-          strokeWidth="1.2"
-        />
-        <rect
-          x="6"
-          y="23"
-          width="7"
-          height="3"
-          rx="2"
-          fill="#3D6B5E"
-          fillOpacity="0.15"
-        />
-
-        <rect
-          x="16.5"
-          y="17"
-          width="7"
-          height="18"
-          rx="2"
-          fill="url(#barGrad2)"
-          stroke="#3D6B5E"
-          strokeWidth="1.2"
-        />
-        <rect
-          x="16.5"
-          y="17"
-          width="7"
-          height="3"
-          rx="2"
-          fill="#3D6B5E"
-          fillOpacity="0.2"
-        />
-
-        <rect
-          x="27"
-          y="10"
-          width="7"
-          height="25"
-          rx="2"
-          fill="url(#barGrad3)"
-          stroke="#3D6B5E"
-          strokeWidth="1.2"
-        />
-        <rect
-          x="27"
-          y="10"
-          width="7"
-          height="3"
-          rx="2"
-          fill="#3D6B5E"
-          fillOpacity="0.25"
-        />
+        <g filter="url(#softShadow)">
+          <rect
+            x="8"
+            y="28"
+            width="8"
+            height="14"
+            rx="4"
+            fill="url(#bar1)"
+            stroke="#355D52"
+            stroke-width="1.4"
+          />
+          <rect
+            x="19"
+            y="19"
+            width="8"
+            height="23"
+            rx="4"
+            fill="url(#bar2)"
+            stroke="#3A6459"
+            stroke-width="1.4"
+          />
+          <rect
+            x="30"
+            y="9"
+            width="8"
+            height="33"
+            rx="4"
+            fill="url(#bar3)"
+            stroke="#3F6C60"
+            stroke-width="1.4"
+          />
+        </g>
 
         <path
-          d="M9.5 16L20 9.5L30.5 6"
-          stroke="url(#trendLine)"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          d="M12 24 L24 14 L36 7"
+          stroke="url(#trend)"
+          stroke-width="3.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
           filter="url(#glow)"
         />
 
-        <circle
-          cx="9.5"
-          cy="16"
-          r="2.5"
-          fill="#D4882C"
-          stroke="#fff"
-          strokeWidth="1.2"
-        />
-        <circle
-          cx="20"
-          cy="9.5"
-          r="2.5"
-          fill="#D4882C"
-          stroke="#fff"
-          strokeWidth="1.2"
-        />
-        <circle
-          cx="30.5"
-          cy="6"
-          r="2.5"
-          fill="#D4882C"
-          stroke="#fff"
-          strokeWidth="1.2"
-        />
+        <g filter="url(#glow)">
+          <circle
+            cx="12"
+            cy="24"
+            r="3.5"
+            fill="#F4A261"
+            stroke="#ffffff"
+            stroke-width="1.6"
+          />
+          <circle
+            cx="24"
+            cy="14"
+            r="3.5"
+            fill="#F4A261"
+            stroke="#ffffff"
+            stroke-width="1.6"
+          />
+          <circle
+            cx="36"
+            cy="7"
+            r="3.5"
+            fill="#F4A261"
+            stroke="#ffffff"
+            stroke-width="1.6"
+          />
+        </g>
 
         <path
-          d="M27 4.5L31.5 5.5L30.5 10"
-          stroke="#D4882C"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          d="M33 4 L38 5.5 L36.5 11 L33 4 Z"
+          fill="#E07A5F"
+          fill-opacity="0.9"
+          stroke="#ffffff"
+          stroke-width="0.8"
+          stroke-opacity="0.4"
         />
+
+        <circle cx="36" cy="7" r="1.8" fill="white" fill-opacity="0.35" />
       </svg>
     ),
     title_en: "Institutionalize Islamic Finance in Uzbekistan",
@@ -160,178 +157,182 @@ export const goals = [
     id: 2,
     icon: (
       <svg
-        width="40"
-        height="40"
-        viewBox="0 0 40 40"
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
           <linearGradient
             id="roofGrad"
-            x1="20"
+            x1="24"
             y1="4"
-            x2="20"
-            y2="18"
+            x2="24"
+            y2="22"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0%" stopColor="#3D6B5E" />
-            <stop offset="100%" stopColor="#3D6B5E" stopOpacity="0.6" />
+            <stop offset="0%" stop-color="#4A8070" />
+            <stop offset="40%" stop-color="#3D6B5E" />
+            <stop offset="100%" stop-color="#2E5247" />
           </linearGradient>
-          <linearGradient
-            id="pillarGrad"
-            x1="0"
-            y1="18"
-            x2="0"
-            y2="28"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0%" stopColor="#3D6B5E" stopOpacity="0.7" />
-            <stop offset="100%" stopColor="#3D6B5E" stopOpacity="0.3" />
+          <linearGradient id="pillarGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#5A9485" />
+            <stop offset="50%" stop-color="#477A6B" />
+            <stop offset="100%" stop-color="#356155" />
           </linearGradient>
           <linearGradient
             id="baseGrad"
             x1="8"
-            y1="28"
-            x2="32"
-            y2="28"
+            y1="30"
+            x2="40"
+            y2="30"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0%" stopColor="#3D6B5E" stopOpacity="0.8" />
-            <stop offset="50%" stopColor="#3D6B5E" />
-            <stop offset="100%" stopColor="#3D6B5E" stopOpacity="0.8" />
+            <stop offset="0%" stop-color="#3D6B5E" />
+            <stop offset="50%" stop-color="#2E5247" />
+            <stop offset="100%" stop-color="#3D6B5E" />
           </linearGradient>
-          <filter id="roofShadow">
-            <feDropShadow
-              dx="0"
-              dy="1"
-              stdDeviation="1"
-              floodColor="#3D6B5E"
-              floodOpacity="0.2"
-            />
+
+          <radialGradient id="centerGrad" cx="50%" cy="50%" r="70%">
+            <stop offset="0%" stop-color="#F4A261" />
+            <stop offset="70%" stop-color="#E07A5F" />
+            <stop offset="100%" stop-color="#D4882C" stop-opacity="0.7" />
+          </radialGradient>
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2.4" result="blur" />
+            <feComponentTransfer>
+              <feFuncA type="linear" slope="1.5" />
+            </feComponentTransfer>
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          <filter id="softShadow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="3.5" result="shadow" />
+            <feFlood flood-color="#000" flood-opacity="0.22" />
+            <feComposite in2="shadow" operator="in" />
+            <feOffset dx="2" dy="3" />
+            <feMerge>
+              <feMergeNode />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
           </filter>
         </defs>
+        <ellipse
+          cx="24"
+          cy="44"
+          rx="18"
+          ry="3"
+          fill="#2E5247"
+          fill-opacity="0.12"
+        />
+
+        <g filter="url(#softShadow)">
+          <path
+            d="M24 4 L6 20 H42 L24 4 Z"
+            fill="url(#roofGrad)"
+            stroke="#355D52"
+            stroke-width="1.8"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M24 8 L12 19 H36 L24 8 Z"
+            fill="#3D6B5E"
+            fill-opacity="0.18"
+          />
+          <g filter="url(#glow)">
+            <circle cx="24" cy="16" r="5.5" fill="url(#centerGrad)" />
+            <circle cx="24" cy="16" r="2.8" fill="#fff" fill-opacity="0.75" />
+          </g>
+
+          <rect
+            x="8"
+            y="29"
+            width="32"
+            height="5"
+            rx="2"
+            fill="url(#baseGrad)"
+            stroke="#355D52"
+            stroke-width="1.6"
+          />
+          <rect
+            x="8"
+            y="29"
+            width="32"
+            height="1.5"
+            rx="1"
+            fill="#fff"
+            fill-opacity="0.12"
+          />
+          <rect
+            x="13"
+            y="20"
+            width="4"
+            height="12"
+            rx="1.5"
+            fill="url(#pillarGrad)"
+            stroke="#3A6459"
+            stroke-width="1.2"
+          />
+          <rect
+            x="22"
+            y="20"
+            width="4"
+            height="12"
+            rx="1.5"
+            fill="url(#pillarGrad)"
+            stroke="#3A6459"
+            stroke-width="1.2"
+          />
+          <rect
+            x="31"
+            y="20"
+            width="4"
+            height="12"
+            rx="1.5"
+            fill="url(#pillarGrad)"
+            stroke="#3A6459"
+            stroke-width="1.2"
+          />
+
+          <rect
+            x="12.5"
+            y="20"
+            width="5"
+            height="1.8"
+            rx="0.8"
+            fill="#fff"
+            fill-opacity="0.15"
+          />
+          <rect
+            x="21.5"
+            y="20"
+            width="5"
+            height="1.8"
+            rx="0.8"
+            fill="#fff"
+            fill-opacity="0.15"
+          />
+          <rect
+            x="30.5"
+            y="20"
+            width="5"
+            height="1.8"
+            rx="0.8"
+            fill="#fff"
+            fill-opacity="0.15"
+          />
+        </g>
 
         <path
-          d="M20 4L4 18H36L20 4Z"
-          fill="url(#roofGrad)"
-          stroke="#3D6B5E"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          filter="url(#roofShadow)"
-        />
-
-        <path d="M20 7L10 16H30L20 7Z" fill="#3D6B5E" fillOpacity="0.1" />
-
-        <circle
-          cx="20"
-          cy="12.5"
-          r="3"
-          fill="#D4882C"
-          fillOpacity="0.9"
+          d="M38 6 L42 8 L40 13 L38 6 Z"
+          fill="#E07A5F"
+          fill-opacity="0.85"
           stroke="#fff"
-          strokeWidth="1"
-        />
-        <circle cx="20" cy="12.5" r="1.2" fill="#fff" fillOpacity="0.8" />
-
-        <rect
-          x="6"
-          y="17"
-          width="28"
-          height="2"
-          rx="0.5"
-          fill="#3D6B5E"
-          fillOpacity="0.25"
-        />
-
-        <rect
-          x="11"
-          y="19"
-          width="3"
-          height="10"
-          rx="1"
-          fill="url(#pillarGrad)"
-          stroke="#3D6B5E"
-          strokeWidth="1"
-        />
-        <rect
-          x="18.5"
-          y="19"
-          width="3"
-          height="10"
-          rx="1"
-          fill="url(#pillarGrad)"
-          stroke="#3D6B5E"
-          strokeWidth="1"
-        />
-        <rect
-          x="26"
-          y="19"
-          width="3"
-          height="10"
-          rx="1"
-          fill="url(#pillarGrad)"
-          stroke="#3D6B5E"
-          strokeWidth="1"
-        />
-
-        <rect
-          x="10.5"
-          y="19"
-          width="4"
-          height="1.5"
-          rx="0.5"
-          fill="#3D6B5E"
-          fillOpacity="0.35"
-        />
-        <rect
-          x="18"
-          y="19"
-          width="4"
-          height="1.5"
-          rx="0.5"
-          fill="#3D6B5E"
-          fillOpacity="0.35"
-        />
-        <rect
-          x="25.5"
-          y="19"
-          width="4"
-          height="1.5"
-          rx="0.5"
-          fill="#3D6B5E"
-          fillOpacity="0.35"
-        />
-
-        <rect
-          x="7"
-          y="29"
-          width="26"
-          height="3.5"
-          rx="1.2"
-          fill="url(#baseGrad)"
-          stroke="#3D6B5E"
-          strokeWidth="1.2"
-        />
-
-        <rect
-          x="7"
-          y="29"
-          width="26"
-          height="1"
-          rx="0.5"
-          fill="#3D6B5E"
-          fillOpacity="0.15"
-        />
-
-        <ellipse
-          cx="20"
-          cy="35"
-          rx="14"
-          ry="1.5"
-          fill="#3D6B5E"
-          fillOpacity="0.08"
+          stroke-width="0.8"
+          stroke-opacity="0.4"
         />
       </svg>
     ),
@@ -346,106 +347,129 @@ export const goals = [
     id: 3,
     icon: (
       <svg
-        width="40"
-        height="40"
-        viewBox="0 0 40 40"
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <linearGradient
-            id="circleGrad"
-            x1="6"
-            y1="6"
-            x2="34"
-            y2="34"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0%" stopColor="#3D6B5E" stopOpacity="0.12" />
-            <stop offset="100%" stopColor="#3D6B5E" stopOpacity="0.04" />
-          </linearGradient>
+          <radialGradient id="bgGrad" cx="50%" cy="50%" r="85%">
+            <stop offset="0%" stop-color="#3D6B5E" stop-opacity="0.08" />
+            <stop offset="100%" stop-color="#2E5247" stop-opacity="0.03" />
+          </radialGradient>
+
           <linearGradient
             id="ringGrad"
-            x1="6"
-            y1="6"
-            x2="34"
-            y2="34"
+            x1="8"
+            y1="8"
+            x2="40"
+            y2="40"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0%" stopColor="#3D6B5E" />
-            <stop offset="100%" stopColor="#3D6B5E" stopOpacity="0.5" />
+            <stop offset="0%" stop-color="#5A9485" />
+            <stop offset="45%" stop-color="#3D6B5E" />
+            <stop offset="100%" stop-color="#356155" />
           </linearGradient>
+
           <linearGradient
             id="checkGrad"
-            x1="13"
-            y1="15"
-            x2="27"
-            y2="25"
+            x1="14"
+            y1="16"
+            x2="34"
+            y2="32"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0%" stopColor="#D4882C" />
-            <stop offset="100%" stopColor="#E8A54B" />
+            <stop offset="0%" stop-color="#F4A261" />
+            <stop offset="50%" stop-color="#E07A5F" />
+            <stop offset="100%" stop-color="#D4882C" />
           </linearGradient>
-          <filter id="checkGlow">
-            <feDropShadow
-              dx="0"
-              dy="0.5"
-              stdDeviation="1.2"
-              floodColor="#D4882C"
-              floodOpacity="0.35"
-            />
+
+          <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="3.2" result="blur" />
+            <feComponentTransfer>
+              <feFuncA type="linear" slope="1.6" />
+            </feComponentTransfer>
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
           </filter>
-          <filter id="ringShadow">
-            <feDropShadow
-              dx="0"
-              dy="1"
-              stdDeviation="1.5"
-              floodColor="#3D6B5E"
-              floodOpacity="0.15"
-            />
+
+          <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="shadow" />
+            <feFlood flood-color="#000" flood-opacity="0.25" />
+            <feComposite in2="shadow" operator="in" />
+            <feOffset dx="2" dy="3" />
+            <feMerge>
+              <feMergeNode />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
           </filter>
+
+          <radialGradient id="highlight" cx="30%" cy="30%" r="40%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35" />
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+          </radialGradient>
         </defs>
 
-        <circle
-          cx="20"
-          cy="20"
-          r="18"
-          stroke="#3D6B5E"
-          strokeWidth="0.5"
-          strokeOpacity="0.15"
-          strokeDasharray="3 3"
-        />
-
-        <circle cx="20" cy="20" r="14" fill="url(#circleGrad)" />
+        <circle cx="24" cy="24" r="22" fill="url(#bgGrad)" />
 
         <circle
-          cx="20"
-          cy="20"
-          r="14"
-          stroke="url(#ringGrad)"
-          strokeWidth="2"
-          filter="url(#ringShadow)"
-        />
-
-        <path
-          d="M12 10.5A14 14 0 0 1 29.5 12"
+          cx="24"
+          cy="24"
+          r="21"
           stroke="#3D6B5E"
-          strokeWidth="1"
-          strokeOpacity="0.12"
-          strokeLinecap="round"
+          stroke-width="0.8"
+          stroke-opacity="0.12"
+          stroke-dasharray="4 5"
         />
+
+        <g filter="url(#softShadow)">
+          <circle
+            cx="24"
+            cy="24"
+            r="17"
+            fill="none"
+            stroke="url(#ringGrad)"
+            stroke-width="3.5"
+            stroke-linecap="round"
+          />
+        </g>
+
+        <circle
+          cx="24"
+          cy="24"
+          r="15.5"
+          fill="none"
+          stroke="#3D6B5E"
+          stroke-width="1"
+          stroke-opacity="0.18"
+        />
+
+        <g filter="url(#glow)">
+          <path
+            d="M15 22 L21 28.5 L33 15"
+            stroke="url(#checkGrad)"
+            stroke-width="4.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
 
         <path
-          d="M13 20.5L17.5 25.5L27.5 14.5"
-          stroke="url(#checkGrad)"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          filter="url(#checkGlow)"
+          d="M15 22 L21 28.5 L33 15"
+          stroke="url(#highlight)"
+          stroke-width="2.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-opacity="0.6"
         />
 
-        <circle cx="30" cy="9" r="1.8" fill="#D4882C" fillOpacity="0.7" />
-        <circle cx="30" cy="9" r="0.8" fill="#fff" fillOpacity="0.6" />
+        <g filter="url(#glow)">
+          <circle cx="34" cy="12" r="2.8" fill="#F4A261" fill-opacity="0.9" />
+          <circle cx="34" cy="12" r="1.1" fill="#ffffff" fill-opacity="0.7" />
+        </g>
       </svg>
     ),
     title_en: "Set High Standards of Islamic Governance and Trust",

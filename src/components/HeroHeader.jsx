@@ -47,7 +47,7 @@ export function HeroHeader() {
           }}
           className="text-3xl sm:text-4xl md:text-5xl font-medium"
         >
-          {t("ISLOMIY MOLIYAGA")}
+          {t("ISLOMIY MOLIYAGA")} 
           <br />
           <span>{t("SIZNING YO'LBOSHCHINGIZ")}</span>
         </h1>
