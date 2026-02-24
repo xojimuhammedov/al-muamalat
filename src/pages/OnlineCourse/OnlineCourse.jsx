@@ -24,11 +24,11 @@ const OnlineCourse = () => {
   ];
   return (
     <>
-      <main className="min-h-screen bg-white">
-        <section className="px-4 py-8 md:px-6 lg:px-8 mt-12">
+      <main className="bg-white">
+        <section className="py-8 md:px-6 mt-16">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-balance">
-              International educational programs
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-balance">
+                Online Courses
             </h1>
             <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto text-balance">
               Al Muamalat Education's international study programs offer an
@@ -38,9 +38,8 @@ const OnlineCourse = () => {
           </div>
         </section>
 
-        <section className="px-4 md:px-6 lg:px-8">
+        {/* <section className="px-4 md:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            {/* What you'll learn */}
             <div className="bg-slate-50 rounded-lg p-6 md:p-8">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-balance">
                 What you'll learn
@@ -57,7 +56,6 @@ const OnlineCourse = () => {
               </div>
             </div>
 
-            {/* Why study */}
             <div className="bg-slate-50 rounded-lg p-6 md:p-8">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-balance">
                 Why should you study at <br className="hidden sm:block" />
@@ -75,7 +73,7 @@ const OnlineCourse = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
       <CourseList />
     </>

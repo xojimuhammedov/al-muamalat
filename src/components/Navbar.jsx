@@ -5,6 +5,9 @@ import LogoIcon from "../assets/nav-logo.png";
 import Language from "./Language";
 import NavMenu from "./NavMenu";
 import { useTranslation } from "react-i18next";
+import { useQuery } from "react-query";
+import { API } from "../api";
+import { get } from "lodash";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -22,6 +25,7 @@ function Navbar() {
       children: [
         { label: t("O’quv kurslari"), href: "/education-course" },
         { label: t("AAOIFI imtihonlari"), href: "/aaoifi-exam" },
+        { label: t("Online courses"), href: "/online-course" },
       ],
     },
     { label: t("Islom moliyasi"), href: "/material" },
@@ -50,6 +54,14 @@ function Navbar() {
   const handleDropdownLeave = useCallback(() => {
     dropdownTimeout.current = setTimeout(() => setOpenDropdown(null), 150);
   }, []);
+
+  const { data } = useQuery("userMe", async () => {
+    return await API.userMe().catch((err) => {
+      console.log(err);
+    });
+  });
+
+  console.log(data);
 
   return (
     <>
@@ -134,13 +146,23 @@ function Navbar() {
           {/* Right side */}
           <div className="flex items-center gap-3">
             <Language />
-            <Link
-              to="/login"
-              className="group hidden items-center gap-2 rounded-full bg-[#FE5D37] px-5 py-2 text-[13px] font-semibold text-white shadow-lg shadow-[#FE5D37]/20 transition-all duration-300 sm:flex"
-            >
-              {t("Kirish")}
-              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
-            </Link>
+            {get(data, "data.success") ? (
+              <Link
+                to="/profile"
+                className="group hidden items-center gap-2 rounded-full bg-[#FE5D37] px-5 py-2 text-[13px] font-semibold text-white shadow-lg shadow-[#FE5D37]/20 transition-all duration-300 sm:flex"
+              >
+                {t("Profile")}
+                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+              </Link>
+            ) : (
+              <Link
+                to="/login"
+                className="group hidden items-center gap-2 rounded-full bg-[#FE5D37] px-5 py-2 text-[13px] font-semibold text-white shadow-lg shadow-[#FE5D37]/20 transition-all duration-300 sm:flex"
+              >
+                {t("Kirish")}
+                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+              </Link>
+            )}
 
             {/* Mobile Menu Toggle */}
             <button

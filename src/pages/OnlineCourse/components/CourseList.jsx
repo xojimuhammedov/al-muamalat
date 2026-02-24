@@ -15,7 +15,7 @@ const CourseList = () => {
   }, []);
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-4 pb-8">
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {course.map((course) => (
           <div
@@ -39,14 +39,15 @@ const CourseList = () => {
 
               <div className="mt-5 flex items-center justify-between">
                 <span className="text-base font-bold text-foreground">
-                  {course?.price ? course?.price / 1000 : 0} sum
+                  {course?.price ? course?.price / 1000 : 0} {t("sum")}
                 </span>
                 <Link
                   to={`/online-course/${course.course_id}`}
-                  className="block w-full"
+                  onClick={() => window.scrollTo({ top: 0 })}
+                  className="block"
                 >
                   <button className="py-2 px-4 bg-teal-600 text-white rounded-lg hover:bg-teal-700 max-w-max transition-colors font-semibold">
-                    {t("Batafsil ko'rish")}
+                    {t("Batafsil")}
                   </button>
                 </Link>
               </div>

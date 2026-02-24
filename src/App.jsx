@@ -1,5 +1,5 @@
-import { Route, Routes, useLocation } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { lazy, Suspense, useEffect } from "react";
 import "./App.css";
 import Partners from "./components/Partners";
 import Header from "./components/Header";

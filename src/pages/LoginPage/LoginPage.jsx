@@ -2,15 +2,18 @@ import { Box, Button } from "@chakra-ui/react";
 import { useState } from "react";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import { useTranslation } from "react-i18next";
 
 function LoginPage() {
   const [login, setLogin] = useState("login");
+  const { t } = useTranslation();
   return (
     <Box bg={"#f2f2f2"} position="relative" h={"100vh"}>
       <Button
         onClick={() => setLogin(login === "login" ? "Register" : "login")}
-        {...css.button}>
-        {login === "login" ? "Register" : "Login"}
+        {...css.button}
+      >
+        {login === "login" ? t("Ro'yhatdan o'tish") : t("Kirish")}
       </Button>
       {login === "login" ? <Login /> : <Register />}
     </Box>
@@ -21,7 +24,7 @@ export default LoginPage;
 
 const css = {
   button: {
-    width: "120px",
+    width: "160px",
     background: "#fe7555",
     color: "#fff",
     borderRadius: "5px",

@@ -20,6 +20,16 @@ axiosInstance.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
+axiosInstance.interceptors.response.use(
+  function (response) {
+    return response;
+  },
+  function (error) {
+    return Promise.reject(error);
+  },
+);
+
+
 export const API = {
   registerUser: (payload) => axiosInstance.post("/auth/signup", payload),
   loginUser: (payload) => axiosInstance.post("/auth/signin", payload),

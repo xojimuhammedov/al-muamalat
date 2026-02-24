@@ -5,8 +5,10 @@ import { useMutation, useQuery } from "react-query";
 import axios from "axios";
 import { get } from "lodash";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 const Payment = ({ course }) => {
+  const { t } = useTranslation();
   const { data } = useQuery("userMe", async () => {
     return await API.userMe().catch((err) => {
       console.log(err);
@@ -39,7 +41,7 @@ const Payment = ({ course }) => {
       .catch((err) => {
         console.log(err);
         if (err.response.data.message === "Please login in to get access") {
-          toast.error("To'lov qilish uchun ro'yhatdan o'ting iltimos!");
+          toast.error(t("To'lov qilish uchun ro'yhatdan o'ting iltimos!"));
         }
         // toast.error("Bu kurs uchun oldin to'lov qilgansiz!");
       });
@@ -53,11 +55,9 @@ const Payment = ({ course }) => {
   };
 
   const features = [
-    "Space for creative ideas",
-    "Engaging and fun curriculum",
-    "Professional teaching methods",
-    "UK certification upon completion",
-    "Personalized one-to-one training",
+    t("Doimiy egalik"),
+    t("Moslanuvchan o‘quv jadvali"),
+    t("Istalgan qurilmada (telefon/kompyuter) qulay foydalanish"),
   ];
   return (
     <div className="bg-white py-8">
@@ -66,7 +66,7 @@ const Payment = ({ course }) => {
           {/* Left Section - Services/Benefits */}
           <div className="bg-gradient-to-br from-teal-500 to-teal-600 p-8 md:p-10 text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-12">
-              Kurs Qismlari
+               {t("Kurs Qismlari")}
             </h2>
 
             <div className="space-y-8">
@@ -77,12 +77,12 @@ const Payment = ({ course }) => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2">
-                      Mukammal o'quv dasturi
+                      {t("Ishonchli o'quv dasturi")}
                     </h3>
                     <p className="text-teal-50 leading-relaxed text-sm md:text-base">
-                      Kursda barcha zarur mavzular va amaliy misol-hollar bilan
-                      ta'lim beriladi. Siz har bir darsni o'z vaqtingizda o'qiy
-                      olasiz va qayta ko'rib chiqishingiz mumkin.
+                      {t(
+                        "Kursda barcha zarur mavzular bo'yicha ta'lim beriladi. Siz har bir darsni o'z vaqtingizda o'qiy olasiz va qayta ko'rib chiqishingiz mumkin.",
+                      )}
                     </p>
                   </div>
                 </div>
@@ -95,12 +95,12 @@ const Payment = ({ course }) => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2">
-                      Professional o'qituvchilar
+                      {t("Professional o'qituvchilar")}
                     </h3>
                     <p className="text-teal-50 leading-relaxed text-sm md:text-base">
-                      Kursni sohaning eng yaxshi mutaxassislari tuzgan va
-                      o'tgan. Ular haqiqiy tajribani va yangi bilimlarni sizga
-                      o'rgatadi.
+                      {t(
+                        "Kursni sohaning eng yaxshi mutaxassislari tuzgan va o'tgan. Ular haqiqiy tajribani va yangi bilimlarni sizga o'rgatadi.",
+                      )}
                     </p>
                   </div>
                 </div>
@@ -111,12 +111,12 @@ const Payment = ({ course }) => {
           {/* Right Section - Payment Details */}
           <div className="border-2 border-blue-200 p-8 md:p-10 bg-gradient-to-br from-white to-blue-50">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              To'lov
+              {t("To'lov")}
             </h2>
 
             <div className="mb-8">
               <h3 className="text-xl font-semibold text-gray-900 mb-6">
-                Kurs olish imkonyatlari:
+                {t("Kursning imkonyatlari")}:
               </h3>
               <ul className="space-y-4">
                 {features.map((feature, index) => (
@@ -133,9 +133,11 @@ const Payment = ({ course }) => {
             {/* Price Section */}
             <div className="border-t border-blue-200 pt-6 mb-8">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-gray-700 font-medium">Kurs narxi:</span>
+                <span className="text-gray-700 font-medium">
+                  {t("Kurs narxi")}:
+                </span>
                 <span className="text-2xl md:text-3xl font-bold text-teal-600">
-                  {course?.price ? course.price / 1000 : 0} so'm
+                  {course?.price ? course.price / 1000 : 0} {t("sum")}
                 </span>
               </div>
             </div>
@@ -151,7 +153,7 @@ const Payment = ({ course }) => {
                   : "bg-teal-500 text-white hover:bg-teal-600 active:scale-95"
               }`}
             >
-              {isLoading ? "Ketayotgan..." : "Sotib olish"}
+              {isLoading ? t("Jarayonda...") : t("To'lov qilish")}
             </button>
           </div>
         </div>
