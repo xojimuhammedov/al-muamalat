@@ -10,18 +10,15 @@ import Navbar from "./components/Navbar";
 import ServicesSection from "./pages/ServicesPage/ServicePage";
 import Services from "./components/Services";
 import { AboutHero } from "./components/About";
+import OnlineCourse from "./pages/OnlineCourse/OnlineCourse";
+import CourseAbout from "./pages/CourseAbout/CourseAbout";
 
 // Lazy load all page components for code splitting
 const ContactPage = lazy(() => import("./pages/ContactPage/ContactPage"));
 const MaterialPage = lazy(() => import("./pages/MaterialPage/MaterialPage"));
 const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
 const ProfilePage = lazy(() => import("./pages/ProfilePage/ProfilePage"));
-const CoursePage = lazy(() => import("./pages/CoursePage/CoursePage"));
-const CourseAbout = lazy(() => import("./pages/CourseAbout/CourseAbout"));
 const CouncilPage = lazy(() => import("./pages/CouncilPage/CouncilPage"));
-const DirectionPage = lazy(() => import("./pages/DirectionPage/DirectionPage"));
-const MyCoursesPage = lazy(() => import("./pages/MyCoursesPage/MyCoursesPage"));
-const LessonsPage = lazy(() => import("./pages/LessonsPage/LessonsPage"));
 const AAFOIExam = lazy(() => import("./pages/AAFOI_Exam/AAFOI_Exam"));
 const EducationPage = lazy(() => import("./pages/EducationPage/EducationPage"));
 const OurTeam = lazy(() => import("./pages/OurTeam/OurTeam"));
@@ -68,14 +65,11 @@ function App() {
           <Route path="/education-course" element={<EducationPage />} />
           <Route path="/council" element={<CouncilPage />} />
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/course" element={<CoursePage />} />
-          <Route path="/course/about" element={<CourseAbout />} />
-          <Route path="/direction/:id" element={<DirectionPage />} />
-          <Route path="/my-courses/:id" element={<MyCoursesPage />} />
-          <Route path="/lessons/:id" element={<LessonsPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/team" element={<OurTeam />} />
           <Route path="/services" element={<ServicesSection />} />
+          <Route path="/online-course" element={<OnlineCourse />} />
+          <Route path="/online-course/:id" element={<CourseAbout />} />
         </Routes>
       </Suspense>
       {location.pathname === "/login" ? "" : <NewFooter />}

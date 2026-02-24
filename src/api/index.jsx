@@ -1,6 +1,6 @@
 import axios from "axios";
-const API_BASE_URL = "https://api.al-muamalat.uz/api";
-export const API_URL = "https://api.al-muamalat.uz/api";
+const API_BASE_URL = "https://almuamalat.ifpc.uz/api";
+export const API_URL = "https://almuamalat.ifpc.uz/api";
 
 const axiosInstance = axios;
 axiosInstance.defaults.baseURL = API_BASE_URL;
