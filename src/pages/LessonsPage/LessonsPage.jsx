@@ -7,7 +7,7 @@ import { ArrowLeft } from "lucide-react";
 
 function LessonsPage() {
   const { id } = useParams();
-  const [, i18n] = useTranslation();
+  const [t, i18n] = useTranslation();
   const [lesson, setLesson] = useState();
   const [course, setCourse] = useState([]);
   const [selectedLesson, setSelectedLesson] = useState(null);
@@ -37,6 +37,9 @@ function LessonsPage() {
   return (
     <div className="mt-24">
       <div className="container mx-auto">
+        <h2 className="text-2xl border-b border-gray-300 pb-4 font-bold text-slate-900">
+          {findCourse?.[`name_${i18n?.language}`]}
+        </h2>
         {filteredLessons?.length > 0 && (
           <div className="flex mt-4 gap-6">
             <div className="w-80">
@@ -65,7 +68,6 @@ function LessonsPage() {
             <div className="flex-1 rounded-lg bg-white shadow-md p-4 ">
               <div className="mb-6 flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-slate-500">Kurs</p>
                   <h2 className="text-2xl font-bold text-slate-900">
                     {findCourse?.[`name_${i18n?.language}`]}
                   </h2>
@@ -75,27 +77,53 @@ function LessonsPage() {
                   onClick={() => setSelectedLesson(null)}
                   className="group hidden items-center gap-2 rounded-full bg-[#FE5D37] px-5 py-2 text-[13px] font-semibold text-white shadow-lg shadow-[#FE5D37]/20 transition-all duration-300 sm:flex"
                 >
-                  <ArrowLeft className="text-white w-4 h-4" /> {t("Kurslar ro'yxatiga qaytish")}
+                  <ArrowLeft className="text-white w-4 h-4" />{" "}
+                  {t("Kurslar ro'yxatiga qaytish")}
                 </Link>
               </div>
-              <div className="overflow-hidden">
-                <div className="space-y-6">
-                  {/* Video Player */}
-                  <div className="aspect-video w-full overflow-hidden rounded-lg bg-black">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src={`https://player.vimeo.com/video/${selectedLesson?.video_url}?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479`}
-                      title={selectedLesson?.name_uz}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="rounded-lg"
-                    />
+              {selectedLesson && (
+                <div className="overflow-hidden">
+                  <div className="space-y-6">
+                    {/* Video Player */}
+                    <div className="aspect-video w-full overflow-hidden rounded-lg bg-black">
+                      <iframe
+                        width="100%"
+                        height="100%"
+                        src={`https://player.vimeo.com/video/${selectedLesson?.video_url}?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479`}
+                        title={selectedLesson?.name_uz}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="rounded-lg"
+                      />
+                    </div>
+                    <h3 className="mt-8 font-medium">
+                      {selectedLesson?.[`title_${i18n?.language}`]}
+                    </h3>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
+          </div>
+        )}
+        {filteredLessons?.length === 0 && (
+          <div className="text-center py-12">
+            <svg
+              className="w-16 h-16 text-gray-300 mx-auto mb-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M12 6.253v13m0-13C6.5 6.253 2 10.998 2 17s4.5 10.747 10 10.747c5.5 0 10-4.998 10-10.747 0-5.755-4.5-10.747-10-10.747z"
+              />
+            </svg>
+            <p className="text-gray-600 mt-4 font-medium">
+              {t("Ushbu kursda darslar mavjud emas")}
+            </p>
           </div>
         )}
       </div>

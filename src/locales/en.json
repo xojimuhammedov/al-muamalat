@@ -204,7 +204,7 @@
   "Al Muamalat Education's international study programs offer an in-depth learning experience at leading Islamic financial institutions around the world.":"Al Muamalat's international study programs offer an in-depth learning experience at leading Islamic financial institutions around the world.",
   "To'lov qilinmagan": "Unpaid",
   "To'lov qilingan": "Paid",
-  "Profile": "Profile",
+  "Profile": "My profile",
   "My Courses": "My Courses",
   "Kurslar ro'yxatiga qaytish":"Back to course list",
   "Image Upload":"Image upload",
@@ -215,5 +215,10 @@
   "Password kiriting":"Enter password",
   "Password":"Password",
   "Yangilash":"Update",
-  "Profildan chiqish":"Log out of profile"
+  "Profildan chiqish":"Log out of profile",
+  "Barcha kurslar bo'limiga o'tib kurs xarid qiling":"Go to the All Courses section and purchase a course.",
+  "Hali kurs sotib olmadingiz":"You haven't purchased a course yet.",
+  "Barcha kurslar":"All courses",
+  "Sotib olgan kurslar":"Courses purchased",
+  "Shaxsiy ma'lumotlar va sotib olgan kurslarni boshqarish":"Manage personal information and purchased courses"
 }

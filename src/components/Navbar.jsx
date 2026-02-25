@@ -11,6 +11,7 @@ import { get } from "lodash";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const token = localStorage.getItem("userToken");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const dropdownTimeout = useRef(null);
@@ -55,13 +56,17 @@ function Navbar() {
     dropdownTimeout.current = setTimeout(() => setOpenDropdown(null), 150);
   }, []);
 
-  const { data } = useQuery("userMe", async () => {
-    return await API.userMe().catch((err) => {
-      console.log(err);
-    });
+  const { data } = useQuery({
+    queryKey: ["userMe"],
+    queryFn: API.userMe,
+    enabled: !!token, // token bo‘lsa ishlaydi
+    retry: false,
   });
 
-  console.log(data);
+  const isAuth = data?.data?.success;
+
+  const linkPath = isAuth ? "/profile" : "/login";
+  const linkText = isAuth ? t("Profile") : t("Kirish");
 
   return (
     <>
@@ -146,23 +151,13 @@ function Navbar() {
           {/* Right side */}
           <div className="flex items-center gap-3">
             <Language />
-            {get(data, "data.success") ? (
-              <Link
-                to="/profile"
-                className="group hidden items-center gap-2 rounded-full bg-[#FE5D37] px-5 py-2 text-[13px] font-semibold text-white shadow-lg shadow-[#FE5D37]/20 transition-all duration-300 sm:flex"
-              >
-                {t("Profile")}
-                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
-              </Link>
-            ) : (
-              <Link
-                to="/login"
-                className="group hidden items-center gap-2 rounded-full bg-[#FE5D37] px-5 py-2 text-[13px] font-semibold text-white shadow-lg shadow-[#FE5D37]/20 transition-all duration-300 sm:flex"
-              >
-                {t("Kirish")}
-                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
-              </Link>
-            )}
+            <Link
+              to={linkPath}
+              className="group hidden items-center gap-2 rounded-full bg-[#FE5D37] px-5 py-2 text-[13px] font-semibold text-white shadow-lg shadow-[#FE5D37]/20 transition-all duration-300 sm:flex"
+            >
+              {linkText}
+              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+            </Link>
 
             {/* Mobile Menu Toggle */}
             <button

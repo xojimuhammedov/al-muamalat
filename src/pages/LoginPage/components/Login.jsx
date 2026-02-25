@@ -20,6 +20,7 @@ function Login() {
       .then((res) => {
         if (res?.data?.success) {
           navigate("/profile");
+          window.location.reload()
           toast.success("Siz muvaffaqiyatli login qildingiz!");
         }
         localStorage.setItem(
