@@ -3,7 +3,6 @@ import { useEffect, useMemo, useState } from "react";
 import { API_URL } from "../../api";
 import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
-import { t } from "i18next";
 import { ArrowLeft } from "lucide-react";
 
 function LessonsPage() {
@@ -75,8 +74,7 @@ function LessonsPage() {
                 onClick={() => setSelectedLesson(null)}
                 className="group hidden items-center gap-2 rounded-full bg-[#FE5D37] px-5 py-2 text-[13px] font-semibold text-white shadow-lg shadow-[#FE5D37]/20 transition-all duration-300 sm:flex"
               >
-                <ArrowLeft className="text-white w-4 h-4" /> Kurslar ro'yxatiga
-                qaytish
+                <ArrowLeft className="text-white w-4 h-4" /> Kurslar ro'yxatiga qaytish
               </Link>
             </div>
             <div className="overflow-hidden">

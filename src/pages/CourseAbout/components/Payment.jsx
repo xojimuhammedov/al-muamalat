@@ -64,7 +64,7 @@ const Payment = ({ course }) => {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
           {/* Left Section - Services/Benefits */}
-          <div className="bg-gradient-to-br from-teal-500 to-teal-600 p-8 md:p-10 text-white">
+          <div className="bg-gradient-to-br from-teal-600 to-teal-700 p-8 md:p-10 text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-12">
                {t("Kurs Qismlari")}
             </h2>
@@ -109,7 +109,7 @@ const Payment = ({ course }) => {
           </div>
 
           {/* Right Section - Payment Details */}
-          <div className="border-2 border-blue-200 p-8 md:p-10 bg-gradient-to-br from-white to-blue-50">
+          <div className="border-2 border-teal-600 p-8 md:p-10 bg-gradient-to-br from-white to-blue-50">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
               {t("To'lov")}
             </h2>
@@ -121,7 +121,7 @@ const Payment = ({ course }) => {
               <ul className="space-y-4">
                 {features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="w-2 h-2 rounded-full bg-teal-500 mt-2 flex-shrink-0"></span>
+                    <span className="w-2 h-2 rounded-full bg-gradient-to-br from-teal-600 to-teal-700 mt-2 flex-shrink-0"></span>
                     <span className="text-gray-700 text-sm md:text-base">
                       {feature}
                     </span>
@@ -149,8 +149,8 @@ const Payment = ({ course }) => {
               disabled={isLoading}
               className={`w-full py-3 px-6 rounded-xl font-bold text-lg transition-all duration-300 ${
                 isLoading
-                  ? "bg-teal-400 text-white cursor-wait"
-                  : "bg-teal-500 text-white hover:bg-teal-600 active:scale-95"
+                  ? "bg-gradient-to-br from-teal-600 to-teal-700 text-white cursor-wait"
+                  : "bg-gradient-to-br from-teal-600 to-teal-700 text-white hover:bg-teal-600 active:scale-95"
               }`}
             >
               {isLoading ? t("Jarayonda...") : t("To'lov qilish")}

@@ -46,7 +46,7 @@ const CourseList = () => {
                   onClick={() => window.scrollTo({ top: 0 })}
                   className="block"
                 >
-                  <button className="py-2 px-4 bg-teal-600 text-white rounded-lg hover:bg-teal-700 max-w-max transition-colors font-semibold">
+                  <button className="py-2 px-4 bg-teal-700 text-white rounded-lg hover:bg-teal-700 max-w-max transition-colors font-semibold">
                     {t("Batafsil")}
                   </button>
                 </Link>
