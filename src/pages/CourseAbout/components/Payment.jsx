@@ -119,7 +119,7 @@ const Payment = ({ course }) => {
                 {t("Kursning imkonyatlari")}:
               </h3>
               <ul className="space-y-4">
-                {features.map((feature, index) => (
+                {features?.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <span className="w-2 h-2 rounded-full bg-gradient-to-br from-teal-600 to-teal-700 mt-2 flex-shrink-0"></span>
                     <span className="text-gray-700 text-sm md:text-base">
@@ -137,7 +137,7 @@ const Payment = ({ course }) => {
                   {t("Kurs narxi")}:
                 </span>
                 <span className="text-2xl md:text-3xl font-bold text-teal-600">
-                  {course?.price ? course.price / 1000 : 0} {t("sum")}
+                  {course?.price ? course?.price / 100 : 0} {t("sum")}
                 </span>
               </div>
             </div>

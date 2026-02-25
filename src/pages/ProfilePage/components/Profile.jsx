@@ -110,7 +110,7 @@ function Profile() {
           {...register("full_name")}
           type="name"
           autoComplete="off"
-          placeholder="Full Name"
+          placeholder={t("Full Name")}
         />
         <label className="profile-label" htmlFor="address">
           {t("Manzilingizni kiriting (ixtiyoriy)")}

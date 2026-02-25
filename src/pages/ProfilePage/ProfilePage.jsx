@@ -9,7 +9,7 @@ function ProfilePage() {
   return (
     <>
       <Main />
-      <div className="mx-auto flex max-w-7xl py-8">
+      <div className="mx-auto flex max-w-7xl px-4 py-8">
         <Tabs>
           <TabList>
             <Tab>{t("Profile")}</Tab>
