@@ -37,5 +37,5 @@ export const API = {
   updateProfile: (payload) =>
     axiosInstance.put(`/users/${payload?.id}`, payload),
   userMe: () => axiosInstance.get("/users/me"),
-  myCourses: () => axiosInstance.get("/courses/my"),
+  myCourses: () => axiosInstance.get("/courses/main"),
 };

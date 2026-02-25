@@ -2,16 +2,18 @@ import { Tab, TabList, Tabs, TabPanels, TabPanel, Box } from "@chakra-ui/react";
 import Main from "./components/Main";
 import Profile from "./components/Profile";
 import Courses from "./components/Courses";
+import { useTranslation } from "react-i18next";
 
 function ProfilePage() {
+  const { t } = useTranslation();
   return (
     <>
       <Main />
-      <Box py={"2rem"} className="container">
+      <div className="mx-auto flex max-w-7xl py-8">
         <Tabs>
           <TabList>
-            <Tab>Profile</Tab>
-            <Tab>My Courses</Tab>
+            <Tab>{t("Profile")}</Tab>
+            <Tab>{t("My Courses")}</Tab>
           </TabList>
           <TabPanels>
             <TabPanel p={"0"}>
@@ -22,7 +24,7 @@ function ProfilePage() {
             </TabPanel>
           </TabPanels>
         </Tabs>
-      </Box>
+      </div>
     </>
   );
 }

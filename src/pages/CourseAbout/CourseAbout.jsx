@@ -16,7 +16,11 @@ function CourseAbout() {
       .then((res) => setCourse(res?.data?.data));
   }, [id]);
 
-  const findCourse = course.find((item) => item?.course_id === id);
+  const findCourse = useMemo(() => {
+    return course.find(
+      (item) => String(item.course_id) === String(id)
+    );
+  }, [course, id]);
 
   return (
     <>

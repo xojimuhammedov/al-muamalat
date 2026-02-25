@@ -12,6 +12,7 @@ import Services from "./components/Services";
 import { AboutHero } from "./components/About";
 import OnlineCourse from "./pages/OnlineCourse/OnlineCourse";
 import CourseAbout from "./pages/CourseAbout/CourseAbout";
+import LessonsPage from "./pages/LessonsPage/LessonsPage";
 
 // Lazy load all page components for code splitting
 const ContactPage = lazy(() => import("./pages/ContactPage/ContactPage"));
@@ -70,6 +71,7 @@ function App() {
           <Route path="/services" element={<ServicesSection />} />
           <Route path="/online-course" element={<OnlineCourse />} />
           <Route path="/online-course/:id" element={<CourseAbout />} />
+          <Route path="/my-courses/:id" element={<LessonsPage />} />
         </Routes>
       </Suspense>
       {location.pathname === "/login" ? "" : <NewFooter />}
