@@ -64,13 +64,13 @@ function Courses() {
         {/* Header */}
         <div className="flex items-center justify-between mb-8 pb-6 border-b border-gray-200">
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">
+            <h2 className="text-xl font-bold text-gray-900">
               {t("Sotib olgan kurslar")}
             </h2>
           </div>
           <Link
             to="/online-course"
-            className="px-5 py-2.5 font-semibold text-white bg-[#FE5D37] hover:bg-orange-600 rounded-lg transition-colors flex items-center gap-2 hover:shadow-lg"
+            className="px-4 py-2 font-medium text-white bg-[#FE5D37] hover:bg-orange-600 rounded-lg transition-colors flex items-center gap-2 hover:shadow-lg"
           >
             {t("Barcha kurslar")}
           </Link>

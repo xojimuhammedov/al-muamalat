@@ -4,6 +4,8 @@ import { createPortal } from "react-dom";
 import LogoIcon from "../assets/nav-logo.png";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useQuery } from "react-query";
+import { API } from "../api";
 
 const languages = [
   { code: "en", label: "EN" },
@@ -14,6 +16,7 @@ function NavMenu({ isOpen, onClose }) {
   const [mobileDropdown, setMobileDropdown] = useState(null);
   const [mounted, setMounted] = useState(false);
   const [activeLang, setActiveLang] = useState("en");
+  const token = localStorage.getItem("userToken");
 
   const { t, i18n } = useTranslation();
 
@@ -26,6 +29,7 @@ function NavMenu({ isOpen, onClose }) {
       children: [
         { label: t("O’quv kurslari"), href: "/education-course" },
         { label: t("AAOIFI imtihonlari"), href: "/aaoifi-exam" },
+        { label: t("Online courses"), href: "/online-course" },
       ],
     },
     { label: t("Islom moliyasi"), href: "/material" },
@@ -76,6 +80,18 @@ function NavMenu({ isOpen, onClose }) {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
+
+  const { data } = useQuery({
+    queryKey: ["userMe"],
+    queryFn: API.userMe,
+    enabled: !!token, // token bo‘lsa ishlaydi
+    retry: false,
+  });
+
+  const isAuth = data?.data?.success;
+
+  const linkPath = isAuth ? "/profile" : "/login";
+  const linkText = isAuth ? t("Profile") : t("Kirish");
 
   if (!mounted) return null;
 
@@ -197,14 +213,14 @@ function NavMenu({ isOpen, onClose }) {
 
           {/* Login */}
           <Link
-            to="/login"
+            to={linkPath}
             onClick={() => {
               onClose();
               window.scrollTo({ top: 0 });
             }}
             className="flex items-center justify-center gap-2 rounded-full bg-[#FE5D37] py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#FE5D37]/20 transition-all"
           >
-            {t("Kirish")}
+            {linkText}
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

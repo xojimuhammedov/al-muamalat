@@ -37,14 +37,14 @@ function LessonsPage() {
   return (
     <div className="mt-24">
       <div className="container mx-auto">
-        <h2 className="text-2xl border-b border-gray-300 pb-4 font-bold text-slate-900">
+        <h2 className="text-lg md:text-2xl border-b border-gray-300 pb-4 font-bold text-slate-900">
           {findCourse?.[`name_${i18n?.language}`]}
         </h2>
         {filteredLessons?.length > 0 && (
-          <div className="flex mt-4 gap-6">
-            <div className="w-80">
+          <div className="flex flex-col lg:flex-row mt-4 gap-6">
+            <div className="w-full lg:w-80">
               <div className="sticky top-8 rounded-lg bg-white shadow-md">
-                <div className="h-[670px] overflow-y-auto p-4">
+                <div className="h-[470px] lg:h-[670px] overflow-y-auto p-4">
                   <div className="space-y-1">
                     {filteredLessons?.map((lesson) => (
                       <button
@@ -65,17 +65,17 @@ function LessonsPage() {
                 </div>
               </div>
             </div>
-            <div className="flex-1 rounded-lg bg-white shadow-md p-4 ">
-              <div className="mb-6 flex items-center justify-between">
+            <div className="flex-1 rounded-lg bg-white shadow-md p-4">
+              <div className="mb-6 flex flex-col gap-2 lg:flex-row items-baseline lg:items-center justify-between">
                 <div>
-                  <h2 className="text-2xl font-bold text-slate-900">
+                  <h2 className="text-lg md:text-2xl font-bold text-slate-900">
                     {findCourse?.[`name_${i18n?.language}`]}
                   </h2>
                 </div>
                 <Link
                   to={"/profile"}
                   onClick={() => setSelectedLesson(null)}
-                  className="group hidden items-center gap-2 rounded-full bg-[#FE5D37] px-5 py-2 text-[13px] font-semibold text-white shadow-lg shadow-[#FE5D37]/20 transition-all duration-300 sm:flex"
+                  className="group items-center gap-2 rounded-full bg-[#FE5D37] px-5 py-2 text-[13px] font-semibold text-white shadow-lg shadow-[#FE5D37]/20 transition-all duration-300 flex"
                 >
                   <ArrowLeft className="text-white w-4 h-4" />{" "}
                   {t("Kurslar ro'yxatiga qaytish")}
