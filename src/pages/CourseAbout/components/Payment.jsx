@@ -6,6 +6,7 @@ import axios from "axios";
 import { get } from "lodash";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
+import { formatPrice } from "../../../utils/helper";
 
 const Payment = ({ course }) => {
   const { t } = useTranslation();
@@ -137,7 +138,7 @@ const Payment = ({ course }) => {
                   {t("Kurs narxi")}:
                 </span>
                 <span className="text-2xl md:text-3xl font-bold text-teal-600">
-                  {course?.price ? course?.price / 100 : 0} {t("sum")}
+                {formatPrice(course?.price / 100)} {t("sum")}
                 </span>
               </div>
             </div>

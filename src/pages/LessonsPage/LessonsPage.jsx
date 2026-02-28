@@ -132,21 +132,3 @@ function LessonsPage() {
 }
 
 export default LessonsPage;
-
-const css = {
-  titles: {
-    color: "#103741",
-    fontSize: "30px",
-    lineHeight: "35px",
-    marginTop: "24px",
-  },
-  text: {
-    fontSize: "16px",
-    lineHeight: "24px",
-    marginTop: "16px",
-    boxShadow: "rgba(144, 173, 248, 0.25) 0px 9px 18px 0px",
-    padding: "20px",
-    borderRadius: "12px",
-    backgroundColor: "white",
-  },
-};

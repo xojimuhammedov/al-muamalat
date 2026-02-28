@@ -232,7 +232,7 @@ function Profile() {
                     onClick={() => setIsEditing(true)}
                     className="w-full px-6 py-2 font-medium text-white bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all shadow-md hover:shadow-lg"
                   >
-                    Tahrirlash
+                    {t("Tahrirlash")}
                   </button>
                   <div
                     onClick={removeClick}
@@ -245,7 +245,7 @@ function Profile() {
                     >
                       <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z" />
                     </svg>
-                    Chiqish
+                     {t("Chiqish")}
                   </div>
                 </div>
               ) : (
@@ -254,7 +254,7 @@ function Profile() {
                     type="submit"
                     className="w-full px-6 py-2 font-medium text-white bg-gradient-to-r from-green-500 to-green-600 rounded-lg hover:from-green-600 hover:to-green-700 transition-all shadow-md hover:shadow-lg"
                   >
-                    Saqlash
+                    {t("Saqlash")}
                   </button>
                 </>
               )}

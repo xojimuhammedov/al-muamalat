@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { API_URL } from "../../../api";
 import { useTranslation } from "react-i18next";
+import { formatPrice } from "../../../utils/helper";
 
 const CourseList = () => {
   const { t, i18n } = useTranslation();
@@ -39,7 +40,7 @@ const CourseList = () => {
 
               <div className="mt-5 flex items-center justify-between">
                 <span className="text-base font-bold text-foreground">
-                  {course?.price ? course?.price / 100 : 0} {t("sum")}
+                {formatPrice(course?.price / 100)} {t("sum")}
                 </span>
                 <Link
                   to={`/online-course/${course.course_id}`}

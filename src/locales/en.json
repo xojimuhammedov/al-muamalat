@@ -220,5 +220,8 @@
   "Hali kurs sotib olmadingiz":"You haven't purchased a course yet.",
   "Barcha kurslar":"All courses",
   "Sotib olgan kurslar":"Courses purchased",
-  "Shaxsiy ma'lumotlar va sotib olgan kurslarni boshqarish":"Manage personal information and purchased courses"
+  "Shaxsiy ma'lumotlar va sotib olgan kurslarni boshqarish":"Manage personal information and purchased courses",
+  "Tahrirlash":"Update",
+  "Chiqish":"Log out",
+  "Saqlash":"Save"
 }
