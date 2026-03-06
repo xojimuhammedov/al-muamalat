@@ -41,6 +41,8 @@ export default function NewFooter() {
   const companyLinks = [
     { label: t("AAOIFI imtihonlari"), href: "/aaoifi-exam" },
     { label: t("O’quv kurslari"), href: "/education-course" },
+    { label: t("Online courses"), href: "/online-course" },
+    { label: t("Xizmatlar"), href: "/services" },
     { label: t("Bog'lanish"), href: "/contact" },
   ];
 

@@ -45,7 +45,6 @@ function Section({ course }) {
         if (err.response.data.message === "Please login in to get access") {
           toast.error("To'lov qilish uchun ro'yhatdan o'ting iltimos!");
         }
-        // toast.error("Bu kurs uchun oldin to'lov qilgansiz!");
       });
   });
   const onSubmit = () => {

@@ -50,11 +50,10 @@ function LessonsPage() {
                       <button
                         key={lesson?.id}
                         onClick={() => setSelectedLesson(lesson)}
-                        className={`w-full rounded-md px-3 py-2 text-left text-sm transition-all duration-200 ${
-                          selectedLesson?.id === lesson?.id
-                            ? "bg-[#FE5D37] text-white hover:bg-[#FE5D37]/80"
-                            : "text-slate-700 hover:bg-slate-100"
-                        }`}
+                        className={`w-full rounded-md px-3 py-2 text-left text-sm transition-all duration-200 ${selectedLesson?.id === lesson?.id
+                          ? "bg-[#FE5D37] text-white hover:bg-[#FE5D37]/80"
+                          : "text-slate-700 hover:bg-slate-100"
+                          }`}
                       >
                         <span className="line-clamp-1">
                           {lesson?.[`title_${i18n?.language}`]}
@@ -84,7 +83,6 @@ function LessonsPage() {
               {selectedLesson && (
                 <div className="overflow-hidden">
                   <div className="space-y-6">
-                    {/* Video Player */}
                     <div className="aspect-video w-full overflow-hidden rounded-lg bg-black">
                       <iframe
                         width="100%"
@@ -100,6 +98,19 @@ function LessonsPage() {
                     <h3 className="mt-8 font-medium">
                       {selectedLesson?.[`title_${i18n?.language}`]}
                     </h3>
+                    <div className="flex mt-4 flex-col gap-2">
+                      {selectedLesson?.documents?.map((file, index) => (
+                        <a
+                          key={index}
+                          href={file?.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:underline"
+                        >
+                          {file?.name}
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
