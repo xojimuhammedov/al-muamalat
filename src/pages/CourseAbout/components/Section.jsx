@@ -104,9 +104,13 @@ function Section({ course }) {
               </Text>
             )}
             {course?.price === 200000000 || course?.price === 300000000 ? (
-              <Button type="submit" onClick={onSubmit} {...css.button}>
+              <button
+                type="submit"
+                onClick={onSubmit}
+                className="w-full inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fe5d37] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[#fe5d37] text-white hover:bg-[#fe5d37]/90 h-10 px-4 py-2 mt-20 shadow-sm"
+              >
                 {t("Sotib olish")}
-              </Button>
+              </button>
             ) : (
               ""
             )}
@@ -204,22 +208,7 @@ const css = {
     marginBottom: "30px",
     marginTop: "4rem",
   },
-  button: {
-    background: "#fe5d37",
-    color: "#fff",
-    fontSize: "18px",
-    lineHeight: "26px",
-    cursor: "pointer",
-    width: "100%",
-    height: "50px",
-    transition: "0.3s",
-    marginTop: "80px",
 
-    _hover: {
-      background: "#db4220",
-      color: "#fff",
-    },
-  },
   subname: {
     color: "#db4220",
     fontSize: "24px",

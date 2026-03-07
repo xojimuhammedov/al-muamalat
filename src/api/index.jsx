@@ -38,4 +38,11 @@ export const API = {
     axiosInstance.put(`/users/${payload?.id}`, payload),
   userMe: () => axiosInstance.get("/users/me"),
   myCourses: () => axiosInstance.get("/courses/my"),
+  registerUserForEmail: (payload) => axiosInstance.post("/v2/auth/signup/init", payload),
+  verifyEmail: (payload) => axiosInstance.post("/v2/auth/signup/verify", payload),
+  loginUserForEmail: (payload) => axiosInstance.post("/v2/auth/signin/init", payload),
+  verifyLoginEmail: (payload) => axiosInstance.post("/v2/auth/signin/verify", payload),
+  forgotPasswordResend: (payload) => axiosInstance.post("/v2/auth/password/forgot/resend", payload),
+  forgotPasswordVerify: (payload) => axiosInstance.post("/v2/auth/password/forgot/verify", payload),
+  forgotPasswordConfirm: (payload) => axiosInstance.post("/v2/auth/password/forgot/confirm", payload),
 };

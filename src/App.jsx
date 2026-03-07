@@ -1,5 +1,5 @@
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
-import { lazy, Suspense, useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import "./App.css";
 import Partners from "./components/Partners";
 import Header from "./components/Header";
@@ -24,7 +24,6 @@ const AAFOIExam = lazy(() => import("./pages/AAFOI_Exam/AAFOI_Exam"));
 const EducationPage = lazy(() => import("./pages/EducationPage/EducationPage"));
 const OurTeam = lazy(() => import("./pages/OurTeam/OurTeam"));
 
-// Loading fallback component
 const LoadingFallback = () => (
   <div
     style={{

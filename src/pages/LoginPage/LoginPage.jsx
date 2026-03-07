@@ -9,13 +9,7 @@ function LoginPage() {
   const { t } = useTranslation();
   return (
     <Box bg={"#f2f2f2"} position="relative" h={"100vh"}>
-      <Button
-        onClick={() => setLogin(login === "login" ? "Register" : "login")}
-        {...css.button}
-      >
-        {login === "login" ? t("Ro'yhatdan o'tish") : t("Kirish")}
-      </Button>
-      {login === "login" ? <Login /> : <Register />}
+      {login === "login" ? <Login setLogin={setLogin} /> : <Register setLogin={setLogin} />}
     </Box>
   );
 }

@@ -1,13 +1,10 @@
 import {
   Box,
-  Button,
   Flex,
   Heading,
   Image,
-  Input,
   SimpleGrid,
   Text,
-  Textarea,
   VStack,
 } from "@chakra-ui/react";
 import ContactImage from "../../../assets/contact-banner.png";
@@ -134,62 +131,62 @@ function Contact() {
           <SimpleGrid mt={"3rem"} columns={{ base: 1, md: 2 }} {...css.list}>
             <Box width={"100%"} p={{ base: "10px", md: "3rem" }}>
               <Heading as={"h3"}>{t("Aloqaga chiqing")}</Heading>
-              <form className="contact-form" action="">
-                <Input
-                  {...css.input}
-                  type="text"
-                  placeholder={t("Ismingiz")}
-                  required
-                  width={{ base: "100%", md: "48%" }}
-                  value={nameValue}
-                  onChange={(e) => changeName(e.target.value)}
-                />
-                <Input
-                  {...css.input}
-                  type="text"
-                  placeholder={t("Familyangiz")}
-                  required
-                  width={{ base: "100%", md: "48%" }}
-                  value={nameValueTwo}
-                  onChange={(e) => setNameValueTwo(e.target.value)}
-                />
-                <Input
-                  type="email"
-                  {...css.input}
-                  placeholder={t("Sizning elektron manzilingiz")}
-                  value={email}
-                  onChange={(e) => changeEmail(e.target.value)}
-                  required
-                  width={{ base: "100%", md: "48%" }}
-                />
-                <Input
-                  {...css.input}
-                  type="number"
-                  placeholder={t("Tashkilotingiz")}
-                  value={company}
-                  onChange={(e) => setCompany(e.target.value)}
-                  width={{ base: "100%", md: "48%" }}
-                />
-                <Input
-                  {...css.input}
+              <form className="contact-form space-y-4" action="">
+                <div className="flex w-full flex-col md:flex-row gap-4">
+                  <input
+                    className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fe5d37] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    type="text"
+                    placeholder={t("Ismingiz")}
+                    required
+                    value={nameValue}
+                    onChange={(e) => changeName(e.target.value)}
+                  />
+                  <input
+                    className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fe5d37] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    type="text"
+                    placeholder={t("Familyangiz")}
+                    required
+                    value={nameValueTwo}
+                    onChange={(e) => setNameValueTwo(e.target.value)}
+                  />
+                </div>
+                <div className="flex w-full flex-col md:flex-row gap-4">
+                  <input
+                    type="email"
+                    className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fe5d37] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    placeholder={t("Sizning elektron manzilingiz")}
+                    value={email}
+                    onChange={(e) => changeEmail(e.target.value)}
+                    required
+                  />
+                  <input
+                    className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fe5d37] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    type="text"
+                    placeholder={t("Tashkilotingiz")}
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
+                  />
+                </div>
+                <input
+                  className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fe5d37] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   type="number"
                   placeholder={t("Sizning raqamingiz")}
                   value={numberValue}
                   onChange={(e) => changeNumber(e.target.value)}
                 />
-                <Textarea
-                  {...css.input}
+                <textarea
+                  className="flex min-h-[80px] w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fe5d37] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   placeholder={t("Xabaringiz / Izoh...")}
                   value={textValue}
                   onChange={(e) => changeText(e.target.value)}
                 />
-                <Button
+                <button
                   onClick={sendMessage}
-                  className="btn btn-primary"
+                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fe5d37] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[#fe5d37] text-white hover:bg-[#fe5d37]/90 h-10 px-6 py-2 shadow-sm w-[150px]"
                   type="submit"
                 >
                   {t("Yuborish")}
-                </Button>
+                </button>
               </form>
             </Box>
             <Box>
@@ -215,25 +212,7 @@ const css = {
     borderRadius: "10px",
     objectFit: "cover",
   },
-  input: {
-    width: "100%",
-    color: "#74787C",
-    border: "0",
-    backgroundColor: "#fff",
-    borderRadius: "10px",
-    transition: "border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out",
-    padding: "1rem 0.75rem",
-    height: "calc(3.5rem + 2px)",
 
-    _focus: {
-      boxShadow: "0 0 0 .25rem rgba(254,93,55,0.25)",
-      color: "#74787C",
-    },
-
-    _placeholder: {
-      fontSize: "14px",
-    },
-  },
   box: {
     width: "75px",
     height: "75px",

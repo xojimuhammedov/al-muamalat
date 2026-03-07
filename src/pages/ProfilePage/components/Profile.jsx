@@ -143,11 +143,8 @@ function Profile() {
                   type="name"
                   autoComplete="off"
                   placeholder={t("Full Name")}
-                  className={`w-full px-4 py-3 rounded-lg border-2 font-medium transition-all text-sm ${
-                    isEditing
-                      ? "border-orange-500 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2"
-                      : "border-gray-200 bg-gray-50 text-gray-900 cursor-not-allowed"
-                  }`}
+                  className={`flex h-10 w-full rounded-md border border-slate-200 px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fe5d37] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${isEditing ? "bg-white text-slate-900" : "bg-slate-50 text-slate-500"
+                    }`}
                 />
               </div>
 
@@ -167,11 +164,8 @@ function Profile() {
                   type="address"
                   placeholder={t("Address")}
                   disabled={!isEditing}
-                  className={`w-full px-4 py-3 rounded-lg border-2 font-medium transition-all text-sm ${
-                    isEditing
-                      ? "border-orange-500 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2"
-                      : "border-gray-200 bg-gray-50 text-gray-900 cursor-not-allowed"
-                  }`}
+                  className={`flex h-10 w-full rounded-md border border-slate-200 px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fe5d37] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${isEditing ? "bg-white text-slate-900" : "bg-slate-50 text-slate-500"
+                    }`}
                 />
               </div>
 
@@ -191,11 +185,8 @@ function Profile() {
                   autoComplete="new-password"
                   placeholder={t("Password")}
                   disabled={!isEditing}
-                  className={`w-full px-4 py-3 rounded-lg border-2 font-medium transition-all text-sm ${
-                    isEditing
-                      ? "border-orange-500 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2"
-                      : "border-gray-200 bg-gray-50 text-gray-900 cursor-not-allowed"
-                  }`}
+                  className={`flex h-10 w-full rounded-md border border-slate-200 px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fe5d37] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${isEditing ? "bg-white text-slate-900" : "bg-slate-50 text-slate-500"
+                    }`}
                 />
               </div>
 
@@ -215,11 +206,8 @@ function Profile() {
                   placeholder={t("Sizning raqamingiz")}
                   name="phone_number"
                   disabled={!isEditing}
-                  className={`w-full px-4 py-3 rounded-lg border-2 font-medium transition-all text-sm ${
-                    isEditing
-                      ? "border-orange-500 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2"
-                      : "border-gray-200 bg-gray-50 text-gray-900 cursor-not-allowed"
-                  }`}
+                  className={`flex h-10 w-full rounded-md border border-slate-200 px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fe5d37] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${isEditing ? "bg-white text-slate-900" : "bg-slate-50 text-slate-500"
+                    }`}
                 />
               </div>
             </div>
@@ -230,13 +218,14 @@ function Profile() {
                 <div className="flex items-center gap-4">
                   <button
                     onClick={() => setIsEditing(true)}
-                    className="w-full px-6 py-2 font-medium text-white bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all shadow-md hover:shadow-lg"
+                    type="button"
+                    className="w-full inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fe5d37] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[#fe5d37] text-white hover:bg-[#fe5d37]/90 h-10 px-4 py-2 shadow-sm"
                   >
                     {t("Tahrirlash")}
                   </button>
                   <div
                     onClick={removeClick}
-                    className="w-full px-6 py-2 cursor-pointer font-medium text-orange-600 bg-orange-50 hover:bg-orange-100 rounded-lg transition-colors flex items-center justify-center gap-2"
+                    className="w-full cursor-pointer inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fe5d37] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-[#fe5d37] bg-white hover:bg-slate-50 text-[#fe5d37] h-10 px-4 py-2"
                   >
                     <svg
                       className="w-5 h-5"
@@ -245,14 +234,14 @@ function Profile() {
                     >
                       <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z" />
                     </svg>
-                     {t("Chiqish")}
+                    {t("Chiqish")}
                   </div>
                 </div>
               ) : (
                 <>
                   <button
                     type="submit"
-                    className="w-full px-6 py-2 font-medium text-white bg-gradient-to-r from-green-500 to-green-600 rounded-lg hover:from-green-600 hover:to-green-700 transition-all shadow-md hover:shadow-lg"
+                    className="w-full inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fe5d37] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[#fe5d37] text-white hover:bg-[#fe5d37]/90 h-10 px-4 py-2 shadow-sm"
                   >
                     {t("Saqlash")}
                   </button>
