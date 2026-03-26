@@ -1,6 +1,8 @@
 import { Box, Heading, Image, Link } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
+import HalolImage from '../../../assets/halol-1.jpg'
+import HalolFile from '../../../assets/halol-file.pdf'
 
 function Article() {
   var settings = {
@@ -124,6 +126,22 @@ function Article() {
               {t("Batafsil o'qish")}
             </Link>
           </Box>
+          <Box width={"100%"}>
+            <Image
+              {...css.image}
+              width={'100%'}
+              objectFit={'cover'}
+              src={HalolImage}
+            />
+            <Heading {...css.title}>{t("Halol boylik asoslari")}</Heading>
+            <Link
+              {...css.link}
+              download
+              href={HalolFile}
+              target="_blank">
+              {t("Batafsil o'qish")}
+            </Link>
+          </Box>
         </Slider>
       </Box>
     </Box>
@@ -149,7 +167,7 @@ const css = {
     margin: "10px 0",
   },
   image: {
-    height: "410px",
+    height: "400px",
   },
   link: {
     color: "#fe5d37",
