@@ -3,6 +3,9 @@ import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import HalolImage from '../../../assets/halol-1.jpg'
 import HalolFile from '../../../assets/halol-file.pdf'
+import IslomiyMoliya from '../../../assets/islomiy-moliya.jpg'
+import IslamicFinance from '../../../assets/islamic-finance.jpg'
+import MoneyProblem from '../../../assets/money.jpg'
 
 function Article() {
   var settings = {
@@ -142,6 +145,45 @@ function Article() {
               {t("Batafsil o'qish")}
             </Link>
           </Box>
+          <Box width={"100%"}>
+            <Image
+              {...css.image}
+              src={IslomiyMoliya}
+            />
+            <Heading {...css.title}>{t("Исломий молия – реал бозордан ажралмаган иқтисодиёт")}</Heading>
+            <Link
+              {...css.link}
+              href="https://kun.uz/kr/33230925"
+              target="_blank">
+              {t("Batafsil o'qish")}
+            </Link>
+          </Box>
+          <Box width={"100%"}>
+            <Image
+              {...css.image}
+              src={IslamicFinance}
+            />
+            <Heading {...css.title}>{t("Исломий молияда назорат: “ўтлаб кетмаслик” учун қандай воситалар бор?")}</Heading>
+            <Link
+              {...css.link}
+              href="https://kun.uz/kr/58795378"
+              target="_blank">
+              {t("Batafsil o'qish")}
+            </Link>
+          </Box>
+          <Box width={"100%"}>
+            <Image
+              {...css.image}
+              src={MoneyProblem}
+            />
+            <Heading {...css.title}>{t("Исломий молия – “ётган” пулни иқтисодиётга олиб кириш воситаси")}</Heading>
+            <Link
+              {...css.link}
+              href="https://kun.uz/kr/33230925"
+              target="_blank">
+              {t("Batafsil o'qish")}
+            </Link>
+          </Box>
         </Slider>
       </Box>
     </Box>
@@ -162,12 +204,14 @@ const css = {
   },
   title: {
     color: "#103741",
-    fontSize: "18px",
+    fontSize: "16px",
     lineHeight: "26px",
     margin: "10px 0",
   },
   image: {
     height: "400px",
+    width: "100%",
+    objectFit: "cover",
   },
   link: {
     color: "#fe5d37",
