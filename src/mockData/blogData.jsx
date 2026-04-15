@@ -5,6 +5,7 @@ import TeamFifthen from "../assets/blog-11.jpg";
 import GayratImage from "../assets/blog-12.jpg";
 import BlogImage from "../assets/team7.jpg";
 import BaxtiyorImage from "../assets/oybek-final.jpg";
+import OtabekImage from "../assets/otabek.jpg";
 
 export const blogData = [
   {
@@ -104,5 +105,20 @@ export const blogData = [
       "Islomiy moliya bo'yicha konsalting va maxsulot tuzilmalari eksperti",
     image: BaxtiyorImage,
     link: "https://www.linkedin.com/in/bakhtiyorjon-fayzullaev-fmva-cpss-955a58273/",
+  },
+  {
+    id: 8,
+    title_uz: "Otabek Imamov (MPA)",
+    title_en: "Otabek Imamov (MPA)",
+    certificate: "",
+    text_en:
+      "Otabek Imamov holds a Master of Public Administration from the Japan National Graduate Institute for Policy Studies and a Bachelor's degree in Accounting and Audit from Tashkent Financial Institute. He has over 15 years of experience in investment project finance, infrastructure development, and cooperation with international financial institutions, including the Islamic Development Bank Group, across government and private sector roles.",
+    text_uz:
+      "Otabek Imamov Yaponiya Milliy Davlat Boshqaruvi Institutida davlat boshqaruvi magistri va Toshkent Moliya Institutida buxgalteriya hisobi va audit bo'yicha bakalavr darajasini olgan. U investitsiya loyiha moliyasi, infratuzilmani rivojlantirish va Islom Taraqqiyot Banki Guruhi kabi xalqaro moliya institutlari bilan hamkorlik sohasida davlat va xususiy sektorda 15 yildan ortiq tajribaga ega.",
+    job_en: "Business Development Advisor",
+    job_uz:
+      "Biznesni rivojlantirish maslahatchisi",
+    image: OtabekImage,
+    link: "https://www.linkedin.com/",
   },
 ];

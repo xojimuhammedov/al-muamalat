@@ -13,7 +13,7 @@ function LessonsPage() {
   const [selectedLesson, setSelectedLesson] = useState(null);
   useEffect(() => {
     axios
-      .get(`${API_URL}/lessons/`)
+      .get(`${API_URL}/lessons?limit=100`)
       .then((response) => setLesson(response?.data?.data))
       .catch((err) => {
         console.log(err);

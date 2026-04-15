@@ -34,7 +34,9 @@ function CourseAbout() {
           <div
             className="text-base text-gray-600"
             dangerouslySetInnerHTML={{
-              __html: findCourse?.[`description_${i18n?.language}`],
+              __html: findCourse?.[`description_${i18n?.language}`]
+                ?.replace(/\\n/g, "")
+                ?.replace(/\\"/g, '"'),
             }}
           />
         </section>
