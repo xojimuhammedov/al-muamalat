@@ -2,6 +2,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import "./App.css";
 import Partners from "./components/Partners";
+import LocalPartners from "./components/LocalPartners";
 import Header from "./components/Header";
 import Videos from "./components/Videos";
 import NewFooter from "./components/NewFooter";
@@ -55,6 +56,7 @@ function App() {
                 <CoreGoals />
                 <Services />
                 <Partners />
+                <LocalPartners />
                 <Videos />
               </>
             }

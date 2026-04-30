@@ -1,14 +1,17 @@
 import { Box, Heading, Image, VStack } from "@chakra-ui/react";
 import Slider from "react-slick";
-import LogoOne from "../assets/logo.jpg";
-import LogoTwo from "../assets/logo1.jpg";
-import LogoFour from "../assets/logo3.jpg";
-import LogoFive from "../assets/logo4.jpg";
-import LogoSix from "../assets/logo5.jpg";
-import LogoSeven from "../assets/logo6.jpg";
+import AsiaAlliance from "../assets/asia_alliance.svg";
+import IpotekaBank from "../assets/ipoteka_bank.png";
+import TuronBank from "../assets/turon_bank.png";
+import XalqBank from "../assets/xalq_bank.webp";
+import OkaAgency from "../assets/oka_agency.png";
+import HamkorSugurta from "../assets/hamkor_sugurta.jpg";
+import Tadbirkorlik from "../assets/tadbirkorlik.jpg";
+import Kifoya from "../assets/kifoya.jpg";
+import Asterium from "../assets/asterium.jpg";
 import { useTranslation } from "react-i18next";
 
-function Partners() {
+function LocalPartners() {
   var settings = {
     speed: 5000,
     dots: false,
@@ -58,7 +61,7 @@ function Partners() {
             fontWeight="700"
             letterSpacing="-1px"
           >
-            {t("Bizning xalqaro hamkorlarimiz va mijozlarimiz")}
+            {t("Bizning mahalliy hamkorlarimiz va mijozlarimiz")}
           </Heading>
           <Box
             width="80px"
@@ -70,22 +73,31 @@ function Partners() {
         </VStack>
         <Slider {...settings}>
           <Box {...css.list}>
-            <Image {...css.image} src={LogoOne} />
+            <Image {...css.image} src={AsiaAlliance} />
           </Box>
           <Box {...css.list}>
-            <Image {...css.image} src={LogoTwo} />
+            <Image {...css.image} src={IpotekaBank} />
           </Box>
           <Box {...css.list}>
-            <Image {...css.image} src={LogoFour} />
+            <Image {...css.image} src={TuronBank} />
           </Box>
           <Box {...css.list}>
-            <Image {...css.image} src={LogoFive} />
+            <Image {...css.image} src={XalqBank} />
           </Box>
           <Box {...css.list}>
-            <Image {...css.image} src={LogoSix} />
+            <Image {...css.image} src={OkaAgency} />
           </Box>
           <Box {...css.list}>
-            <Image {...css.image} src={LogoSeven} />
+            <Image {...css.image} src={HamkorSugurta} />
+          </Box>
+          <Box {...css.list}>
+            <Image {...css.image} src={Tadbirkorlik} />
+          </Box>
+          <Box {...css.list}>
+            <Image {...css.image} src={Kifoya} />
+          </Box>
+          <Box {...css.list}>
+            <Image {...css.image} src={Asterium} />
           </Box>
         </Slider>
       </Box>
@@ -93,37 +105,30 @@ function Partners() {
   );
 }
 
-export default Partners;
+export default LocalPartners;
 
 const css = {
   list: {
     boxShadow: "rgba(144, 173, 248, 0.25) 0px 9px 18px 0px",
-    padding: "20px",
+    padding: "12px 20px",
     borderRadius: "12px",
     backgroundColor: "white",
     width: "100%",
-    height: "200px",
+    height: "180px",
     display: "flex !important",
     alignItems: "center",
     justifyContent: "center",
   },
   image: {
-    height: "140px",
+    height: "100px",
+    width: "auto",
+    maxWidth: "90%",
     objectFit: "contain",
     transition: "0.3s",
 
     _hover: {
-      transform: "scale(1.2)",
+      transform: "scale(1.1)",
       cursor: "pointer",
     },
-  },
-  title: {
-    color: "#103741",
-    textAlign: "center",
-    fontSize: {
-      base: "25px",
-      lg: "2.5rem",
-    },
-    lineHeight: "1.2",
   },
 };
