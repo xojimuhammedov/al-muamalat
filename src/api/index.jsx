@@ -45,4 +45,23 @@ export const API = {
   forgotPasswordResend: (payload) => axiosInstance.post("/v2/auth/password/forgot/resend", payload),
   forgotPasswordVerify: (payload) => axiosInstance.post("/v2/auth/password/forgot/verify", payload),
   forgotPasswordConfirm: (payload) => axiosInstance.post("/v2/auth/password/forgot/confirm", payload),
+  
+  // Discussions
+  getQuestions: (courseId, page = 1, limit = 10) => 
+    axiosInstance.get(`/discussions/questions?course_id=${courseId}&page=${page}&limit=${limit}`),
+  createQuestion: (payload) => axiosInstance.post("/discussions/questions", payload, {
+    headers: { "Content-Type": "application/json" }
+  }),
+  getQuestionDetail: (questionId) => axiosInstance.get(`/discussions/questions/${questionId}`),
+  updateQuestion: (questionId, payload) => axiosInstance.put(`/discussions/questions/${questionId}`, payload, {
+    headers: { "Content-Type": "application/json" }
+  }),
+  deleteQuestion: (questionId) => axiosInstance.delete(`/discussions/questions/${questionId}`),
+  createReply: (questionId, payload) => axiosInstance.post(`/discussions/questions/${questionId}/replies`, payload, {
+    headers: { "Content-Type": "application/json" }
+  }),
+  updateReply: (replyId, payload) => axiosInstance.put(`/discussions/replies/${replyId}`, payload, {
+    headers: { "Content-Type": "application/json" }
+  }),
+  deleteReply: (replyId) => axiosInstance.delete(`/discussions/replies/${replyId}`),
 };

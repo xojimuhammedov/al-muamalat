@@ -160,3 +160,47 @@ a:hover {
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
+
+/* Discussion Section Custom Styles */
+.quill {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.ql-toolbar.ql-snow {
+  border: none !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  background-color: #f8fafc;
+}
+
+.ql-container.ql-snow {
+  border: none !important;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.ql-editor {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.ql-editor.ql-blank::before {
+  color: #94a3b8;
+  font-style: normal;
+}
+
+.prose-sm :where(p):not(:where([class~="not-prose"] *)) {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out forwards;
+}

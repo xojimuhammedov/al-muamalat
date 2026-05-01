@@ -10,6 +10,7 @@ import { useLessonLogic } from "./hooks/useLessonLogic";
 import LessonHeader from "./components/LessonHeader";
 import LessonSidebar from "./components/LessonSidebar";
 import LessonVideoPlayer from "./components/LessonVideoPlayer";
+import DiscussionSection from "./components/DiscussionSection";
 
 function LessonsPage() {
   const { id } = useParams();
@@ -81,15 +82,18 @@ function LessonsPage() {
             </div>
 
             {selectedLesson && (
-              <LessonVideoPlayer
-                selectedLesson={selectedLesson}
-                handleNext={handleNext}
-                handlePrev={handlePrev}
-                currentIndex={currentIndex}
-                totalLessons={lessons.length}
-                isCompleted={completedLessons.map(String).includes(String(selectedLesson.id))}
-                language={i18n.language}
-              />
+              <div className="space-y-8">
+                <LessonVideoPlayer
+                  selectedLesson={selectedLesson}
+                  handleNext={handleNext}
+                  handlePrev={handlePrev}
+                  currentIndex={currentIndex}
+                  totalLessons={lessons.length}
+                  isCompleted={completedLessons.map(String).includes(String(selectedLesson.id))}
+                  language={i18n.language}
+                />
+                <DiscussionSection courseId={id} lessonId={selectedLesson.id} />
+              </div>
             )}
           </div>
         </div>
